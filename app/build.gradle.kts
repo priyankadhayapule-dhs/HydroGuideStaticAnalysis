@@ -1,15 +1,16 @@
 import com.android.build.gradle.internal.tasks.factory.dependsOn
-import java.io.ByteArrayOutputStream
+//import java.io.ByteArrayOutputStream
 
 // This is for dynamically adding the git commit hash to the version name
 fun gitCommitHash(): String {
     return try {
-        val stdout = ByteArrayOutputStream()
-        project.exec {
-            commandLine("git", "rev-parse", "--short", "HEAD")
-            standardOutput = stdout
-        }
-        stdout.toString().trim()
+        ProcessBuilder("git", "rev-parse", "--short", "HEAD")
+            .redirectErrorStream(true)
+            .start()
+            .inputStream
+            .bufferedReader()
+            .readText()
+            .trim()
     } catch (e: Exception) {
         "nogit"
     }
@@ -65,6 +66,7 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        buildConfig = true
     }
 
     lint {
@@ -72,11 +74,12 @@ android {
     }
 
     project.tasks.preBuild.dependsOn("cyclonedxBom")
-    kotlinOptions {
-        jvmTarget = "17"
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
-
-
 }
 
 dependencies {
