@@ -5,7 +5,7 @@ import java.io.ByteArrayOutputStream
 fun gitCommitHash(): String {
     return try {
         val stdout = ByteArrayOutputStream()
-        exec {
+        project.exec {
             commandLine("git", "rev-parse", "--short", "HEAD")
             standardOutput = stdout
         }
