@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer shadow layer -->
+    <item android:left="0dp" android:top="0dp" android:right="0dp" android:bottom="0dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#B300033A" />
+        </shape>
+    </item>
+    <!-- Main box layer with padding to show shadow outside -->
+    <item android:left="12dp" android:top="12dp" android:right="12dp" android:bottom="12dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC" />
+            <stroke android:width="1dp" android:color="#222222" />
+        </shape>
+    </item>
+</layer-list>

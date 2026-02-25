@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colr_error_reporter_background"
+    android:padding="@dimen/dimen_32x">
+
+    <ImageView
+        android:id="@+id/icon_error"
+        android:layout_width="@dimen/dimen_80x"
+        android:layout_height="@dimen/dimen_80x"
+        android:src="@android:drawable/ic_dialog_alert"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/sys_updates_package_icon_size"
+        android:padding="@dimen/dimen_8x"
+        app:tint="@color/colr_err_report" />
+
+    <TextView
+        android:id="@+id/tvErrorTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_reporter_title"
+        android:textSize="@dimen/dimen_25x"
+        android:textStyle="bold"
+        android:textColor="@color/colr_err_report"
+        app:layout_constraintTop_toBottomOf="@id/icon_error"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dimen_25x" />
+
+    <TextView
+        android:id="@+id/tvErrorMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/error_reporter_hint_msg"
+        android:textSize="@dimen/sp_dimen_18x"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:lineSpacingExtra="@dimen/dimen_4x"
+        app:layout_constraintTop_toBottomOf="@id/tvErrorTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dimen_16x"
+        android:layout_marginHorizontal="@dimen/sys_updates_package_icon_size" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdStackTrace"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="@dimen/dimen_8x"
+        app:cardElevation="@dimen/dimen_4x"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/tvErrorMessage"
+        app:layout_constraintBottom_toTopOf="@id/btnOk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dimen_32x"
+        android:layout_marginBottom="@dimen/dimen_32x"
+        android:layout_marginHorizontal="@dimen/dimen_25x">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_16x">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/dimen_8x" >
+
+                <TextView
+                    android:id="@+id/tvErrorType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:text=""
+                    android:textSize="@dimen/summary_input_box_label_size"
+                    android:textStyle="bold"
+                    android:textColor="@color/colr_err_report_msg"
+                    />
+                <TextView
+                    android:id="@+id/tvErrorReferenceId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text=""
+                    android:textSize="@dimen/summary_input_box_label_size"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/colr_err_report" />
+            </TableRow>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <TextView
+                    android:id="@+id/tvStackTraceText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/table_text_no_records"
+                    android:textColor="@color/colr_err_report_stack_trace_text"
+                    android:fontFamily="monospace"
+                    android:background="@color/colr_err_report_stack_trace_background"
+                    android:padding="@dimen/dimen_12x"
+                    android:lineSpacingExtra="2dp"
+                    android:scrollbars="vertical|horizontal"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"/>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="@dimen/sys_updates_tile_height"
+        android:layout_height="@dimen/dialog_gain_row_height"
+        android:text="OK"
+        android:textSize="@dimen/sp_dimen_18x"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/colr_err_report"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/sys_updates_package_icon_size" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

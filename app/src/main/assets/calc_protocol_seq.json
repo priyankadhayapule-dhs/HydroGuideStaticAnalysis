@@ -1,0 +1,36 @@
+[
+  {
+    "protocolId": "1",
+    "seqMap": [
+      {
+        "measurementId": "0",
+        "precedentMeasurementId" : "-1"
+      },
+      {
+        "measurementId": "1",
+        "precedentMeasurementId" : "0"
+      },
+      {
+        "measurementId": "2",
+        "precedentMeasurementId" : "1"
+      },
+      {
+        "measurementId": "3",
+        "precedentMeasurementId" : "2"
+      }
+    ]
+  },
+  {
+    "protocolId": "5",
+    "seqMap": [
+      {
+        "measurementId": "12",
+        "precedentMeasurementId" : "-1"
+      },
+      {
+        "measurementId": "13",
+        "precedentMeasurementId" : "12"
+      }
+      ]
+  }
+]

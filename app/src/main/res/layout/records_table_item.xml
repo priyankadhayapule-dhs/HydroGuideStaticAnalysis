@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/record_item_row"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:theme="@style/TableRowTheme">
+
+    <CheckBox
+        android:id="@+id/record_item_checkbox"
+        android:layout_width="@dimen/records_column_checkbox_width"
+        android:layout_height="match_parent"
+        android:background="@color/av_darkest_blue"
+        android:button="@drawable/custom_checkbox_selector"
+        android:buttonTint="@null"
+        android:gravity="center"
+        android:paddingStart="12dp" />
+
+    <TextView
+        android:id="@+id/record_item_name"
+        android:layout_width="@dimen/records_column_name_width"
+        android:layout_height="match_parent"
+        android:background="@drawable/thin_white_border"
+        android:gravity="center_vertical"
+        android:padding="@dimen/records_table_cell_padding"
+        android:text="@string/records_name_label" />
+
+    <TextView
+        android:id="@+id/record_item_id"
+        android:layout_width="@dimen/records_column_id_width"
+        android:layout_height="match_parent"
+        android:background="@drawable/thin_white_border"
+        android:gravity="center_vertical"
+        android:padding="@dimen/records_table_cell_padding"
+        android:text="@string/records_id_label" />
+
+    <TextView
+        android:id="@+id/record_item_dob"
+        android:layout_width="@dimen/records_column_dob_width"
+        android:layout_height="match_parent"
+        android:background="@drawable/thin_white_border"
+        android:gravity="center"
+        android:padding="@dimen/records_table_cell_padding"
+        android:text="@string/records_dob_label" />
+
+    <TextView
+        android:id="@+id/record_item_date"
+        android:layout_width="@dimen/records_column_date_width"
+        android:layout_height="match_parent"
+        android:background="@drawable/thin_white_border"
+        android:gravity="center"
+        android:padding="@dimen/records_table_cell_padding"
+        android:text="@string/records_date_label" />
+
+    <TextView
+        android:id="@+id/record_item_done_by"
+        android:layout_width="@dimen/records_column_done_by_width"
+        android:layout_height="match_parent"
+        android:background="@drawable/thin_white_border"
+        android:gravity="center_vertical"
+        android:padding="@dimen/records_table_cell_padding"
+        android:text="@string/records_done_by_label" />
+
+
+    <TextView
+        android:id="@+id/record_item_facility"
+        android:layout_width="@dimen/records_column_facility_width"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/thin_white_border"
+        android:gravity="center_vertical"
+        android:padding="@dimen/records_table_cell_padding"
+        android:text="@string/records_facility_label" />
+
+    <TextView
+        android:id="@+id/record_item_sync_status"
+        android:layout_width="@dimen/records_column_sync_status_width"
+        android:layout_height="match_parent"
+        android:background="@drawable/thin_white_border"
+        android:gravity="center_vertical"
+        android:padding="@dimen/records_table_cell_padding"
+        android:text="@string/records_sync_status_label" />
+
+</TableRow>

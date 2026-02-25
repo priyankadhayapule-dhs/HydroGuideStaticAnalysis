@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+    <variable
+        name="showSyncIcon"
+        type="Boolean" />
+    <variable
+        name="screenTitle"
+        type="String" />
+</data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/av_blue">
+
+    <LinearLayout
+        android:id="@+id/lnrTopbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <include
+            android:id="@+id/includeTopbar"
+            layout="@layout/generic_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:padding="@dimen/container_layouts_spacing"
+        app:layout_constraintBottom_toTopOf="@+id/inclBottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lnrTopbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <include
+            android:id="@+id/inclSysUpdateOnline"
+            layout="@layout/component_sys_update_mode_tiles"
+            android:layout_width="@dimen/sys_updates_tile_width"
+            android:layout_height="@dimen/sys_updates_tile_height" />
+
+        <include
+            android:id="@+id/inclSysUpdateUsb"
+            layout="@layout/component_sys_update_mode_tiles"
+            android:layout_width="@dimen/sys_updates_tile_width"
+            android:layout_height="@dimen/sys_updates_tile_height"
+            android:layout_marginLeft="@dimen/dimen_32x" />
+
+        <include
+            android:id="@+id/inclSysUpdateLocalStorage"
+            layout="@layout/component_sys_update_mode_tiles"
+            android:layout_width="@dimen/sys_updates_tile_width"
+            android:layout_height="@dimen/sys_updates_tile_height"
+            android:layout_marginLeft="@dimen/dimen_32x"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/inclBottomBar"
+        layout="@layout/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

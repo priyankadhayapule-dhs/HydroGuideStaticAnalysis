@@ -1,0 +1,19 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border_capture_thin_tb"
+        android:gravity="center"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/no_capture_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Current Captures Available"
+            android:textColor="@color/av_light_blue"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </RelativeLayout>
+</layout>

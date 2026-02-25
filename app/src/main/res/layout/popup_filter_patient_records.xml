@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/confirm_dialog_bg"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/dimen_16x">
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.17" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            android:hint="Patient Name"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPatientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:nextFocusDown="@id/edtPatientId"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutPatientId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            android:hint="Patient ID"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtPatientId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutInserterName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            android:hint="Inserter Name"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtInserterName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.17" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/dimen_16x">
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.13" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputContainerDob"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            android:hint="Dob."
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/calendar_month"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtDob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:nextFocusDown="@id/edtInsertionDate"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.3" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputContainerInsertionDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:hintAnimationEnabled="false"
+            android:hint="Insertion Date"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/calendar_month"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtInsertionDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:nextFocusDown="@id/edtInserterName"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.13" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/dimen_16x">
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.05" />
+
+        <include
+            android:id="@+id/includeFacilityInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            layout="@layout/component_facility_input"/>
+
+        <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.55" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:padding="@dimen/dimen_16x">
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_42x"
+            android:textColor="@color/white"
+            android:text="Search"
+            android:background="@drawable/button_border"
+            app:backgroundTint="@color/av_darker_blue"/>
+
+        <Button
+            android:id="@+id/btnDismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_42x"
+            android:layout_marginLeft="@dimen/dimen_16x"
+            android:text="Close"
+            android:background="@drawable/button_border"
+            app:backgroundTint="@color/av_darker_blue"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

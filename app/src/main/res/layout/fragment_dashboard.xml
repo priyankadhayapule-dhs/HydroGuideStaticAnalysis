@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_frag">
+
+    <data>
+
+        <variable
+            name="profileState"
+            type="com.accessvascularinc.hydroguide.mma.model.ProfileState" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/av_blue"
+        tools:context=".ui.HomeFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/home_top_bar"
+                layout="@layout/generic_top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/top_bar_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/title_or_profile_widget_width"
+                android:layout_marginBottom="@dimen/bottom_bar_height">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2" />
+
+                    <GridView
+                        android:visibility="gone"
+                        android:id="@+id/grdDashboardItems"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:drawSelectorOnTop="true"
+                        android:scrollbars="none"
+                        android:gravity="center"
+                        android:numColumns="3"
+                        android:paddingHorizontal="0dp"
+                        android:stretchMode="columnWidth"
+                        android:columnWidth="@dimen/button_image_lg_width"
+                        android:horizontalSpacing="@dimen/grids_horizontal_spacing"
+                        android:verticalSpacing="@dimen/grids_vertical_spacing"
+                        android:focusable="true"
+                        android:clickable="true"/>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2" />
+
+                    <LinearLayout
+                        android:id="@+id/lnrDashboardControlsSetOne"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/records"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="@dimen/home_nav_margin"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/records_nav_button"
+                                android:layout_width="@dimen/button_image_lg_width"
+                                android:layout_height="@dimen/button_image_lg_height"
+                                android:background="@color/ap_transparent"
+                                android:contentDescription="@string/cont_desc_navto_records"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/button_large_records" />
+
+                            <TextView
+                                android:id="@+id/records_nav_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/title_records"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/home_nav_label_size"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:id="@+id/preferences"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="@dimen/home_nav_margin"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/preferences_nav_button"
+                                android:layout_width="@dimen/button_image_lg_width"
+                                android:layout_height="@dimen/button_image_lg_height"
+                                android:background="@color/ap_transparent"
+                                android:contentDescription="@string/cont_desc_navto_preferences"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/button_large_profilesettings" />
+
+                            <TextView
+                                android:id="@+id/preferences_nav_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/title_preferences"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/home_nav_label_size"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:id="@+id/system_update"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/home_nav_margin"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/system_update_nav_button"
+                                android:layout_width="@dimen/button_image_lg_width"
+                                android:layout_height="146dp"
+                                android:background="@color/ap_transparent"
+                                android:contentDescription="@string/cont_desc_navto_system_update"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/button_large_system_update" />
+
+                            <TextView
+                                android:id="@+id/system_update_nav_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/title_system_update"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/home_nav_label_size"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lnrDashboardControlsSetTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/patient_input"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/home_nav_margin"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/patient_input_nav_button"
+                                android:layout_width="@dimen/button_image_lg_width"
+                                android:layout_height="@dimen/button_image_lg_height"
+                                android:background="@color/ap_transparent"
+                                android:contentDescription="@string/cont_desc_navto_patient_input"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/button_large_patientinput" />
+
+                            <TextView
+                                android:id="@+id/patient_input_nav_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/title_patient_input"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/home_nav_label_size"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:id="@+id/procedure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/home_nav_margin"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/button_image_lg_width"
+                                android:layout_height="@dimen/button_image_lg_height">
+
+                                <ImageButton
+                                    android:id="@+id/procedure_nav_button"
+                                    android:layout_width="@dimen/button_image_lg_width"
+                                    android:layout_height="@dimen/button_image_lg_height"
+                                    android:background="@color/ap_transparent"
+                                    android:contentDescription="@string/cont_desc_navto_procedure"
+                                    android:scaleType="fitCenter"
+                                    app:srcCompat="@drawable/button_inactive_procedure_screen" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/error_indicator_pbtn"
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:src="@drawable/error_symbol"
+                                        android:visibility="gone"
+                                        app:tint="@color/battery_red" />
+
+                                    <ImageView
+                                        android:id="@+id/battery_status_pbtn"
+                                        android:layout_width="80dp"
+                                        android:layout_height="80dp"
+                                        android:src="@drawable/battery_alert"
+                                        android:visibility="gone"
+                                        app:tint="@color/battery_red" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/procedure_nav_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/title_procedure"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/home_nav_label_size"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="20dp"
+                            android:layout_height="match_parent" />
+
+                        <LinearLayout
+                            android:id="@+id/ultrasound"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/home_nav_margin"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:id="@+id/ultrasound_nav_button"
+                                android:layout_width="@dimen/button_image_lg_width"
+                                android:layout_height="@dimen/button_image_lg_height"
+                                android:background="@color/ap_transparent"
+                                android:contentDescription="@string/cont_desc_navto_ultrasound"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/ultrasound" />
+
+                            <TextView
+                                android:id="@+id/ultrasound_nav_label"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Ultrasound"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/home_nav_label_size"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/home_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_bar_height"
+            android:background="@color/av_darkest_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageButton
+                    android:id="@+id/exit_app_button"
+                    android:layout_width="@dimen/button_image_width"
+                    android:layout_height="@dimen/button_image_height"
+                    android:background="@drawable/av_btn"
+                    android:contentDescription="@string/cont_desc_return_to_patient_input"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/button_change_screens_exit"
+                    />
+
+                <TextView
+                    android:id="@+id/exit_button_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/exit_button_label"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/bottom_bar_button_label"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/profile_top_bar"
+            android:layout_width="@dimen/title_or_profile_widget_width"
+            android:layout_height="@dimen/top_bar_height"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/user_label"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/profile_label"
+                android:textColor="@color/av_light_blue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:drawablePadding="10dp"
+                android:textColor="@color/av_light_blue"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/missing_cotroller_icon"
+            layout="@layout/missing_connection_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp"
+            android:layout_marginStart="@dimen/home_missing_controller_margin"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/profile_select_widget"
+            android:layout_width="@dimen/title_or_profile_widget_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/top_bar_height"
+            android:maxHeight="400dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.search.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_alignParentTop="true"
+                android:hint="@string/searchbar_hint">
+
+                <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
+                <LinearLayout
+                    android:id="@+id/search_view_layout_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/create_profile_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="10dp"
+                        android:text="@string/create_new_profile_label"
+                        android:textColor="@color/av_darkest_blue"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/profiles_list_items"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/av_light_blue"
+                        android:clipToPadding="false"
+                        android:fadeScrollbars="false"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="16dp"
+                        android:scrollbarAlwaysDrawVerticalTrack="true"
+                        android:scrollbarSize="10dp"
+                        android:scrollbarStyle="outsideInset"
+                        android:scrollbarThumbVertical="@color/av_gray"
+                        android:scrollbarTrackVertical="@color/av_darkest_blue"
+                        android:scrollbars="vertical" />
+                </LinearLayout>
+            </com.google.android.material.search.SearchView>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

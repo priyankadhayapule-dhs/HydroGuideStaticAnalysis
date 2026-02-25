@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp" />
+            <solid android:color="@color/av_darkest_blue" />
+            <!-- No stroke for borderless checked state -->
+        </shape>
+    </item>
+    <item android:state_checked="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="2dp" />
+            <solid android:color="@color/ap_transparent" />
+            <!-- Optional: Add a stroke for a border in the unchecked state -->
+            <!-- <stroke android:width="1dp" android:color="@color/your_border_color" /> -->
+        </shape>
+    </item>
+</selector>

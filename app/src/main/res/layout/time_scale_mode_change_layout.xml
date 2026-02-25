@@ -1,0 +1,82 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <variable
+            name="chartConfig"
+            type="com.accessvascularinc.hydroguide.mma.model.ChartConfig" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:theme="@style/BottomDrawer"
+        tools:context=".ui.settings.TimeScaleModeChangeFragment">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:text="@string/change_plot_speed_label" />
+
+        <ImageView
+            android:id="@+id/time_scale_mode_change_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="50dp"
+            android:contentDescription="@string/cont_desc_timescale_change"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/button_inactive_speed" />
+
+        <RadioGroup
+            android:id="@+id/time_scale_mode_radio_group"
+            android:layout_width="800dp"
+            android:layout_height="match_parent"
+            android:focusedByDefault="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_button_manual"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/av_btn"
+                android:text="@string/time_scale_mode_manual_label"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button_auto_once"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/av_btn"
+                android:text="@string/time_scale_mode_auto_once_label"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+
+            <RadioButton
+                android:id="@+id/radio_button_auto_cont"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/av_btn"
+                android:text="@string/time_scale_mode_auto_cont_label"
+                android:textColor="@color/white"
+                android:textSize="28sp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/av_btn"
+            android:text="@string/button_ok_label"
+            android:textSize="28sp" />
+    </LinearLayout>
+</layout>

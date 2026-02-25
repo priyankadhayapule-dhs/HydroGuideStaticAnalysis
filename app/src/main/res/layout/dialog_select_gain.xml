@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_gain_bg"
+    android:padding="@dimen/dialog_gain_padding"
+    android:layout_gravity="center"
+    android:elevation="8dp"
+    android:minWidth="@dimen/dialog_gain_min_width"
+    android:minHeight="@dimen/dialog_gain_min_height"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/select_gain_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Gain"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dialog_gain_title_text_size"
+        android:textStyle="bold"
+        android:gravity="start"
+        android:layout_marginBottom="@dimen/dialog_gain_title_margin_bottom" />
+
+    <!-- Gain Rows -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_gain_row_height"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/dialog_gain_row_margin_bottom">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Near Gain"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dialog_gain_label_text_size" />
+        <SeekBar
+            android:id="@+id/seekbar_near_gain"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dialog_gain_seekbar_height"
+            android:layout_weight="3"
+            android:max="100"
+            android:progress="50"
+            android:thumb="@drawable/seekbar_gain_thumb"
+            android:progressDrawable="@drawable/seekbar_gain_progress" />
+        <TextView
+            android:id="@+id/near_gain_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dialog_gain_value_text_size"
+            android:layout_marginStart="@dimen/dialog_gain_value_margin_start" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_gain_row_height"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/dialog_gain_row_margin_bottom">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gain"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dialog_gain_label_text_size" />
+        <SeekBar
+            android:id="@+id/seekbar_gain"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dialog_gain_seekbar_height"
+            android:layout_weight="3"
+            android:max="100"
+            android:progress="50"
+            android:thumb="@drawable/seekbar_gain_thumb"
+            android:progressDrawable="@drawable/seekbar_gain_progress" />
+        <TextView
+            android:id="@+id/gain_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dialog_gain_value_text_size"
+            android:layout_marginStart="@dimen/dialog_gain_value_margin_start" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dialog_gain_row_height"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/dialog_gain_last_row_margin_bottom">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Far Gain"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dialog_gain_label_text_size" />
+        <SeekBar
+            android:id="@+id/seekbar_far_gain"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dialog_gain_seekbar_height"
+            android:layout_weight="3"
+            android:max="100"
+            android:progress="50"
+            android:thumb="@drawable/seekbar_gain_thumb"
+            android:progressDrawable="@drawable/seekbar_gain_progress" />
+        <TextView
+            android:id="@+id/far_gain_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dialog_gain_value_text_size"
+            android:layout_marginStart="@dimen/dialog_gain_value_margin_start" />
+    </LinearLayout>
+
+    <!-- Push buttons further below -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="32dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="@dimen/dialog_gain_button_size"
+            android:layout_height="@dimen/dialog_gain_button_size"
+            android:background="@android:color/transparent"
+            android:src="@drawable/camera_capture_button_delete"
+            android:contentDescription="Delete"
+            android:layout_marginEnd="@dimen/dialog_gain_button_margin_end" />
+        <ImageButton
+            android:id="@+id/btn_confirm"
+            android:layout_width="@dimen/dialog_gain_button_size"
+            android:layout_height="@dimen/dialog_gain_button_size"
+            android:background="@android:color/transparent"
+            android:src="@drawable/button_report_checkmark"
+            android:contentDescription="Confirm" />
+    </LinearLayout>
+</LinearLayout>

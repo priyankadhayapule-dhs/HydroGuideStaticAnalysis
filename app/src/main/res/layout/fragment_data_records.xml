@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileState"
+            type="com.accessvascularinc.hydroguide.mma.model.ProfileState" />
+
+        <variable
+            name="screenTitle"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/av_blue"
+        tools:context=".ui.RecordsFragment">
+
+        <include
+            android:id="@+id/includeTopbar"
+            layout="@layout/generic_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/records_table"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:foreground="@drawable/table_container"
+            android:theme="@style/TableTheme"
+            app:layout_constraintBottom_toTopOf="@id/inclBottomBar"
+            app:layout_constraintTop_toBottomOf="@id/includeTopbar"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recDataRecords"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:fadeScrollbars="false"
+                android:orientation="vertical"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollbarSize="10dp"
+                android:scrollbarStyle="outsideInset"
+                android:scrollbarThumbVertical="@color/av_gray"
+                android:scrollbarTrackVertical="@color/av_darkest_blue"
+                android:scrollbars="vertical" />
+
+            <include
+                android:id="@+id/inclTaskbar"
+                layout="@layout/table_taskbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvNoRecordsFound"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:foreground="@drawable/table_container"
+            app:layout_constraintBottom_toTopOf="@id/inclBottomBar"
+            app:layout_constraintTop_toBottomOf="@id/includeTopbar"
+            android:text="@string/mesg_no_records"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="@dimen/table_text_no_records"
+            android:textStyle="italic"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/inclBottomBar"
+            layout="@layout/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_bar_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/loaderOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/av_blue"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/inclBottomBar"
+            app:layout_constraintTop_toBottomOf="@id/includeTopbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Loader Progress Bar on top -->
+        <ProgressBar
+            android:id="@+id/progressBarLoader"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/inclBottomBar"
+            app:layout_constraintTop_toBottomOf="@id/includeTopbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

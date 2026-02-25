@@ -1,0 +1,157 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.HydroGuideApp" parent="Theme.Material3.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/av_light_blue</item>
+        <item name="colorPrimaryVariant">@color/av_darkest_blue</item>
+        <item name="colorOnPrimary">@color/av_darker_blue</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/av_blue</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/av_darkest_blue</item>
+
+        <item name="colorSurface">@color/av_blue</item>
+        <item name="colorSurfaceVariant">@color/av_darker_blue</item>
+        <item name="colorOnSurface">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
+
+        <item name="switchStyle">@style/Widget.App.Switch</item>
+        <item name="android:textViewStyle">@style/MyTextViewStyle</item>
+        <item name="checkboxStyle">@style/Widget.App.CheckBox</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.App.Button.OutlinedButton</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.App.DatePicker</item>
+        <item name="materialSearchViewStyle">@style/searchViewStyle</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+
+    </style>
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="hintTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="searchViewStyle" parent="Widget.Material3.SearchView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+    </style>
+
+    <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="colorPrimary">@color/av_light_blue</item>
+        <item name="colorSecondary">@color/av_darker_blue</item>
+        <item name="colorOnSurface">@color/av_darker_blue</item>
+        <item name="editTextStyle">@style/Widget.Material3.TextInputEditText.FilledBox</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Widget.App.TextInputDropdownLayout" parent="Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="hintTextColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="MyTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ReportTextStyle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/pdf_text_size</item>
+    </style>
+
+    <style name="BottomDrawer" parent="Theme.HydroGuideApp">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:background">@color/av_darkest_blue</item>
+    </style>
+
+    <style name="Widget.App.CardView" parent="Widget.Material3.CardView.Outlined">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Card</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Card" parent="">
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.NumberPicker" parent="">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="colorControlNormal">@color/ap_gray</item>
+        <item name="android:textSize">@dimen/records_table_cell_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Widget.App.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TableTheme" parent="Theme.HydroGuideApp">
+        <!--        <item name="android:textColor">?attr/colorOnSurface</item>-->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/records_table_header_label_size</item>
+    </style>
+
+    <style name="TableRowTheme" parent="Theme.HydroGuideApp">
+        <item name="android:textSize">@dimen/records_table_cell_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.Button.OutlinedButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="cornerRadius">14dp</item>
+        <item name="textAllCaps">true</item>
+        <item name="strokeWidth">4dp</item>
+        <item name="strokeColor">@color/white</item>
+    </style>
+
+    <style name="ThemeOverlay.App.DatePicker" parent="@style/ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/av_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSurface">@color/av_darker_blue</item>
+        <!-- Customize text field of the text input mode. -->
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/av_darker_blue</item>
+        <item name="colorOnSurface">@color/ap_black</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="materialAlertDialogTitleTextStyle">@style/TextAppearance.App.MaterialAlertDialog.Title</item>
+
+        <item name="colorOnSurfaceVariant">@color/ap_black</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/TextAppearance.App.MaterialAlertDialog.Message</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.App.DialogButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.App.DialogButton</item>
+
+    </style>
+
+    <style name="TextAppearance.App.MaterialAlertDialog.Title" parent="TextAppearance.M3.Sys.Typescale.HeadlineSmall">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+
+    </style>
+
+    <style name="TextAppearance.App.MaterialAlertDialog.Message" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">35dp</item>
+    </style>
+
+    <style name="Widget.App.DialogButton" parent="Widget.Material3.Button">
+        <item name="cornerRadius">5dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

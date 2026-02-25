@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LiveImageDemo</string>
+    <string name="image_id_label">Imaging ID:</string>
+
+    <string name="pcie">PCIe</string>
+    <string name="usb">USB</string>
+    <string name="emulation">Emulation</string>
+
+    <string name="close_button">Close</string>
+
+    <string name="gain_label">Gain</string>
+    <string name="color_gain_label">Color Gain</string>
+
+    <string name="imaging_id_selection">Imaging ID Selection</string>
+    <string name="radio_manual">Manual</string>
+    <string name="radio_auto">Auto</string>
+
+    <string name="organ_label">Organ:</string>
+    <string name="view_label">View:</string>
+    <string name="mode_label">Mode:</string>
+    <string name="depth_label">Depth:</string>
+    <string name="autogain_label">Auto Gain</string>
+    <string name="despeckle_label">Speckle Reduction</string>
+    <string name="inference_label">Inference Engine</string>
+
+    <string name="play_label">Play</string>
+    <string name="pause_label">Pause</string>
+    <string name="stop_label">Stop</string>
+    <string name="looping_label">Loop</string>
+    <string name="next_label">&gt;</string>
+    <string name="previous_label">&lt;</string>
+    <string name="speed_label">Speed:</string>
+
+    <string-array name="speed_array">
+        <item>Normal</item>
+        <item>Half</item>
+        <item>Quarter</item>
+    </string-array>
+
+    <string name="record_label">Record</string>
+    <string name="open_label">Open</string>
+
+</resources>

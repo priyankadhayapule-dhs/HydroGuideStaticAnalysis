@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_splash">
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.SplashFragment"
+        android:label="Splash Screen"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_navigation_splash_to_mode_setup"
+            app:destination="@id/navigation_mode_setup" />
+        <action
+            android:id="@+id/action_navigation_splash_to_login"
+            app:destination="@id/navigation_login" />
+        <action
+            android:id="@+id/action_navigation_splash_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_splash_to_admin_home"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_mode_setup"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.ModeSetupFragment"
+        android:label="Mode Setup"
+        tools:layout="@layout/fragment_mode_setup">
+        <action
+            android:id="@+id/action_navigation_mode_setup_to_login"
+            app:destination="@id/navigation_login" />
+        <action
+            android:id="@+id/action_navigation_mode_setup_to_offline_admin_setup"
+            app:destination="@id/navigation_offline_admin_setup" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_offline_admin_setup"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.OfflineAdminSetupFragment"
+        android:label="Offline Admin Setup"
+        tools:layout="@layout/fragment_offline_admin_setup">
+        <action
+            android:id="@+id/action_offline_admin_setup_to_mode_setup"
+            app:destination="@id/navigation_mode_setup" />
+        <action
+            android:id="@+id/action_offline_admin_setup_to_login"
+            app:destination="@id/navigation_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_navigation_login_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_login_to_dashboard"
+            app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_navigation_login_to_verify_otp"
+            app:destination="@id/navigation_verify_otp" />
+        <action
+            android:id="@+id/action_navigation_login_to_changepassword"
+            app:destination="@id/navigation_changepassword" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_navigation_settings_to_home"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_changepassword"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.ChangePasswordFragment"
+        android:label="Change Password"
+        tools:layout="@layout/fragment_reset_password">
+        <action
+            android:id="@+id/action_navigation_changepassword_to_login"
+            app:destination="@id/navigation_login" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_verify_otp"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.VerifyOtpFragment"
+        android:label="Verify OTP"
+        tools:layout="@layout/fragment_verify_otp">
+        <action
+            android:id="@+id/action_navigation_verify_otp_to_login"
+            app:destination="@id/navigation_login" />
+        <action
+            android:id="@+id/action_navigation_verify_otp_to_reset_password"
+            app:destination="@id/navigation_reset_password" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_reset_password"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.ResetPasswordFragment"
+        android:label="Reset Password"
+        tools:layout="@layout/fragment_reset_password" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_home_to_setup"
+            app:destination="@id/navigation_setup" />
+        <action
+            android:id="@+id/action_navigation_home_to_patient_input"
+            app:destination="@id/navigation_patient_input" />
+        <action
+            android:id="@+id/action_navigation_home_to_records"
+            app:destination="@id/navigation_records" />
+        <action
+            android:id="@+id/action_navigation_home_to_procedure"
+            app:destination="@id/navigation_procedure" />
+        <action
+            android:id="@+id/action_navigation_home_to_preferences"
+            app:destination="@id/navigation_preferences" />
+        <action
+            android:id="@+id/action_navigation_home_to_ultrasound"
+            app:destination="@id/navigation_connect_ultrasound" />
+        <action
+            android:id="@+id/action_navigation_home_to_scanning_ultrasound"
+            app:destination="@id/navigation_scanning_ultrasound" />
+        <action
+            android:id="@+id/action_navigation_home_to_change_password"
+            app:destination="@id/navigation_changepassword" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_setup"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.SetupFragment"
+        android:label="Setup"
+        tools:layout="@layout/fragment_setup">
+        <action
+            android:id="@+id/action_navigation_setup_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_setup_to_patient_input"
+            app:destination="@id/navigation_patient_input" />
+        <action
+            android:id="@+id/action_navigation_setup_to_bluetooth_pairing"
+            app:destination="@id/navigation_bluetooth_pairing" />
+        <action
+            android:id="@+id/action_navigation_setup_to_ultrasound_capture"
+            app:destination="@id/navigation_ultrasound_capture" />
+        <action
+            android:id="@+id/action_navigation_setup_to_calibration_screen"
+            app:destination="@id/fragmentCalibration" />
+        <action
+            android:id="@+id/action_navigation_setup_to_scanning_ultrasound"
+            app:destination="@id/navigation_scanning_ultrasound" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_records"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.RecordsFragment"
+        android:label="@string/title_records"
+        tools:layout="@layout/fragment_records">
+        <action
+            android:id="@+id/nav_records_to_report_view"
+            app:destination="@id/reportViewFragment" />
+        <action
+            android:id="@+id/action_navigation_records_to_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_preferences"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.PreferencesFragment"
+        android:label="@string/title_preferences"
+        tools:layout="@layout/fragment_preferences">
+        <action
+            android:id="@+id/action_navigation_preferences_to_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_patient_input"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.PatientInputFragment"
+        android:label="@string/title_patient_input"
+        tools:layout="@layout/fragment_patient_input">
+        <action
+            android:id="@+id/action_navigation_patient_input_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_patient_input_to_procedure"
+            app:destination="@id/navigation_procedure" />
+        <action
+            android:id="@+id/action_navigation_patient_input_to_setup_screen"
+            app:destination="@id/navigation_setup" />
+        <action
+            android:id="@+id/action_navigation_patient_input_to_connect_ultrasound"
+            app:destination="@id/navigation_connect_ultrasound" />
+        <action
+            android:id="@+id/action_navigation_patient_input_to_scanning_ultrasound"
+            app:destination="@id/navigation_scanning_ultrasound" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_software_update"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.SoftwareUpdateFragment"
+        android:label="@string/title_system_update"
+        tools:layout="@layout/system_update">
+        <action
+            android:id="@+id/action_navigation_software_update_to_home"
+            app:destination="@id/navigation_dashboard" />
+        <action
+            android:id="@+id/action_navigation_software_update_to_search"
+            app:destination="@id/navigation_software_search" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_software_search"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.SoftwareSearchFragment"
+        android:label="Search Update"
+        tools:layout="@layout/search_update">
+        <argument
+            android:name="@string/map_keys_update_src"
+            app:argType="com.accessvascularinc.hydroguide.mma.model.SoftwareUpdateSource"
+            android:defaultValue="ONLINE" />
+        <action
+            android:id="@+id/action_navigation_software_search_to_update"
+            app:destination="@id/navigation_software_update" />
+        <action
+            android:id="@+id/action_navigation_next_temp"
+            app:destination="@id/navigation_software_install" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_software_install"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.SoftwareUpdateInstall"
+        android:label="Search Update"
+        tools:layout="@layout/install_update">
+        <argument
+            android:name="@string/map_keys_update_src"
+            app:argType="com.accessvascularinc.hydroguide.mma.model.SoftwareUpdateSource"
+            android:defaultValue="ONLINE" />
+        <action
+            android:id="@+id/action_navigation_software_search_to_update"
+            app:destination="@id/navigation_software_update" />
+    </fragment>
+        <fragment
+            android:id="@+id/navigation_connect_ultrasound"
+            android:name="com.accessvascularinc.hydroguide.mma.ui.ConnectUltrasoundFragment"
+            android:label="Connect Ultrasound"
+            tools:layout="@layout/fragment_connect_ultrasound">
+            <action
+                android:id="@+id/action_connect_ultrasound_to_patient_input"
+                app:destination="@id/navigation_patient_input" />
+            <action
+                android:id="@+id/action_connect_ultrasound_to_scanning_ultrasound"
+                app:destination="@id/navigation_scanning_ultrasound" />
+            <action
+                android:id="@+id/action_connect_ultrasound_to_procedure"
+                app:destination="@id/navigation_procedure" />
+            <action
+                android:id="@+id/action_connect_ultrasound_to_home"
+                app:destination="@id/navigation_home" />
+            <action
+                android:id="@+id/action_connect_ultrasound_to_setup"
+                app:destination="@id/navigation_setup" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/navigation_scanning_ultrasound"
+            android:name="com.accessvascularinc.hydroguide.mma.ui.ScanningUltrasoundFragment"
+            android:label="Scanning Ultrasound"
+            tools:layout="@layout/fragment_scanning_ultrasound">
+            <argument
+                android:name="fromScreen"
+                app:argType="string"
+                android:defaultValue="connect_ultrasound" />
+            <argument
+                android:name="isVenousAccess"
+                app:argType="boolean"
+                android:defaultValue="false" />
+            <action
+                android:id="@+id/action_scanning_ultrasound_to_connect_ultrasound"
+                app:destination="@id/navigation_connect_ultrasound" />
+            <action
+                android:id="@+id/action_scanning_ultrasound_to_patient_input"
+                app:destination="@id/navigation_patient_input" />
+            <action
+                android:id="@+id/action_scanning_ultrasound_to_navigation_bluetooth_pairing"
+                app:destination="@id/navigation_bluetooth_pairing" />
+            <action
+                android:id="@+id/action_scanning_ultrasound_to_setup_screen"
+                app:destination="@id/navigation_setup" />
+            <action
+                android:id="@+id/action_scanning_ultrasound_to_ultrasound_capture"
+                app:destination="@id/navigation_ultrasound_capture" />
+            <action
+                android:id="@+id/action_scanning_ultrasound_to_callibration"
+                app:destination="@id/fragmentCalibration" />
+            <action
+                android:id="@+id/action_scanning_ultrasound_to_home"
+                app:destination="@id/navigation_home" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/navigation_ultrasound_capture"
+            android:name="com.accessvascularinc.hydroguide.mma.ui.UltrasoundCaptureFragment"
+            android:label="Ultrasound Capture"
+            tools:layout="@layout/fragment_ultrasound_capture">
+            <action
+                android:id="@+id/action_ultrasound_capture_to_scanning_ultrasound"
+                app:destination="@id/navigation_scanning_ultrasound" />
+            <action
+                android:id="@+id/action_ultrasound_capture_to_setup_screen"
+                app:destination="@id/navigation_setup" />
+            <action
+                android:id="@+id/action_ultrasound_capture_to_connect_ultrasound"
+                app:destination="@id/navigation_connect_ultrasound" />
+        </fragment>
+
+    <!-- Bluetooth Pairing Fragment -->
+    <fragment
+        android:id="@+id/navigation_bluetooth_pairing"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.BluetoothPairingFragment"
+        android:label="Bluetooth Pairing"
+        tools:layout="@layout/fragment_bluetooth_pairing">
+
+        <action
+            android:id="@+id/action_bluetooth_pairing_to_setup_screen"
+            app:destination="@id/navigation_setup" />
+        <action
+            android:id="@+id/action_bluetooth_pairing_to_bluetooth_pairing_to_pattern"
+            app:destination="@id/navigation_bluetooth_pairing_pattern" />
+        <action
+            android:id="@+id/action_bluetooth_pairing_pattern_to_calibration_screen"
+            app:destination="@id/fragmentCalibration" />
+    </fragment>
+
+    <!-- Bluetooth Pairing Pattern Fragment -->
+    <fragment
+        android:id="@+id/navigation_bluetooth_pairing_pattern"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.BluetoothPairingPatternFragment"
+        android:label="Bluetooth Pairing Pattern"
+        tools:layout="@layout/fragment_bluetooth_pairing_pattern">
+        <action
+            android:id="@+id/action_bluetooth_pairing_pattern_to_previous_screen"
+            app:destination="@id/navigation_bluetooth_pairing" />
+        <action
+            android:id="@+id/action_bluetooth_pairing_pattern_to_next_screen"
+            app:destination="@id/navigation_procedure" />
+        <action
+            android:id="@+id/action_bluetooth_pairing_pattern_to_calibration_screen"
+            app:destination="@id/fragmentCalibration" />
+        <action
+            android:id="@+id/action_bluetooth_pairing_pattern_to_scanning_ultrasound"
+            app:destination="@id/navigation_scanning_ultrasound" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_procedure"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.ProcedureFragment"
+        android:label="@string/title_procedure"
+        tools:layout="@layout/fragment_procedure">
+        <action
+            android:id="@+id/action_navigation_procedure_to_summary"
+            app:destination="@id/navigation_summary" />
+        <action
+            android:id="@+id/action_navigation_procedure_to_patient_input"
+            app:destination="@id/navigation_patient_input" />
+        <action
+            android:id="@+id/action_navigation_procedure_to_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_summary"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.SummaryFragment"
+        android:label="@string/title_report_summary"
+        tools:layout="@layout/fragment_summary">
+        <action
+            android:id="@+id/action_navigation_summary_to_procedure"
+            app:destination="@id/navigation_procedure" />
+        <action
+            android:id="@+id/nav_summary_to_report_view"
+            app:destination="@id/reportViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportViewFragment"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.ReportViewFragment"
+        android:label="ReportViewFragment"
+        tools:layout="@layout/fragment_report_view">
+        <argument
+            android:name="@string/report_isSubmitted"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/nav_report_view_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/nav_report_view_to_records"
+            app:destination="@id/navigation_records" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.admin.FragmentDashboard"
+        android:label="@string/dashboard_title"
+        tools:layout="@layout/fragment_dashboard">
+        <argument
+            android:name="@string/dashboard_action_argument_call_source"
+            app:argType="string"
+            android:defaultValue="" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/nav_data_records"
+            app:destination="@id/fragmentDataRecords"/>
+        <action
+            android:id="@+id/action_navigation_home_to_settings"
+            app:destination="@id/navigation_setting" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDataRecords"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.admin.DataRecordFragment"
+        android:label="@string/caption_clinician_records"
+        tools:layout="@layout/fragment_data_records">
+        <action
+            android:id="@+id/nav_to_clinicians_manager"
+            app:destination="@id/fragmentManageClinician" />
+        <action
+            android:id="@+id/nav_to_manage_facilities"
+            app:destination="@id/fragmentManageFacilities" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentManageClinician"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.admin.ManageCliniciansFragment"
+        android:label="@string/caption_clinician_screen"
+        tools:layout="@layout/fragment_manage_clinicians">
+        <action
+            android:id="@+id/nav_to_credentials_manager"
+            app:destination="@id/fragmentManageCredentials" />
+        <action
+            android:id="@+id/nav_to_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentManageFacilities"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.admin.ManageFacilitiesFragment"
+        android:label="@string/caption_facility_screen"
+        tools:layout="@layout/fragment_manage_facilities">
+        <action
+            android:id="@+id/nav_to_dashboard"
+            app:destination="@id/navigation_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentManageCredentials"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.admin.CredentialsManagerFragment"
+        android:label="@string/caption_reset_credentials_action"
+        tools:layout="@layout/fragment_credentials_manager">
+        <action
+            android:id="@+id/nav_to_clinicians"
+            app:destination="@id/fragmentManageClinician" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentCalibration"
+        android:name="com.accessvascularinc.hydroguide.mma.ui.CalibrationFragment"
+        android:label="@string/calibration"
+        tools:layout="@layout/fragment_calibration">
+        <!--        <action-->
+        <!--            android:id="@+id/nav_to_clinicians"-->
+        <!--            app:destination="@id/fragmentManageClinician" />-->
+        <action
+            android:id="@+id/action_navigation_calibration_to_procedure"
+            app:destination="@id/navigation_procedure" />
+        <action
+            android:id="@+id/action_navigation_patient_input_to_setup_screen"
+            app:destination="@id/navigation_setup" />
+
+    </fragment>
+</navigation>

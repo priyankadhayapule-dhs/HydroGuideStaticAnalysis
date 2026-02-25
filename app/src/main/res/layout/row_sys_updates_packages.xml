@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="@dimen/horizontal_padding">
+
+    <ImageView
+        android:id="@+id/imgPackageInstallIcon"
+        android:layout_width="@dimen/sys_updates_package_icon_size"
+        android:layout_height="@dimen/sys_updates_package_icon_size"
+        android:src="@drawable/ic_package"
+        app:tint="@android:color/white"
+        android:layout_marginRight="@dimen/horizontal_padding"/>
+
+    <TextView
+        android:id="@+id/buildName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.3"
+        android:text="App_13.01.02_05_10_2025"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sys_updates_package_name_size"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/horizontal_padding"/>
+
+
+    <Button
+        android:id="@+id/btnInstall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/install"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:backgroundTint="@android:color/transparent"
+        android:background="@drawable/btn_outline_white"
+        android:layout_marginLeft="@dimen/horizontal_padding"
+        android:paddingHorizontal="@dimen/container_layouts_spacing"
+        android:paddingVertical="@dimen/horizontal_padding" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8"/>
+</LinearLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_a_4_6_digit_pin_for_quick_login"
+        android:textColor="@color/av_darkest_blue"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_pin"
+        android:textColor="@color/av_darkest_blue"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/pinInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/enter_pin"
+            android:inputType="numberPassword"
+            android:maxLength="6"
+            android:textColor="#000000"
+            android:textColorHint="#999999"
+            android:background="@color/av_gray"
+            android:padding="12dp"
+            android:paddingEnd="40dp" />
+
+        <ImageView
+            android:id="@+id/pinEye"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_eye_closed"
+            android:contentDescription="@string/show_hide_pin"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_pin"
+        android:textColor="@color/av_darkest_blue"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/confirmPinInput"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/re_enter_pin"
+            android:inputType="numberPassword"
+            android:maxLength="6"
+            android:textColor="#000000"
+            android:textColorHint="#999999"
+            android:background="@color/av_gray"
+            android:padding="12dp"
+            android:paddingEnd="40dp" />
+
+        <ImageView
+            android:id="@+id/confirmPinEye"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_eye_closed"
+            android:contentDescription="@string/show_hide_pin"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
+
+</LinearLayout>

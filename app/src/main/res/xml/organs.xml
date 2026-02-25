@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The organ_name attribute is a index into the R.string file
+     The icon_resource attribute is an index to the R.drawable file-->
+<resources>
+    <organ
+        organ_name="heart"
+        global_id="0"
+        icon_resource = "ic_heart"
+    />
+
+    <organ
+        organ_name="lungs"
+        global_id="1"
+        icon_resource = "ic_lungs"
+    />
+
+    <organ
+        organ_name="abdomen"
+        global_id="2"
+        icon_resource = "ic_abdomen"
+    />
+    <organ
+        organ_name="msk"
+        global_id="3"
+        icon_resource = "ic_msk_lexsa"
+        />
+
+    <organ
+        organ_name="nerve"
+        global_id="4"
+        icon_resource = "ic_nerve_lexsa"
+        />
+
+    <organ
+        organ_name="vascular"
+        global_id="5"
+        icon_resource = "ic_vascular_lexsa"
+        />
+    <organ
+        organ_name="vascular"
+        global_id="6"
+        icon_resource = "ic_lungs_lexsa"
+        />
+
+    <organ
+        organ_name="ob"
+        global_id="7"
+        icon_resource = "ic_ob_organ"
+        />
+
+    <organ
+        organ_name="gyn"
+        global_id="8"
+        icon_resource = "ic_gyn_torso"
+        />
+
+    <organ
+        organ_name="bladder"
+        global_id="9"
+        icon_resource = "ic_bladder_torso"
+        />
+
+    <organ
+        organ_name="tcd"
+        global_id="10"
+        icon_resource = "ic_tcd_torso"
+        />
+</resources>

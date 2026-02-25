@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    tools:context="com.echonous.liveimagedemo.LiveImageDemo">
+
+    <!-- UI Control Panel -->
+    <LinearLayout
+        android:id="@+id/uictrl"
+        android:layout_width="300dp"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <com.echonous.liveimagedemo.FreezeButton
+            android:id="@+id/freeze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:textOff="unfreeze"
+            android:textOn="freeze"
+            android:textSize="18sp"
+            android:padding="10dp" />
+
+        <!-- Imaging ID selection area -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imaging_id_selection"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:checkedButton="@+id/radioAutoId"
+            android:layout_marginBottom="10dp" >
+
+            <RadioButton
+                android:id="@+id/radioManualId"
+                android:text="@string/radio_manual"
+                android:onClick="onRadioButtonClicked" />
+
+            <RadioButton
+                android:id="@+id/radioAutoId"
+                android:text="@string/radio_auto"
+                android:onClick="onRadioButtonClicked" />
+
+        </RadioGroup>
+
+        <!-- Manual entry of Imaging ID -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/manualGroupId"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/image_id_label"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editImageId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100dip"
+                android:numeric="integer"
+                android:inputType="number"
+                android:digits="1234567890"
+                android:imeOptions="actionDone"
+                android:selectAllOnFocus="true"
+                android:windowSoftInputMode="stateVisible" />
+
+        </LinearLayout>
+
+        <!-- Automatic generation of Imaging ID -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/autoGroupId" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/organ_label"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/organId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_label"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/viewId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode_label"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/modeId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/depth_label"
+                    android:layout_marginStart="20dp"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/depthId"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#fb6d04"
+            android:layout_marginTop="25dp" />
+
+        <!-- Gain Control -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp" >
+
+            <SeekBar
+                android:id="@+id/gain"
+                android:layout_marginStart="25dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:max="100"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/gain_label"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#FFFF00"
+                android:textSize="16sp" />
+
+            <SeekBar
+                android:id="@+id/color_gain"
+                android:layout_marginStart="25dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:max="100" 
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/color_gain_label"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#FFFF00"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/autogainId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/autogain_label"
+            android:textColor="#FFFF00"
+            android:onClick="onAutoGainClicked"
+            android:checked="false"
+            android:layout_marginStart="20dp" />
+
+        <CheckBox
+            android:id="@+id/despeckleId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/despeckle_label"
+            android:textColor="#FFFF00"
+            android:onClick="onDeSpeckleClicked"
+            android:checked="false"
+            android:layout_marginStart="20dp" />
+
+        <CheckBox
+            android:id="@+id/inferenceId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inference_label"
+            android:textColor="#FFFF00"
+            android:onClick="onInferenceClicked"
+            android:checked="false"
+            android:layout_marginStart="20dp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#fb6d04"
+            android:layout_marginTop="25dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp" >
+
+            <ImageButton
+                android:id="@+id/playId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/play_icon"
+                android:onClick="onButtonClicked" />
+
+            <ImageButton
+                android:id="@+id/pauseId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pause_icon"
+                android:onClick="onButtonClicked" />
+
+            <ImageButton
+                android:id="@+id/stopId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/stop_icon"
+                android:onClick="onButtonClicked" />
+
+            <ImageButton
+                android:id="@+id/previousId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/previous_icon"
+                android:onClick="onButtonClicked"
+                android:layout_marginStart="15dp" />
+
+            <ImageButton
+                android:id="@+id/nextId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/next_icon"
+                android:onClick="onButtonClicked" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp" >
+
+            <CheckBox
+                android:id="@+id/loopingId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onLoopingClicked"
+                android:button="@drawable/repeat_icon"
+                android:checked="false"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speed_label"
+                android:layout_marginStart="20dp"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/speedId"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp" >
+
+            <ImageButton
+                android:id="@+id/videoId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/video_icon"
+                android:layout_marginStart="10dp"
+                android:onClick="onButtonClicked" />
+
+            <ImageButton
+                android:id="@+id/cameraId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/camera_icon"
+                android:layout_marginStart="80dp"
+                android:onClick="onButtonClicked" />
+
+            <ImageButton
+                android:id="@+id/openId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/eject_icon"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="20dp"
+                android:onClick="onButtonClicked" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#fb6d04"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+
+
+    <SeekBar
+        android:id="@+id/reviewId"
+        android:layout_marginStart="25dp"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:max="100"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_toEndOf="@+id/uictrl" />
+
+
+    <!-- Panel for drawing Ultrasound image -->
+    <SurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/reviewId"
+        android:layout_toEndOf="@+id/uictrl" />
+
+</RelativeLayout>
+

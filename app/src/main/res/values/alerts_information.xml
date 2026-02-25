@@ -1,0 +1,68 @@
+<!--Priorities should not be equal. Smaller numbers have greater priority:
+    1 is higher than 999. Priority indicates order of appearance if multiple alerts are present
+    at the same time.
+    Bullet: \n\t\u2022                  -->
+
+<resources>
+    <!--Missing Controller Status-->
+    <string name="ctrl_status_title">Missing Controller Status</string>
+    <string name="ctrl_status_description">The HydroGuide controller has not sent a status update in over five seconds, indicating a problem with the connection or the hardware. The procedure is suspended until this problem is resolved. </string>
+    <string name="ctrl_status_instructions"> \t\u2022 Disconnect and reconnect the HydroGuide controller from the tablet \n\t\u2022 Check that the controller is charged \n\t\u2022 Replace the connecting cable to the controller\n\t\u2022 Connect and continue the procedure using a backup controller </string>
+    <string name="ctrl_status_note_text">Note: You may proceed with the procedure without the HydroGuide application and use pre-existing captures in your report by continuing to the report screen. Do not continue the procedure after breaching the sterile field. </string>
+    <integer name="ctrl_status_priority">1</integer>
+    <string name="ctrl_status_unique_id">ControllerStsTmt</string>
+
+    <!--Missing Controller Status-->
+    <string name="ecg_data_title">ECG Data Missing </string>
+    <string name="ecg_data_description">The HydroGuide controller has not sent an ECG Data packet in half a second, indicating a problem with the connection or the hardware. The procedure is suspended until this problem is resolved. </string>
+    <string name="ecg_data_instructions">\t\u2022 Disconnect and reconnect the HydroGuide controller from the tablet \n\t\u2022 Check that the controller is charged \n\t\u2022 Replace the connecting cable to the controller\n\t\u2022 Connect and continue the procedure using a backup controller </string>
+    <string name="ecg_data_note_text">Note: You may proceed with the procedure without the HydroGuide application and use pre-existing captures in your report by continuing to the report screen. Do not continue the procedure after breaching the sterile field. </string>
+    <integer name="ecg_data_priority">5</integer>
+    <string name="ecg_data_unique_id">EcgDataTmt</string>
+
+    <!--Battery Subsystem Fault-->
+    <string name="battery_subs_title">Charger Status Fault</string>
+    <string name="battery_subs_description">The HydroGuide controller has experienced an error in its battery subsystem. For safety, the procedure is suspended until this problem is resolved. </string>
+    <string name="battery_subs_instructions">\t\u2022 Disconnect and reconnect the HydroGuide controller from the tablet \n\t\u2022 Ensure the controller is charged \n\t\u2022 Connect and continue the procedure using a backup controller </string>
+    <string name="battery_subs_note_text">Note: You may proceed with the procedure without the HydroGuide application and use pre-existing captures in your report by continuing to the report screen. Do not continue the procedure after breaching the sterile field. </string>
+    <integer name="battery_subs_priority">2</integer>
+    <string name="battery_subs_unique_id">BatterySubsFault</string>
+
+    <!--Internal Lead Off-->
+    <string name="lead_off_intrav_title">Intravascular Lead Off</string>
+    <string name="lead_off_intrav_description">The HydroGuide controller indicates that the intravascular lead has an error or is disconnected.  </string>
+    <string name="lead_off_intrav_instructions">\t\u2022 Check the aligator clip at the entrance of the catheter and reposition it if necessary\n\t\u2022 Ensure the wire connecting the HydroGuide controller to the catheter line is not damaged or frayed and replace if necessary\n\t\u2022 Disconnect and reconnect the HydroGuide controller from the tablet </string>
+    <string name="lead_off_intrav_note_text">Note: You may proceed with the procedure without the HydroGuide application and use pre-existing captures in your report by continuing to the report screen. Do not continue the procedure after breaching the sterile field. </string>
+    <integer name="lead_off_intrav_priority">10</integer>
+    <string name="lead_off_intrav_unique_id">IntravLeadOff</string>
+
+    <!--External Lead Off-->
+    <string name="lead_off_extern_title">External Lead Off</string>
+    <string name="lead_off_extern_description">The HydroGuide controller indicates that at least one of the three external leads has an error or is disconnected. </string>
+    <string name="lead_off_extern_instructions">\t\u2022 Check the connection points of all three leads and reposition each if necessary\n\t\u2022 Ensure the wires connecting the HydroGuide controller to the ECG leads are not damaged or frayed and replace if necessary\n\t\u2022 Disconnect and reconnect the HydroGuide controller from the tablet </string>
+    <string name="lead_off_extern_note_text">Note: You may proceed with the procedure without the HydroGuide application and use pre-existing captures in your report by continuing to the report screen. Do not continue the procedure after breaching the sterile field. </string>
+    <integer name="lead_off_extern_priority">9</integer>
+    <string name="lead_off_extern_unique_id">ExterLeadOff</string>
+
+    <!--Fuel Gauge Alert-->
+    <string name="fuel_gauge_title">Fuel Gauge Status Flag</string>
+    <string name="fuel_gauge_description">The HydroGuide controller indicates that there is a present problem with the fuel gauge status. </string>
+    <string name="fuel_gauge_instructions">\t\u2022 Disconnect and reconnect the HydroGuide controller from the tablet \n\t\u2022 Ensure the controller is charged \n\t\u2022 Connect and continue the procedure using a backup controller </string>
+    <string name="fuel_gauge_note_text">Note: You may proceed with the procedure without the HydroGuide application and use pre-existing captures in your report by continuing to the report screen. Do not continue the procedure after breaching the sterile field. </string>
+    <integer name="fuel_gauge_priority">15</integer>
+    <string name="fuel_gauge_unique_id">FuelGaugeStatus</string>
+
+    <string name="hardware_fault_title">ECG Voltage Supply Out of Range</string>
+    <string name="hardware_fault_description">The HydroGUIDE controller has detected that the ECG ADC voltage supply is outside the acceptable operating range. ECG signal data may be unreliable or inaccurate. </string>
+    <string name="hardware_fault_instructions">\t\u2022 Restart the HydroGUIDE controller and confirm the alert is cleared \n\t\u2022 If the alert persists after a restart, replace the controller and ensure that the issue is resolved. </string>
+    <string name="hardware_fault_note_text">ECG measurements obtained while this alert is active may be inaccurate. </string>
+    <integer name="hardware_fault_priority">15</integer>
+    <string name="hardware_fault_unique_id">ECGADCVoltOutRange</string>
+
+    <!--Generic Fallback (default placeholder for alert panel before real alarm text is set)-->
+    <string name="alert_default_title">Internal Error</string>
+    <string name="alert_default_description">An unexpected alert condition has occurred. The procedure may be suspended until this is resolved.</string>
+    <string name="alert_default_instructions">\t\u2022 Disconnect and reconnect the HydroGuide controller from the tablet\n\t\u2022 If the issue persists, contact technical support</string>
+    <string name="alert_default_note_text">Note: If this alert does not resolve, you may proceed without the HydroGuide application by continuing to the report screen.</string>
+    <string name="alert_default_unique_id">UnknownAlert</string>
+</resources>

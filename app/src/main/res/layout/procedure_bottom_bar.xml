@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <variable
+            name="chartConfig"
+            type="com.accessvascularinc.hydroguide.mma.model.ChartConfig" />
+
+        <variable
+            name="monitorData"
+            type="com.accessvascularinc.hydroguide.mma.model.MonitorData" />
+
+        <variable
+            name="tabletState"
+            type="com.accessvascularinc.hydroguide.mma.model.TabletState" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:background="@color/av_darkest_blue">
+
+        <LinearLayout
+            android:id="@+id/nav_to_patient_input"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/nav_to_patient_input_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_return_to_patient_input"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_changescreens_patient_input" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/title_patient_input"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cancel_button_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/nav_to_patient_input"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/cancel_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_cancel"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/cancel_procedure" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Cancel"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/volume"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/cancel_button_container"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/volume_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/cont_desc_volume"
+                android:nextFocusLeft="@id/nav_to_patient_summary"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_neutral_volume" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/change_volume_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/brightness"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/volume"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/brightness_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/cont_desc_brightness"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_neutral_brightness" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/change_brightness_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mute"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/brightness"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/mute_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_mute"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_neutral_mute" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/toggle_mute_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/graph_toggle"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_toEndOf="@id/mute"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/graphToggle_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_image_height"
+                    android:background="@drawable/av_btn_alt"
+                    android:contentDescription="@string/cont_desc_brightness"
+                    android:focusedByDefault="true"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/button_external_selected" />
+
+                <ImageView
+                    android:id="@+id/gtbtn_intravascular_selected_external_error"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignEnd="@id/graphToggle_btn"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginEnd="70dp"
+                    android:src="@drawable/error_symbol"
+                    android:visibility="gone"
+                    app:tint="@color/battery_red" />
+
+                <ImageView
+                    android:id="@+id/gtbtn_intravascular_selected_intravascular_error"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignEnd="@id/graphToggle_btn"
+                    android:layout_marginTop="37dp"
+                    android:src="@drawable/error_symbol"
+                    android:visibility="gone"
+                    app:tint="@color/battery_red" />
+
+                <ImageView
+                    android:id="@+id/gtbtn_external_selected_intravascular_error"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignEnd="@id/graphToggle_btn"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/error_symbol"
+                    android:visibility="gone"
+                    app:tint="@color/battery_red" />
+
+                <ImageView
+                    android:id="@+id/gtbtn_external_selected_external_error"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignEnd="@id/graphToggle_btn"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="44dp"
+                    android:src="@drawable/error_symbol"
+                    android:visibility="gone"
+                    app:tint="@color/battery_red" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/toggle_waveform_label"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/bottom_bar_button_label"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ultrasound"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/graph_toggle"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:visibility="gone">
+            <ImageButton
+                android:id="@+id/ultrasound_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="Ultrasound Button"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/transparent_ultrasound" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Ultrasound"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vertical_offset"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/vertical_scale"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/vertical_offset_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/cont_desc_vert_offset"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_inactive_offset" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/change_vertical_offset_label_short"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/vertical_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/time_scale"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/vertical_scale_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_vert_scale"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_inactive_amplitude" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/change_vertical_scale_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/time_scale"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/cycle_mock_data"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/time_scale_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_horiz_scale"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_inactive_speed" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/change_plot_speed_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cycle_mock_data"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/demo_capture"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/cycle_mock_data_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_horiz_scale"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_inactive_procedure_screen" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/cycle_mock_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/demo_capture"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/nav_to_patient_summary_container"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/demo_capture_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_capture"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_neutral_camera" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/capture_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nav_to_patient_summary_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageButton
+                android:id="@+id/nav_to_patient_summary"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_navto_patient_summary"
+                android:padding="5dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_inactive_prepreport" />
+
+            <TextView
+                android:id="@+id/nav_to_finish_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/prep_report_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

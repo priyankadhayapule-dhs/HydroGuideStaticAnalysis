@@ -1,0 +1,69 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <variable
+            name="encounterData"
+            type="com.accessvascularinc.hydroguide.mma.model.EncounterData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="560dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/capture_dialog"
+        android:padding="15dp"
+        tools:context=".ui.input.EditFacilityDialogFragment">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/av_darkest_blue"
+            android:text="@string/title_edit_facility"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/facility_name_input_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginVertical="20dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/facility_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingVertical="@dimen/input_box_vert_padding" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- For Testing -->
+        <ImageButton
+            android:id="@+id/confirm_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/facility_name_input_box"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/av_btn"
+            android:contentDescription="@string/cont_desc_return_to_patient_input"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/button_report_checkmark" />
+
+        <ImageButton
+            android:id="@+id/cancel_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/facility_name_input_box"
+            android:layout_marginEnd="20dp"
+            android:layout_toStartOf="@id/confirm_btn"
+            android:background="@drawable/av_btn"
+            android:contentDescription="@string/cont_desc_return_to_patient_input"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/camera_capture_button_delete" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,50 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="90.78dp"
+    android:height="60dp"
+    android:viewportWidth="139.94"
+    android:viewportHeight="90.5">
+    <path
+        android:fillColor="#2c479e"
+        android:pathData="M0,0h139.94v90.5h-139.94z" />
+    <group>
+        <clip-path android:pathData="M47.72,61.32h57.14v3.35h-57.14z" />
+        <path
+            android:fillAlpha="0.6"
+            android:fillColor="#fff"
+            android:pathData="M104.86,64.59l-57.12,0.08 -0.02,-3.27 57.12,-0.08Z"
+            android:strokeAlpha="0.6" />
+    </group>
+    <group>
+        <clip-path android:pathData="M47.71,28.71h57.14v3.36h-57.14z" />
+        <path
+            android:fillAlpha="0.6"
+            android:fillColor="#fff"
+            android:pathData="M104.85,31.98l-57.12,0.08 -0.02,-3.27 57.12,-0.08Z"
+            android:strokeAlpha="0.6" />
+    </group>
+    <group>
+        <clip-path android:pathData="M47.72,39.58h57.14v3.36h-57.14z" />
+        <path
+            android:fillAlpha="0.6"
+            android:fillColor="#fff"
+            android:pathData="M104.86,42.85l-57.12,0.08 -0.02,-3.27 57.12,-0.08Z"
+            android:strokeAlpha="0.6" />
+    </group>
+    <group>
+        <clip-path android:pathData="M47.72,50.45h57.14v3.36h-57.14z" />
+        <path
+            android:fillAlpha="0.6"
+            android:fillColor="#fff"
+            android:pathData="M104.86,53.72l-57.12,0.08 -0.02,-3.27 57.12,-0.08Z"
+            android:strokeAlpha="0.6" />
+    </group>
+    <path
+        android:fillColor="#fff"
+        android:pathData="M26.59,73.57h86.77L113.35,16.92L26.59,16.92ZM109.57,69.76L30.37,69.76L30.37,20.74h79.21Z" />
+    <path
+        android:fillColor="#2c479e"
+        android:pathData="M54.19,9.28L9.84,9.28c-0.28,0.27 -0.55,0.55 -0.82,0.83L9.02,53.99a31.78,31.78 0,1 0,45.17 -44.71" />
+    <path
+        android:fillColor="#fff"
+        android:pathData="M50.77,13.26a26.56,26.56 0,1 0,0.05 37.56,26.53 26.53,0 0,0 -0.05,-37.56m-9.94,19.96 l7.75,7.75a1.7,1.7 0,0 1,0 2.4l-5.21,5.21a1.7,1.7 0,0 1,-2.4 0l-7.75,-7.75a1.7,1.7 0,0 0,-2.4 0l-7.75,7.75a1.7,1.7 0,0 1,-2.4 0l-5.21,-5.21a1.7,1.7 0,0 1,0 -2.4l7.75,-7.75a1.7,1.7 0,0 0,0 -2.4l-7.75,-7.75a1.7,1.7 0,0 1,0 -2.4l5.21,-5.21a1.7,1.7 0,0 1,2.4 0l7.75,7.75a1.7,1.7 0,0 0,2.4 0l7.75,-7.75a1.7,1.7 0,0 1,2.4 0l5.21,5.21a1.7,1.7 0,0 1,0 2.4l-7.75,7.75a1.7,1.7 0,0 0,0 2.4" />
+</vector>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <usb-device
+        product-id="688"
+        vendor-id="1118" />
+    <usb-device
+        product-id="24577"
+        vendor-id="1027" /> <!-- FT232RL -->
+    <usb-device
+        product-id="24596"
+        vendor-id="1027" /> <!-- FT232H -->
+    <usb-device
+        product-id="24592"
+        vendor-id="1027" /> <!-- FT2232C/D/HL - Were using this one.-->
+    <usb-device
+        product-id="24593"
+        vendor-id="1027" /> <!-- FT4232HL -->
+    <usb-device
+        product-id="24597"
+        vendor-id="1027" /> <!-- FT230X -->
+    <usb-device
+        product-id="45088"
+        vendor-id="1412" /> <!-- REX-USB60F -->
+    <usb-device
+        product-id="24641"
+        vendor-id="1027" /> <!-- FT4233HPQ -->
+    <usb-device
+        product-id="24643"
+        vendor-id="1027" /> <!-- FT4232HPQ -->
+    <usb-device
+        product-id="24640"
+        vendor-id="1027" /> <!-- FT2233HPQ-->
+    <usb-device
+        product-id="24642"
+        vendor-id="1027" /> <!-- FT4232HPQ -->
+    <usb-device
+        product-id="24645"
+        vendor-id="1027" /> <!-- FT232HPQ -->
+    <usb-device
+        product-id="24644"
+        vendor-id="1027" /> <!-- FT233HPQ -->
+
+    <!-- IDs must be in decimal! -->
+    <!--<usb-device class="8" protocol="80" subclass="6" />-->
+    <usb-device vendor-id="7615" product-id="256" /> <!-- For USB Torso Three -->
+    <usb-device vendor-id="7615" product-id="257" /> <!-- For USB Torso One -->
+    <usb-device vendor-id="7615" product-id="258" /> <!-- For USB Lexsa -->
+    <usb-device vendor-id="7615" product-id="10" /> <!-- For K-Link -->
+    <usb-device product-id="4193" vendor-id="4966" />
+</resources>

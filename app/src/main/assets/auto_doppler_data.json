@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "displayName": "Mitral Valve (A4C)",
+    "targetValue": "A4C_MV",
+    "supportedMode": "PW",
+    "shiftIndex": 15
+  },
+  {
+    "id": 2,
+    "displayName": "LV Outflow Tract (A5C)",
+    "targetValue": "A5C_LVOT",
+    "supportedMode": "PW",
+    "shiftIndex": 54
+  },
+  {
+    "id": 3,
+    "displayName": "Tricuspid Valve (A4C)",
+    "targetValue": "A4C_TV",
+    "supportedMode": "PW",
+    "shiftIndex": 15
+  },
+  {
+    "id": 4,
+    "displayName": "Pulmonary Valve (RVOT, PSAX-AV)",
+    "targetValue": "PLAX_RVOT_PV",
+    "supportedMode": "PW",
+    "shiftIndex": 54
+  },
+  {
+    "id": 6,
+    "displayName": "MV Septal Annulus (A4C)",
+    "targetValue": "TDI_A4C_MVSA",
+    "supportedMode": "TDI",
+    "shiftIndex": 31
+  },
+  {
+    "id": 7,
+    "displayName": "MV Lateral Annulus (A4C)",
+    "targetValue": "TDI_A4C_MVLA",
+    "supportedMode": "TDI",
+    "shiftIndex": 31
+  },
+  {
+    "id": 8,
+    "displayName": "TV Lateral Annulus (A4C)",
+    "targetValue": "TDI_A4C_TVLA",
+    "supportedMode": "TDI",
+    "shiftIndex": 31
+  }
+]
+

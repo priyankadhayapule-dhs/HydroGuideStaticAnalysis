@@ -1,0 +1,493 @@
+[
+  {
+    "name": "Cervical Length",
+    "id": "21",
+    "reportData": [
+      {
+        "id": "81",
+        "name": "Cervical Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "AFI",
+    "id": "22",
+    "reportData": [
+      {
+        "id": "115",
+        "name": "AFI 1",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "parentMeasurementNameId":["90","198"],
+        "isTopPadding": true,
+        "isLastAvgMax": false
+      },
+      {
+        "id": "116",
+        "name": "AFI 2",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "parentMeasurementNameId":["90","198"],
+        "isTopPadding": true,
+        "isLastAvgMax": false
+      },
+      {
+        "id": "117",
+        "name": "AFI 3",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "parentMeasurementNameId":["90","198"],
+        "isTopPadding": true,
+        "isLastAvgMax": false
+      },
+      {
+        "id": "118",
+        "name": "AFI 4",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "parentMeasurementNameId":["90","198"],
+        "isTopPadding": true,
+        "isLastAvgMax": false
+      },
+      {
+        "id": "90",
+        "calculationId": "82",
+        "name": "AFI SUM",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "115","116","117","118"
+        ]
+      },
+      {
+        "id": "198",
+        "calculationId": "84",
+        "name": "AFI MAX",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "115","116","117","118"
+        ]
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "Fetus A",
+    "id": "10",
+    "reportData": [
+      {
+        "id": "82",
+        "name": "Gestational Sac",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "83",
+        "name": "Yolk Sac",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "84",
+        "name": "CRL",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "85",
+        "name": "BPD",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "86",
+        "name": "HC",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "87",
+        "name": "OFD",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "88",
+        "name": "AC",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "89",
+        "name": "FL",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "91",
+        "name": "Umbilical Artery",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false
+      },
+      {
+        "id": "195",
+        "name": "Peak Systolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["197","199"],
+        "isTopPadding": true
+      },
+      {
+        "id": "196",
+        "name": "End Diastolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["197","199"],
+        "isTopPadding": true
+      },
+      {
+        "id": "197",
+        "calculationId": "83",
+        "name": "Umbilical Artery Ratio",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "195","196"
+        ]
+      },
+      {
+        "id": "199",
+        "calculationId": "85",
+        "name": "RI",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "195","196"
+        ]
+      },
+      {
+        "id": "212",
+        "name": "HR",
+        "unit": "bpm",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "Fetus B",
+    "id": "11",
+    "reportData": [
+      {
+        "id": "82",
+        "name": "Gestational Sac",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "83",
+        "name": "Yolk Sac",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "84",
+        "name": "CRL",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "85",
+        "name": "BPD",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "86",
+        "name": "HC ",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "87",
+        "name": "OFD",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "88",
+        "name": "AC",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "89",
+        "name": "FL",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "206",
+        "name": "Umbilical Artery",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false
+      },
+      {
+        "id": "207",
+        "name": "Peak Systolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["212","213"],
+        "isTopPadding": true
+      },
+      {
+        "id": "208",
+        "name": "End Diastolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["212","213"],
+        "isTopPadding": true
+      },
+      {
+        "id": "212",
+        "calculationId": "92",
+        "name": "Umbilical Artery Ratio",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "207","208"
+        ]
+      },
+      {
+        "id": "213",
+        "calculationId": "93",
+        "name": "RI",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "207","208"
+        ]
+      },
+      {
+        "id": "212",
+        "name": "HR",
+        "unit": "bpm",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "Fetus C",
+    "id": "12",
+    "reportData": [
+      {
+        "id": "82",
+        "name": "Gestational Sac",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "83",
+        "name": "Yolk Sac",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "84",
+        "name": "CRL",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "85",
+        "name": "BPD",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "86",
+        "name": "HC ",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "87",
+        "name": "OFD",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "88",
+        "name": "AC",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "89",
+        "name": "FL",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "209",
+        "name": "Umbilical Artery",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false
+      },
+      {
+        "id": "210",
+        "name": "Peak Systolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["214","215"],
+        "isTopPadding": true
+      },
+      {
+        "id": "211",
+        "name": "End Diastolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["214","215"],
+        "isTopPadding": true
+      },
+      {
+        "id": "214",
+        "calculationId": "94",
+        "name": "Umbilical Artery Ratio",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "210","211"
+        ]
+      },
+      {
+        "id": "215",
+        "calculationId": "95",
+        "name": "RI",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "210","211"
+        ]
+      },
+      {
+        "id": "212",
+        "name": "HR",
+        "unit": "bpm",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "Comment",
+    "id": "101",
+    "reportData": [],
+    "type": "comment"
+  }
+]

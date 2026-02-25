@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_background"
+        tools:context=".ui.BluetoothPairingPatternFragment">
+
+        <include
+        android:id="@+id/top_bar"
+        layout="@layout/generic_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:title="@{title}"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/pairing_instructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pairing_instructions"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@id/top_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
+
+        <GridLayout
+            android:id="@+id/pattern_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="5"
+            android:rowCount="2"
+            app:layout_constraintTop_toBottomOf="@id/pairing_instructions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp">
+
+            <!-- 10 arrow buttons with numbers -->
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_down" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_left" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_up" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_right" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_left" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_down" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_left" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_right" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_down" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="120dp" android:layout_height="120dp" android:orientation="vertical" android:gravity="center" android:layout_margin="8dp">
+                <ImageView android:layout_width="110dp" android:layout_height="110dp" android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </GridLayout>
+
+        <RelativeLayout
+            android:id="@+id/setup_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_bar_height"
+            android:background="@color/av_darkest_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height">
+
+                        <ImageButton
+                            android:id="@+id/back_btn"
+                            android:layout_width="@dimen/button_image_width"
+                            android:layout_height="@dimen/button_image_height"
+                            android:background="@drawable/av_btn"
+                            android:contentDescription="Back"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/left_back" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/back_btn_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Back"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/volume_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn_alt"
+                        android:contentDescription="Volume"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_volume" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Change Volume"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/brightness_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn_alt"
+                        android:contentDescription="Brightness"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_brightness" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Change Brightness"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/mute_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="Mute"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_mute" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Toggle Mute"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/button_image_width"
+                    android:layout_height="@dimen/button_image_height">
+
+                    <ImageButton
+                        android:id="@+id/proceed_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="Pair"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/right_play_button" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Pair"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/bottom_bar_button_label"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

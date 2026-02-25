@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/av_darker_blue"
+        android:padding="@dimen/dimen_16x">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_from_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="From:"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_dimen_14x"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingBottom="8dp" />
+
+                <DatePicker
+                    android:id="@+id/fromPickedDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="true"
+                    android:spinnersShown="false"
+                    android:datePickerMode="calendar"
+                    android:theme="@style/DatePickerTheme" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_to_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="To:"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/sp_dimen_14x"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingBottom="8dp" />
+
+                <DatePicker
+                    android:id="@+id/toPickedDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="true"
+                    android:spinnersShown="false"
+                    android:datePickerMode="calendar"
+                    android:theme="@style/DatePickerTheme" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:padding="@dimen/dimen_16x">
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_42x"
+            android:textColor="@color/white"
+            android:text="Search"
+            android:background="@drawable/button_border"
+            app:backgroundTint="@color/av_darker_blue"/>
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_42x"
+            android:layout_marginLeft="@dimen/dimen_16x"
+            android:text="Close"
+            android:background="@drawable/button_border"
+            app:backgroundTint="@color/av_darker_blue"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

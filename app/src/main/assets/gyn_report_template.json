@@ -1,0 +1,805 @@
+[
+  {
+    "name": "GYN",
+    "id": "13",
+    "reportData": [
+      {
+        "id": "92",
+        "calculationId": "51",
+        "name": "Uterus Volume",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "122","123","124"
+        ]
+      },
+      {
+        "id": "122",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["92"]
+      },
+      {
+        "id": "124",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["92"]
+      },
+      {
+        "id": "123",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["92"]
+      },
+      {
+        "id": "93",
+        "name": "Endometrium",
+        "unit": "mm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "94",
+        "name": "Cervical Length",
+        "unit": "mm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "Right Ovary",
+    "id": "14",
+    "reportData": [
+      {
+        "id": "99",
+        "calculationId": "54",
+        "name": "RT Ovary Volume",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "131","132","133"
+        ]
+      },
+      {
+        "id": "131",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["99"]
+      },
+      {
+        "id": "133",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["99"]
+      },
+      {
+        "id": "132",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["99"]
+      },
+      {
+        "id": "100",
+        "calculationId": "55",
+        "name": "RT Mass 1",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "134","135","136"
+        ]
+      },
+      {
+        "id": "134",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["100"]
+      },
+      {
+        "id": "136",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["100"]
+      },
+      {
+        "id": "135",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["100"]
+      },
+      {
+        "id": "101",
+        "calculationId": "56",
+        "name": "RT Mass 2",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "137","138","139"
+        ]
+      },
+      {
+        "id": "137",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["101"]
+      },
+      {
+        "id": "139",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["101"]
+      },
+      {
+        "id": "138",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["101"]
+      },
+      {
+        "id": "102",
+        "calculationId": "57",
+        "name": "RT Ovarian Cyst 1",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "140","141","142"
+        ]
+      },
+      {
+        "id": "140",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["102"]
+      },
+      {
+        "id": "142",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["102"]
+      },
+      {
+        "id": "141",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["102"]
+      },
+      {
+        "id": "103",
+        "calculationId": "58",
+        "name": "RT Ovarian Cyst 2",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "143","144","145"
+        ]
+      },
+      {
+        "id": "143",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["103"]
+      },
+      {
+        "id": "145",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["103"]
+      },
+      {
+        "id": "144",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["103"]
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "R Ovarian Artery",
+    "id": "19",
+    "reportData": [
+      {
+        "id": "173",
+        "name": "VTI",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "subMeasurementIds": [187,188,189,190]
+      },
+      {
+        "id": "187",
+        "name": "Peak Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "173",
+        "vtiSubType": 1
+      },
+      {
+        "id": "188",
+        "name": "Mean Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["73"],
+        "position": 0,
+        "parentVti": "173",
+        "vtiSubType": 2
+      },
+      {
+        "id": "189",
+        "name": "Peak Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "173",
+        "vtiSubType": 3
+      },
+      {
+        "id": "190",
+        "name": "Mean Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "173",
+        "vtiSubType": 4
+      },
+      {
+        "id": "174",
+        "name": "Peak Systolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["72","73","74"]
+      },
+      {
+        "id": "175",
+        "name": "End Diastolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["72","73","74"]
+      },
+      {
+        "id": 72,
+        "name": "RI",
+        "calculationId": "72",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "174","175"
+        ]
+      },
+      {
+        "id": 73,
+        "name": "PI",
+        "calculationId": "73",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "173",  "174","175"
+        ]
+      },
+      {
+        "id": 74,
+        "name": "S/D",
+        "calculationId": "74",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "174","175"
+        ]
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "Left Ovary",
+    "id": "15",
+    "reportData": [
+      {
+        "id": "105",
+        "calculationId": "59",
+        "name": "LT Ovary Volume",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "146","147","148"
+        ]
+      },
+      {
+        "id": "146",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["105"]
+      },
+      {
+        "id": "148",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["105"]
+      },
+      {
+        "id": "147",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["105"]
+      },
+      {
+        "id": "106",
+        "calculationId": "60",
+        "name": "LT Mass 1",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "149","150","151"
+        ]
+      },
+      {
+        "id": "149",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["106"]
+      },
+      {
+        "id": "151",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["106"]
+      },
+      {
+        "id": "150",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["106"]
+      },
+      {
+        "id": "107",
+        "calculationId": "61",
+        "name": "LT Mass 2",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "152","153","154"
+        ]
+      },
+      {
+        "id": "152",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["107"]
+      },
+      {
+        "id": "154",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["107"]
+      },
+      {
+        "id": "153",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["107"]
+      },
+      {
+        "id": "108",
+        "calculationId": "62",
+        "name": "LT Ovarian Cyst 1",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "155","156","157"
+        ]
+      },
+      {
+        "id": "155",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["108"]
+      },
+      {
+        "id": "157",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["108"]
+      },
+      {
+        "id": "156",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["108"]
+      },
+      {
+        "id": "109",
+        "calculationId": "63",
+        "name": "LT Ovarian Cyst 2",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "158","159","160"
+        ]
+      },
+      {
+        "id": "158",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["109"]
+      },
+      {
+        "id": "160",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["109"]
+      },
+      {
+        "id": "159",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId":["109"]
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "L Ovarian Artery",
+    "id": "20",
+    "reportData": [
+      {
+        "id": "176",
+        "name": "VTI",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "subMeasurementIds": [191,192,193,194]
+      },
+      {
+        "id": "191",
+        "name": "Peak Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "176",
+        "vtiSubType": 1
+      },
+      {
+        "id": "192",
+        "name": "Mean Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentMeasurementNameId":["76"],
+        "parentVti": "176",
+        "vtiSubType": 2
+      },
+      {
+        "id": "193",
+        "name": "Peak Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "176",
+        "vtiSubType": 3
+      },
+      {
+        "id": "194",
+        "name": "Mean Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "176",
+        "vtiSubType": 4
+      },
+      {
+        "id": "177",
+        "name": "Peak Systolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["75","76","77"]
+      },
+      {
+        "id": "178",
+        "name": "End Diastolic",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId":["75","76","77"]
+      },
+      {
+        "id": 75,
+        "name": "RI",
+        "calculationId": "75",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "177","178"
+        ]
+      },
+      {
+        "id": 76,
+        "name": "PI",
+        "calculationId": "76",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "176","177","178"
+        ]
+      },
+      {
+        "id": 77,
+        "name": "S/D",
+        "calculationId": "77",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "177","178"
+        ]
+      }
+    ],
+    "type" : "protocol"
+  },
+  {
+    "name": "Bladder",
+    "id": "16",
+    "reportData": [
+      {
+        "id": "111",
+        "calculationId": "64",
+        "name": "Pre-Void Bladder Vol",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "161",
+          "162",
+          "163"
+        ]
+      },
+      {
+        "id": "161",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId": [
+          "111"
+        ]
+      },
+      {
+        "id": "163",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId": [
+          "111"
+        ]
+      },
+      {
+        "id": "162",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId": [
+          "111"
+        ]
+      },
+      {
+        "id": "112",
+        "calculationId": "65",
+        "name": "Post-Void Bladder Vol",
+        "unit": "ml",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": true,
+        "dependOn": [
+          "164",
+          "165",
+          "166"
+        ]
+      },
+      {
+        "id": "164",
+        "name": "Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId": [
+          "112"
+        ]
+      },
+      {
+        "id": "166",
+        "name": "Height",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId": [
+          "112"
+        ]
+      },
+      {
+        "id": "165",
+        "name": "Width",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": false,
+        "parentMeasurementNameId": [
+          "112"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "Comment",
+    "id": "102",
+    "reportData": [],
+    "type": "comment"
+  }
+]

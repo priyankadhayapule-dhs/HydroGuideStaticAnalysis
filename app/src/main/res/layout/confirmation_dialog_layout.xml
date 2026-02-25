@@ -1,0 +1,107 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:background="@drawable/capture_dialog"
+        android:padding="15dp"
+        android:theme="@style/BottomDrawer"
+        tools:context=".ui.input.ConfirmProcedureDialogFragment">
+
+        <LinearLayout
+            android:id="@+id/confirmation_content"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/procedure_conclude_dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/conclusion_dialog_title"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/conclude_procedure_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:text="What is the final state of the procedure?"
+                android:textSize="16sp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/capture_dialog"
+                    android:padding="4dp">
+
+                    <Spinner
+                        android:id="@+id/conclusion_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:dropDownWidth="match_parent"
+                        android:focusedByDefault="true"
+                        android:nextFocusDown="@id/confirm_btn_conclude"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:backgroundTint="@color/ap_transparent"
+                        android:src="@drawable/drop" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/return_instruments_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="30dp"
+                android:text="Kindly return Controller and Tablet back to the carrying case after concluding procedure."
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/confirm_btn_conclude"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@id/confirmation_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/av_btn"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/button_report_checkmark" />
+
+        <ImageButton
+            android:id="@+id/cancel_button_conclude"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@id/confirmation_content"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/av_btn"
+            android:contentDescription="@string/cont_desc_return_to_patient_input"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/select_profile_arrow_left" />
+
+    </RelativeLayout>
+</layout>

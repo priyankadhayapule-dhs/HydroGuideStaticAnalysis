@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/PDF_PAGE_WIDTH"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/pdf_text_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingHorizontal="@dimen/PDF_PAGE_MARGIN">
+
+    <RelativeLayout
+        android:id="@+id/top_captures"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/report_external_capture_grp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pdf_top_captures_horizontal_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/report_external_capture_title"
+                style="@style/ReportTextStyle"
+                android:layout_width="@dimen/pdf_capture_label_width"
+                android:layout_height="wrap_content"
+                android:text="@string/report_external_ecg_title" />
+
+            <include
+                android:id="@+id/report_external_capture"
+                layout="@layout/report_capture_simple_black"
+                android:layout_width="@dimen/pdf_capture_width"
+                android:layout_height="230pt" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/report_top_intrav_capture_grp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/pdf_top_captures_horizontal_margin"
+            android:layout_toEndOf="@id/report_external_capture_grp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/report_top_intrav_capture_title"
+                style="@style/ReportTextStyle"
+                android:layout_width="@dimen/pdf_capture_label_width"
+                android:layout_height="wrap_content"
+                android:text="@string/report_top_intrav_ecg_title" />
+
+            <include
+                android:id="@+id/report_top_intrav_capture"
+                layout="@layout/report_capture_simple_black"
+                android:layout_width="@dimen/pdf_capture_width"
+                android:layout_height="230pt" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/report_additional_intrav_title"
+        style="@style/ReportTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="@dimen/pdf_text_vertical_margin"
+        android:gravity="center"
+        android:text="@string/report_additional_intrav_captures_title"
+        android:textStyle="bold" />
+</LinearLayout>

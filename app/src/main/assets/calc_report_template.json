@@ -1,0 +1,1324 @@
+[
+  {
+    "name": "PLAX",
+    "id": "1",
+    "reportData": [
+      {
+        "id": "0",
+        "name": "RVIDd",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "1",
+        "name": "IVSd",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "2",
+          "3"
+        ]
+      },
+      {
+        "id": "2",
+        "name": "LVIDd",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      {
+        "id": "3",
+        "name": "LVPWd",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      {
+        "id": "4",
+        "name": "LVIDs",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "0",
+          "1"
+        ]
+      },
+      {
+        "id": "5",
+        "name": "LA diameter",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "6",
+        "name": "LVOTd",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "6",
+          "11",
+          "12",
+          "13",
+          "14"
+        ]
+      },
+      {
+        "id": "2",
+        "name": "LV Mass",
+        "unit": "g",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isTopPadding": false,
+        "dependOn": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "id": "3",
+        "name": "LV Mass index",
+        "unit": "g/m²",
+        "decimalPlaces": 0,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "id": "4",
+        "name": "RWT",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "2",
+          "3"
+        ]
+      },
+      {
+        "id": "0",
+        "name": "EF",
+        "unit": "%",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "2",
+          "4"
+        ]
+      },
+      {
+        "id": "1",
+        "name": "FS",
+        "unit": "%",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "2",
+          "4"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "Aortic Valve",
+    "id": "4",
+    "reportData": [
+      {
+        "id": "6",
+        "name": "LVOTd",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "6",
+          "11",
+          "12",
+          "13",
+          "14"
+        ]
+      },
+      {
+        "id": "22",
+        "name": "Aortic Annulus",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "23",
+        "name": "Sinus of Valsalva",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "24",
+        "name": "ST Junction",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "25",
+        "name": "Ascending Aorta",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "37",
+        "name": "AV Vena Contracta",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "26",
+        "name": "LVOT VTI",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "6",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15"
+        ],
+        "subMeasurementIds": [
+          59,
+          60,
+          61,
+          62
+        ]
+      },
+      {
+        "id": "59",
+        "name": "Peak Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "26",
+        "vtiSubType": 1
+      },
+      {
+        "id": "60",
+        "name": "Mean Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "26",
+        "vtiSubType": 2
+      },
+      {
+        "id": "61",
+        "name": "Peak Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": false,
+        "position": 0,
+        "parentVti": "26",
+        "vtiSubType": 3
+      },
+      {
+        "id": "62",
+        "name": "Mean Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "26",
+        "vtiSubType": 4
+      },
+      {
+        "id": "38",
+        "name": "Heart Rate",
+        "unit": "bpm",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "14"
+        ]
+      },
+      {
+        "id": "11",
+        "name": "SV",
+        "unit": "ml",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "6",
+          "26"
+        ]
+      },
+      {
+        "id": "13",
+        "name": "Stroke Volume Index",
+        "unit": "ml/m²",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "6",
+          "26"
+        ]
+      },
+      {
+        "id": "14",
+        "name": "Cardiac Output",
+        "unit": "L/min",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "6",
+          "26",
+          "38"
+        ]
+      },
+      {
+        "id": "27",
+        "name": "AV VTI",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "12",
+          "15"
+        ],
+        "subMeasurementIds": [
+          63,
+          64,
+          65,
+          66
+        ]
+      },
+      {
+        "id": "63",
+        "name": "Peak Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "27",
+        "vtiSubType": 1
+      },
+      {
+        "id": "64",
+        "name": "Mean Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "27",
+        "vtiSubType": 2
+      },
+      {
+        "id": "65",
+        "name": "Peak Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "27",
+        "vtiSubType": 3
+      },
+      {
+        "id": "66",
+        "name": "Mean Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "27",
+        "vtiSubType": 4
+      },
+      {
+        "id": "12",
+        "name": "AVA",
+        "unit": "cm²",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "6",
+          "26",
+          "27"
+        ]
+      },
+      {
+        "id": "15",
+        "name": "Dimensionless Index",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "26",
+          "27"
+        ]
+      },
+      {
+        "id": "55",
+        "name": "AR PHT",
+        "unit": "ms",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "58",
+        "name": "AV Pk Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "18"
+        ]
+      },
+      {
+        "id": "18",
+        "name": "AV PG",
+        "unit": "mmHg",
+        "decimalPlaces": 0,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "58"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "Diastology",
+    "id": "5",
+    "reportData": [
+      {
+        "id": "12",
+        "name": "MV E",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "8",
+          "9",
+          "10"
+        ]
+      },
+      {
+        "id": "13",
+        "name": "Decel Time",
+        "unit": "ms",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "14",
+        "name": "MV A",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "8"
+        ]
+      },
+      {
+        "id": "8",
+        "name": "E/A",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "12",
+          "14"
+        ]
+      },
+      {
+        "id": "15",
+        "name": "e' Lateral",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "9"
+        ]
+      },
+      {
+        "id": "16",
+        "name": "a' Lateral",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "56",
+        "name": "s' Lateral",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "46",
+        "name": "e’ Septal",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "10"
+        ]
+      },
+      {
+        "id": "47",
+        "name": "a' Septal",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "57",
+        "name": "s' Septal",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "9",
+        "name": "E/e' Lateral",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "12",
+          "15"
+        ]
+      },
+      {
+        "id": "10",
+        "name": "E/e' Septal",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "12",
+          "46"
+        ]
+      },
+      {
+        "id": "39",
+        "name": "TR VMax",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "5",
+          "17"
+        ]
+      },
+      {
+        "id": "5",
+        "name": "TR PG",
+        "unit": "mmHg",
+        "decimalPlaces": 0,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "39"
+        ]
+      },
+      {
+        "id": "17",
+        "name": "RVSP",
+        "unit": "mmHg",
+        "decimalPlaces": 0,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "39",
+          "45"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "Mitral Valve",
+    "id": "3",
+    "reportData": [
+      {
+        "id": "19",
+        "name": "MV Annulus Diameter",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "7"
+        ]
+      },
+      {
+        "id": "20",
+        "name": "MV Vena Contracta",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "12",
+        "name": "MV E",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "8",
+          "9",
+          "10"
+        ]
+      },
+      {
+        "id": "14",
+        "name": "MV A",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "8"
+        ]
+      },
+      {
+        "id": "13",
+        "name": "Decel Time",
+        "unit": "ms",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "11",
+        "name": "MV VTI (PW)",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "7"
+        ],
+        "subMeasurementIds": [
+          67,
+          68,
+          69,
+          70
+        ]
+      },
+      {
+        "id": "67",
+        "name": "Peak Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "11",
+        "vtiSubType": 1
+      },
+      {
+        "id": "68",
+        "name": "Mean Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "11",
+        "vtiSubType": 2
+      },
+      {
+        "id": "69",
+        "name": "Peak Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "11",
+        "vtiSubType": 3
+      },
+      {
+        "id": "70",
+        "name": "Mean Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "11",
+        "vtiSubType": 4
+      },
+      {
+        "id": "8",
+        "name": "E/A",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "12",
+          "14"
+        ]
+      },
+      {
+        "id": "7",
+        "name": "MVSV",
+        "unit": "ml",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "11",
+          "19"
+        ]
+      },
+      {
+        "id": "18",
+        "name": "MV PHT",
+        "unit": "ms",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "16"
+        ]
+      },
+      {
+        "id": "44",
+        "name": "MV VTI (CW)",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "6"
+        ],
+        "subMeasurementIds": [
+          71,
+          72,
+          73,
+          74
+        ]
+      },
+      {
+        "id": "71",
+        "name": "Peak Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "44",
+        "vtiSubType": 1
+      },
+      {
+        "id": "72",
+        "name": "Mean Vel",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "44",
+        "vtiSubType": 2
+      },
+      {
+        "id": "73",
+        "name": "Peak Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "44",
+        "vtiSubType": 3
+      },
+      {
+        "id": "74",
+        "name": "Mean Gradient",
+        "unit": "mmHg",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "position": 0,
+        "parentVti": "44",
+        "vtiSubType": 4
+      },
+      {
+        "id": "6",
+        "name": "MVA by Cont.",
+        "unit": "cm²",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "6",
+          "26",
+          "44"
+        ]
+      },
+      {
+        "id": "16",
+        "name": "MVA by PHT",
+        "unit": "cm²",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "18"
+        ]
+      },
+      {
+        "id": "15",
+        "name": "MV e' Lateral",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "9"
+        ]
+      },
+      {
+        "id": "16",
+        "name": "MV a' Lateral",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "56",
+        "name": "MV s' Lateral",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "46",
+        "name": "MV e' Septal",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "10"
+        ]
+      },
+      {
+        "id": "47",
+        "name": "MV a' Septal",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "57",
+        "name": "MV s' Septal",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "9",
+        "name": "E/e' Lateral",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "12",
+          "15"
+        ]
+      },
+      {
+        "id": "10",
+        "name": "E/e' Septal",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "12",
+          "46"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "Right Heart",
+    "id": "2",
+    "reportData": [
+      {
+        "id": "7",
+        "name": "RV Basal",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "8",
+        "name": "RV Mid",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "9",
+        "name": "RV Length",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "33",
+        "name": "PV Accel Time",
+        "unit": "ms",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "39",
+        "name": "TR VMax",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "5",
+          "17"
+        ]
+      },
+      {
+        "id": "41",
+        "name": "PR Vmax",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "40",
+        "name": "PREDV",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "34",
+        "name": "TV s'",
+        "unit": "m/s",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "5",
+        "name": "TR PG",
+        "unit": "mmHg",
+        "decimalPlaces": 0,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "39"
+        ]
+      },
+      {
+        "id": "17",
+        "name": "RVSP",
+        "unit": "mmHg",
+        "decimalPlaces": 0,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "39",
+          "45"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "IVC",
+    "id": "6",
+    "reportData": [
+      {
+        "id": "31",
+        "name": "IVC min",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "32",
+        "name": "IVC max",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "45",
+        "name": "RAP",
+        "unit": "mmHg",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "17"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "M-Mode",
+    "id": "7",
+    "reportData": [
+      {
+        "id": "21",
+        "name": "EPSS",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "35",
+        "name": "TAPSE",
+        "unit": "mm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "36",
+        "name": "MAPSE",
+        "unit": "mm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "48",
+        "name": "IVC min",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "49",
+        "name": "IVC max",
+        "unit": "cm",
+        "decimalPlaces": 2,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "38",
+        "name": "Heart Rate",
+        "unit": "bpm",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "14"
+        ]
+      },
+      {
+        "id": "45",
+        "name": "RAP",
+        "unit": "mmHg",
+        "decimalPlaces": 0,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "17"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "MM-PLAX",
+    "id": "23",
+    "reportData": [
+      {
+        "id": "199",
+        "name": "RVIDd",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true
+      },
+      {
+        "id": "200",
+        "name": "IVS",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "88",
+          "89"
+        ]
+      },
+      {
+        "id": "201",
+        "name": "LVIDd",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "86",
+          "87",
+          "88",
+          "89",
+          "90"
+        ]
+      },
+      {
+        "id": "202",
+        "name": "LVPW",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "88",
+          "89",
+          "90"
+        ]
+      },
+      {
+        "id": "203",
+        "name": "LVIDs",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "86",
+          "87"
+        ]
+      },
+      {
+        "id": "88",
+        "name": "LV Mass",
+        "unit": "g",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isTopPadding": true,
+        "isLastAvgMax": false,
+        "dependOn": [
+          "200",
+          "201",
+          "202"
+        ]
+      },
+      {
+        "id": "89",
+        "name": "LV Mass index",
+        "unit": "g/m²",
+        "decimalPlaces": 0,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "200",
+          "201",
+          "202"
+        ]
+      },
+      {
+        "id": "90",
+        "name": "RWT",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "201",
+          "202"
+        ]
+      },
+      {
+        "id": "86",
+        "name": "EF",
+        "unit": "%",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "201",
+          "203"
+        ]
+      },
+      {
+        "id": "87",
+        "name": "FS",
+        "unit": "%",
+        "decimalPlaces": 1,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "201",
+          "203"
+        ]
+      },
+      {
+        "id": "204",
+        "name": "Aorta dist",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "91"
+        ]
+      },
+      {
+        "id": "205",
+        "name": "LA dist",
+        "unit": "cm",
+        "decimalPlaces": 1,
+        "type": "measurement",
+        "isLastAvgMax": true,
+        "parentMeasurementNameId": [
+          "91"
+        ]
+      },
+      {
+        "id": "91",
+        "name": "LA:AO",
+        "unit": "",
+        "decimalPlaces": 2,
+        "type": "calculation",
+        "isLastAvgMax": false,
+        "dependOn": [
+          "205",
+          "204"
+        ]
+      }
+    ],
+    "type": "protocol"
+  },
+  {
+    "name": "Comment",
+    "id": "100",
+    "reportData": [],
+    "type": "comment"
+  }
+]

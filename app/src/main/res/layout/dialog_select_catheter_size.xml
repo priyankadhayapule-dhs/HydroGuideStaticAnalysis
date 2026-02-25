@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="850dp"
+    android:layout_height="630dp"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_depth_bg"
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp"
+    android:paddingTop="32dp"
+    android:paddingBottom="32dp">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_catheter_size"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="10dp" />
+
+    <TextView
+        android:id="@+id/vein_catheter_ratio_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="14dp"
+        android:visibility="gone" />
+
+    <GridLayout
+        android:id="@+id/catheter_size_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:alignmentMode="alignMargins"
+        android:layout_marginTop="10dp"
+        android:rowOrderPreserved="false"
+        android:layout_gravity="center_horizontal"
+        android:horizontalSpacing="40dp"
+        android:verticalSpacing="40dp"
+        android:paddingBottom="32dp">
+
+        <CheckBox android:id="@+id/size_1_9" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:text="@string/_1_9_french"
+            android:textSize="30sp" android:layout_margin="8dp"
+            android:layout_columnWeight="1" />
+        <CheckBox android:id="@+id/size_2_6" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:text="@string/_2_6_french"
+            android:textSize="30sp" android:layout_margin="8dp"
+            android:layout_columnWeight="1" />
+        <CheckBox android:id="@+id/size_3" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:text="@string/_3_french"
+            android:textSize="30sp" android:layout_margin="8dp"
+            android:layout_columnWeight="1" />
+        <CheckBox android:id="@+id/size_4" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:text="@string/_4_french"
+            android:textSize="30sp" android:layout_margin="8dp"
+            android:layout_columnWeight="1" />
+        <CheckBox android:id="@+id/size_5" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:text="@string/_5_french"
+            android:textSize="30sp" android:layout_margin="8dp"
+            android:layout_columnWeight="1" />
+        <CheckBox android:id="@+id/size_6" android:layout_width="0dp"
+            android:layout_height="wrap_content" android:text="@string/_6_french"
+            android:textSize="30sp" android:layout_margin="8dp"
+            android:layout_columnWeight="1" />
+    </GridLayout>
+
+
+    <TextView
+        android:id="@+id/label_Lumens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_numbers_of_lumens"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="5dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/number_lumen_input_box"
+        android:layout_width="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/number_lumen_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:inputType="number"
+            android:nextFocusDown="@id/btn_confirm"
+            android:maxLines="1"
+            android:paddingVertical="@dimen/summary_input_box_vert_padding"
+            android:text="" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="40dp">
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/camera_capture_button_delete"
+            android:contentDescription="@string/delete"
+            android:layout_marginRight="16dp" />
+
+        <ImageButton
+            android:id="@+id/btn_confirm"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/button_report_checkmark"
+            android:contentDescription="@string/confirm" />
+    </LinearLayout>
+</LinearLayout>

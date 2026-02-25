@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/alert_content_layout"
+        android:layout_width="800dp"
+        android:layout_height="600dp"
+        android:background="@color/av_blue"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/alert_widget_title_size"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/alert_widget_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/alert_default_title"
+                        android:autoSizeTextType="uniform"
+                        android:textColor="@color/av_light_blue"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/alert_widget2_red_border"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/battery_red"
+                        android:layout_marginStart="12dp"
+                        android:alpha="0.5"
+                        android:layout_marginTop="38dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="42dp"
+                        android:layout_marginStart="16dp"
+                        android:background="@color/av_darkest_blue"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:padding="@dimen/alert_widget_padding">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/additional_alerts_label"
+                                    android:textColor="@color/av_light_blue"
+                                    android:textSize="@dimen/alert_widget_dev_info_size"
+                                    android:layout_marginEnd="@dimen/alert_widget_padding" />
+
+                                <TextView
+                                    android:id="@+id/additional_alerts_counter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/av_light_blue"
+                                    android:textSize="@dimen/alert_widget_dev_info_size" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity=""
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentEnd="true">
+
+                                <TextView
+                                    android:id="@+id/additional_alerts_list"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/av_light_blue"
+                                    android:textSize="@dimen/alert_widget_dev_info_size"
+                                    android:layout_marginEnd="@dimen/alert_widget_padding"
+                                    android:layout_marginBottom="@dimen/alert_widget_padding"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+
+
+
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/alert_widget_red_border"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/battery_red"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="38dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="4dp"
+                        android:background="@color/av_darkest_blue"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="42dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/alert_widget_padding"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginBottom="38dp">
+
+                        <ImageView
+                            android:id="@+id/alert_highlight_symbol"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/cont_desc_alert_icon"
+                            android:alpha="0.2"
+                            android:gravity="center"
+                            android:src="@drawable/warning_icon" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/alert_widget_padding">
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/alert_widget_spacing" />
+
+                            <TextView
+                                android:id="@+id/alert_widget_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/alert_default_description"
+                                android:textColor="@color/av_light_blue"
+                                android:textSize="@dimen/alert_widget_regular_text_size" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/alert_widget_spacing" />
+
+                            <TextView
+                                android:id="@+id/alert_widget_subtitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/alert_suggestions_label"
+                                android:textColor="@color/av_light_blue"
+                                android:textSize="@dimen/alert_widget_regular_text_size" />
+                            <TextView
+                                android:id="@+id/alert_widget_bullets"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/alert_default_instructions"
+                                android:textColor="@color/av_light_blue"
+                                android:textSize="@dimen/alert_widget_bulleted_text_size" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/alert_widget_spacing" />
+
+                            <TextView
+                                android:id="@+id/alert_widget_note_line"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/alert_default_note_text"
+                                android:textColor="@color/av_light_blue"
+                                android:textSize="@dimen/alert_widget_regular_text_size"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:paddingEnd="@dimen/alert_widget_padding"
+                                    android:paddingBottom="@dimen/alert_widget_padding">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/alert_id_label"
+                                        android:textSize="@dimen/alert_widget_dev_info_size"
+                                        android:layout_marginEnd="@dimen/alert_widget_padding"
+                                        android:textColor="@color/av_light_blue" />
+
+                                    <TextView
+                                        android:id="@+id/alert_id_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/alert_default_unique_id"
+                                        android:textColor="@color/av_light_blue"
+                                        android:textSize="@dimen/alert_widget_dev_info_size" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentStart="true"
+                                    android:padding="@dimen/alert_widget_padding">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/alert_priority_label"
+                                        android:textColor="@color/av_light_blue"
+                                        android:textSize="@dimen/alert_widget_dev_info_size"
+                                        android:layout_marginEnd="@dimen/alert_widget_padding" />
+
+                                    <TextView
+                                        android:id="@+id/alert_priority_indicator"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/av_light_blue"
+                                        android:textSize="@dimen/alert_widget_dev_info_size" />
+
+                                    <Space
+                                        android:layout_width="@dimen/alert_widget_dev_info_size"
+                                        android:layout_height="match_parent"/>
+
+                                    <TextView
+                                        android:id="@+id/composite_alerts_label"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/alert_composition_label"
+                                        android:textColor="@color/av_light_blue"
+                                        android:textSize="@dimen/alert_widget_dev_info_size"
+                                        android:layout_marginEnd="@dimen/alert_widget_padding" />
+
+                                    <TextView
+                                        android:id="@+id/composite_alerts_indicator"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/av_light_blue"
+                                        android:textSize="@dimen/alert_widget_dev_info_size" />
+
+                                </LinearLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

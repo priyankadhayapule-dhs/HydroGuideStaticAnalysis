@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+
+    <!-- Disable errors the given check in this project -->
+    <issue id="ApplySharedPref" severity="ignore" />
+    <issue id="Recycle" severity="ignore" />
+
+
+    <!-- Disable Gradle Dependency version check. Because
+    we will update libraries when we required -->
+    <issue id="GradleDependency" severity="ignore" />
+
+
+
+</lint>

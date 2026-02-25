@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/dialog_depth_bg"
+    android:padding="16dp"
+    android:layout_gravity="center"
+    android:elevation="8dp"
+    android:minHeight="400dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/select_depth_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Depth"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="start"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <!-- Depth selection column -->
+        <LinearLayout
+            android:id="@+id/depth_selection_column"
+            android:layout_width="0dp"
+            android:layout_height="280dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <ImageView
+                android:id="@+id/arrow_up"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/icon_capture_arrowup"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="Up" />
+            <TextView
+                android:id="@+id/depth_above"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="3.5cm"
+                android:textColor="#B3C6E7"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:alpha="0.6"
+                android:layout_marginBottom="4dp" />
+            <LinearLayout
+                android:id="@+id/depth_selected_row"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/depth_selected_border"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp">
+                <ImageView
+                    android:id="@+id/depth_arrow_left"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/depth_dialog_right_arrow"
+                    android:contentDescription="Left" />
+                <TextView
+                    android:id="@+id/depth_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.0cm"
+                    android:textColor="#B3E6FF"
+                    android:textSize="36sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp" />
+                <ImageView
+                    android:id="@+id/depth_arrow_right"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/depth_dialog_left_arrow"
+                    android:contentDescription="Right" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/depth_below"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="4.5cm"
+                android:textColor="#B3C6E7"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:alpha="0.6"
+                android:layout_marginBottom="4dp" />
+            <ImageView
+                android:id="@+id/arrow_down"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/icon_capture_arrowdown"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="Down" />
+        </LinearLayout>
+        <!-- Button column -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp">
+            <ImageButton
+                android:id="@+id/btn_depth_delete"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/camera_capture_button_delete"
+                android:contentDescription="Delete"
+                android:layout_marginBottom="16dp" />
+            <ImageButton
+                android:id="@+id/btn_depth_confirm"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/button_report_checkmark"
+                android:contentDescription="Confirm"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

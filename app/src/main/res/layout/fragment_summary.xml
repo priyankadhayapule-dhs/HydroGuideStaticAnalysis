@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="userProfile"
+            type="com.accessvascularinc.hydroguide.mma.model.UserProfile" />
+
+        <variable
+            name="chartConfig"
+            type="com.accessvascularinc.hydroguide.mma.model.ChartConfig" />
+
+        <variable
+            name="encounterData"
+            type="com.accessvascularinc.hydroguide.mma.model.EncounterData" />
+
+        <variable
+            name="TabletState"
+            type="com.accessvascularinc.hydroguide.mma.model.TabletState" />
+
+        <variable
+            name="controllerState"
+            type="com.accessvascularinc.hydroguide.mma.model.ControllerState" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/av_blue"
+        tools:context=".ui.SummaryFragment">
+
+        <include
+            android:id="@+id/summary_top_bar"
+            layout="@layout/generic_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/patient_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/summary_top_bar"
+            app:layout_constraintWidth_percent="0.85"  >
+
+            <LinearLayout
+                android:id="@+id/inserter_name_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/inserter_name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_inserter_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inserter_name_input_box"
+                    android:layout_width="@dimen/summary_input_width_medium"
+                    android:layout_height="wrap_content"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inserter_name_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="text"
+                        android:enabled="false"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/patient_name_grp"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientInserter}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_name_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:layout_toEndOf="@id/inserter_name_grp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showName ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_name_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_name_input_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_name_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/patient_id_grp"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientName}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/facility_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inserter_name_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/facility_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:labelFor="@id/facility_input"
+                    android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                    android:text="@string/patient_facility_input_label"
+                    android:enabled="false"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/facility_input_box"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="@dimen/summary_input_width_medium"
+                    android:layout_height="match_parent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/facility_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="textNoSuggestions"
+                        android:enabled="false"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_id_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inserter_name_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:layout_toEndOf="@id/facility_grp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showId ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_id_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_id_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_id_input_box"
+                    android:layout_width="@dimen/summary_input_width_small"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_id_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/patient_cath_ext_input"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientId}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_cath_ext_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patient_name_grp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:layout_toEndOf="@id/patient_id_grp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/patient_cath_ext_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_cath_ext_length_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_cath_ext_input_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:suffixText="@string/measurement_unit_cm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_cath_ext_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/patient_arm_circ_grp"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_insert_vein_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/facility_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showInsertionVein ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_insert_vein_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:labelFor="@id/patient_insert_vein_input"
+                    android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                    android:text="@string/patient_insert_vein_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_insert_vein_input_box"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="@dimen/summary_input_width_small"
+                    android:layout_height="match_parent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/patient_insert_vein_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="none"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientInsertionVein}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_dob_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/facility_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:layout_toEndOf="@id/patient_insert_vein_grp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showDob ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_dob_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                    android:text="@string/patient_dob_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_dob_input_box"
+                    android:layout_width="@dimen/summary_input_width_small"
+                    android:layout_height="match_parent"
+                    app:endIconDrawable="@drawable/calendar_month"
+                    app:endIconMode="custom"
+                    app:endIconTint="@color/av_darker_blue">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_dob_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="none"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:text="@={encounterData.patient.patientDob}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_arm_circ_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/facility_grp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:layout_toEndOf="@id/patient_dob_grp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showArmCircumference ? View.VISIBLE : View.INVISIBLE}">
+
+
+                <TextView
+                    android:id="@+id/patient_arm_circ_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_arm_circum_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_arm_circ_input_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:suffixText="@string/measurement_unit_cm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_arm_circ_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/patient_cath_trim_input"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_insert_side_grp"
+                android:layout_width="220dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/patient_insert_vein_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showPatientSide ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_insert_side_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                    android:text="@string/patient_insert_side_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_insert_side_input_box"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/patient_insert_side_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusableInTouchMode="true"
+                        android:inputType="none"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientInsertionSide}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_cath_trim_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patient_insert_vein_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:layout_toEndOf="@id/patient_insert_vein_grp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/patient_cath_trim_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_cath_trim_length_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_cath_trim_input_box"
+                    android:layout_width="325dp"
+                    android:layout_height="wrap_content"
+                    app:suffixText="@string/measurement_unit_cm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_cath_trim_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/patient_vein_size_input"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_vein_size_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patient_insert_vein_grp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:layout_toEndOf="@id/patient_cath_trim_grp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showVeinSize ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_vein_size_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_vein_size_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_vein_size_input_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:suffixText="@string/measurement_unit_mm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_vein_size_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:imeActionLabel="DONE"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/patient_insert_reason_input"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- No. of Lumens -->
+            <LinearLayout
+                android:id="@+id/patient_no_of_lumens_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patient_insert_side_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showNoOfLumens ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_no_of_lumens_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_no_of_lumens_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_no_of_lumens_input_box"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_no_of_lumens_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:imeActionLabel="DONE"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientNoOfLumens}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <!-- Catheter Size -->
+            <LinearLayout
+                android:id="@+id/patient_catheter_size_grp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patient_insert_side_grp"
+                android:layout_toEndOf="@id/patient_no_of_lumens_grp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showCatheterSize ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_catheter_size_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_catheter_size_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_catheter_size_input_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_catheter_size_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:imeActionLabel="DONE"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientCatheterSize}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_insert_reason_grp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patient_catheter_size_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="@{userProfile.userPreferences.displayedEntryFields.showReasonForInsertion ? View.VISIBLE : View.INVISIBLE}">
+
+                <TextView
+                    android:id="@+id/patient_insert_reason_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_insert_reason_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_insert_reason_input_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_insert_reason_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:nextFocusDown="@id/patient_notes_input"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientReasonInsertion}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/patient_notes_grp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patient_insert_reason_grp"
+                android:layout_marginBottom="@dimen/summary_input_box_margin_bottom"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/patient_notes_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:text="@string/patient_notes_input_label"
+                    android:textAlignment="textEnd"
+                    android:textSize="@dimen/summary_input_box_label_size" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/patient_notes_input_box"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/patient_notes_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusableInTouchMode="true"
+                        android:inputType="text"
+                        android:paddingVertical="@dimen/summary_input_box_vert_padding"
+                        android:text="@={encounterData.patient.patientNotes}" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tip_location_confirm_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/patient_notes_grp"
+                android:background="@color/av_tip_confirm_yellow"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tip_location_confirm_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:gravity="center"
+                    android:text="@string/tip_location_success_checkbox"
+                    android:textAlignment="center"
+                    android:textColor="@color/av_darkest_blue"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/tip_location_confirm_radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/tip_location_confirm_yes"
+                        style="@style/Widget.App.CheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:text="@string/tip_location_confirm_yes"
+                        android:textColor="@color/av_darkest_blue"
+                        android:textSize="24sp" />
+
+                    <RadioButton
+                        android:id="@+id/tip_location_confirm_no"
+                        style="@style/Widget.App.CheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="10dp"
+                        android:text="@string/tip_location_confirm_no"
+                        android:textColor="@color/av_darkest_blue"
+                        android:textSize="24sp" />
+                </RadioGroup>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cap_select_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/av_darkest_blue"
+            android:clipToPadding="false"
+            android:fadeScrollbars="true"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:scrollbarSize="10dp"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/patient_info"
+            app:layout_constraintLeft_toRightOf="@id/patient_info"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/summary_top_bar"
+            app:layout_constraintWidth_percent="0.15" />
+
+        <LinearLayout
+            android:id="@+id/report_captures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/patient_info"
+            tools:layout_editor_absoluteX="0dp">
+
+            <include
+                android:id="@+id/ultrasound_capture"
+                layout="@layout/ultrasound_capture_layout"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_margin="5dp"/>
+                
+            <include
+                android:id="@+id/external_capture"
+                layout="@layout/capture_layout"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_margin="5dp"/>
+
+            <HorizontalScrollView
+                android:id="@+id/report_captures_scroll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fillViewport="false"
+                android:scrollbars="horizontal">
+
+                <include
+                    android:id="@+id/intrav_captures_container"
+                    layout="@layout/intrav_captures_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="400dp"
+                    android:layout_margin="5dp"
+                    android:focusable="false" />
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/patient_input_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_bar_height"
+            android:background="@color/av_darkest_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/nav_to_procedure_screen_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/nav_to_procedure_screen"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="@string/cont_desc_return_to_procedure"
+                        android:nextFocusLeft="@id/nav_to_finish"
+                        android:nextFocusUp="@id/nav_to_finish"
+                        android:nextFocusDown="@id/nav_to_finish"
+                        android:nextFocusForward="@id/nav_to_finish"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_inactive_procedure_screen" />
+
+                    <TextView
+                        android:id="@+id/nav_to_procedure_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/title_procedure"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <!-- Volume Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/volume_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn_alt"
+                        android:contentDescription="@string/cont_desc_volume"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_volume" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/change_volume_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Brightness Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/brightness_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn_alt"
+                        android:contentDescription="@string/cont_desc_brightness"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_brightness" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/change_brightness_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Mute Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/mute_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="@string/cont_desc_mute"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_mute" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/toggle_mute_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:layout_width="306dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/free_byte_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:autoSizeTextType="uniform"
+                        android:text="@string/storage_remaining_label"
+                        android:textColor="@color/av_light_blue"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/free_byte_value"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:autoSizeTextType="uniform"
+                        android:text=""
+                        android:textColor="@color/av_light_blue"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/concluded_procedure_indicator"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/conclusion_signal"
+                android:textColor="@color/av_green"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="173dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/controller_battery_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="26dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="@string/controller_battery_label"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/remote_battery_level_indicator"
+                            android:layout_width="53dp"
+                            android:layout_height="37dp"
+                            android:layout_below="@id/controller_battery_label"
+                            android:contentDescription="@string/cont_desc_battery_level_display"
+                            app:srcCompat="@drawable/indicator_battery_90" />
+
+                        <TextView
+                            android:id="@+id/controller_battery_level_pct"
+                            android:layout_width="106dp"
+                            android:layout_height="37dp"
+                            android:layout_below="@id/controller_battery_label"
+                            android:layout_alignParentEnd="true"
+                            android:autoSizeTextType="uniform"
+                            android:text="@{controllerState.batteryLevelPct > -1 ? Integer.toString(Math.round(controllerState.batteryLevelPct)) + '%': `??? `}"
+                            android:textColor="@color/av_green" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="173dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tablet_battery_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="26dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="@string/tablet_battery_label"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/tablet_battery_level_indicator"
+                            android:layout_width="53dp"
+                            android:layout_height="37dp"
+                            android:layout_below="@id/tablet_battery_label"
+                            android:contentDescription="@string/cont_desc_battery_level_display"
+                            app:srcCompat="@drawable/indicator_battery_90" />
+
+                        <TextView
+                            android:id="@+id/tablet_battery_level_pct"
+                            android:layout_width="106dp"
+                            android:layout_height="37dp"
+                            android:layout_below="@id/tablet_battery_label"
+                            android:layout_alignParentEnd="true"
+                            android:autoSizeTextType="uniform"
+                            android:text="@{TabletState.tabletChargePct > -1 ? Integer.toString(TabletState.tabletChargePct) + '%': `??? `}"
+                            android:textColor="@color/av_green" />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/usb_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/cont_desc_usb_icon"
+                        app:srcCompat="@drawable/logo_usb_disconnected" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/appLogo"
+                    android:layout_width="193dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/cont_desc_hydroguide_logo"
+                    app:srcCompat="@drawable/logo_hydroguide" />
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/nav_to_finish_screen_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/nav_to_finish"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="@string/cont_desc_finish_report"
+                        android:focusedByDefault="true"
+                        android:nextFocusLeft="@id/nav_to_procedure_screen"
+                        android:nextFocusUp="@id/nav_to_procedure_screen"
+                        android:nextFocusDown="@id/nav_to_procedure_screen"
+                        android:nextFocusForward="@id/nav_to_procedure_screen"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_inactive__reportreview" />
+
+                    <TextView
+                        android:id="@+id/nav_to_finish_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/title_report_review_short"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

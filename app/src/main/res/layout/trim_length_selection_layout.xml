@@ -1,0 +1,93 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <variable
+            name="encounterData"
+            type="com.accessvascularinc.hydroguide.mma.model.EncounterData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="310dp"
+        android:background="@drawable/capture_dialog"
+        android:padding="15dp"
+        android:theme="@style/BottomDrawer"
+        tools:context=".ui.input.TrimLengthSelectionFragment">
+
+        <TextView
+            android:id="@+id/trim_length_selection_title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/trim_length_selection_title"
+            android:textAlignment="center"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/catheter_insertion_length_selection"
+            android:layout_width="200dp"
+            android:layout_height="280dp"
+            android:layout_below="@id/trim_length_selection_title"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <com.accessvascularinc.hydroguide.mma.ui.input.NumberPickerArrowButton
+                android:id="@+id/trim_length_number_picker_up"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:background="@color/ap_transparent"
+                android:contentDescription="@string/cont_desc_increase_value"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_capture_arrowup" />
+
+            <NumberPicker
+                android:id="@+id/trim_length_number_picker"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/cont_desc_timescale_change"
+                android:focusedByDefault="true"
+                android:theme="@style/ThemeOverlay.NumberPicker" />
+
+            <com.accessvascularinc.hydroguide.mma.ui.input.NumberPickerArrowButton
+                android:id="@+id/trim_length_number_picker_down"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:background="@color/ap_transparent"
+                android:contentDescription="@string/cont_desc_decrease_value"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_capture_arrowdown" />
+        </LinearLayout>
+
+        <!-- For Testing -->
+        <ImageButton
+            android:id="@+id/confirm_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_above="@id/cancel_button"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/av_btn"
+            android:contentDescription="@string/cont_desc_return_to_patient_input"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/button_report_checkmark" />
+
+        <ImageButton
+            android:id="@+id/cancel_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@id/catheter_insertion_length_selection"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/av_btn"
+            android:contentDescription="@string/cont_desc_return_to_patient_input"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/camera_capture_button_delete" />
+
+    </RelativeLayout>
+</layout>

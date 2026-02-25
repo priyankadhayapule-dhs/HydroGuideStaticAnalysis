@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="page_sizes">
+        <item>10</item>
+        <item>25</item>
+        <item>50</item>
+    </string-array>
+</resources>

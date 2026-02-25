@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+        <import type="android.view.View" />
+        
+        <variable
+            name="encounterData"
+            type="com.accessvascularinc.hydroguide.mma.model.EncounterData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/av_blue"
+        tools:context=".ui.SetupFragment">
+
+        <!-- Top Bar -->
+        <include
+            android:id="@+id/setup_top_bar"
+            layout="@layout/generic_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Main Content Area - Responsive -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setup_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/bottom_bar_height"
+            android:padding="20dp"
+            app:layout_constraintTop_toBottomOf="@id/setup_top_bar"
+            app:layout_constraintBottom_toTopOf="@id/setup_bottom_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Guideline for left/right split -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <!-- Left Side - Instructions and Input Fields -->
+            <LinearLayout
+                android:id="@+id/left_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+                android:layout_marginEnd="24dp">
+                <!-- Step 1 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="1. Place the electrodes onto the patient's torso\n    as shown in the diagram to the right"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <!-- Step 2 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="2. Using the measuring tape, measure the\n    distance between the electrodes:"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <!-- Distance 1 Input -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Distance 1:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/et_distance_1"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:background="@color/light_gray"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="cm"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Distance 2 Input -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Distance 2:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/et_distance_2"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:background="@color/light_gray"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="cm"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Distance 3 Input -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Distance 3:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/et_distance_3"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:background="@color/light_gray"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="cm"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Step 3 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="3. Enter the trimmed length of the catheter\n    (rounded to the nearest 0.5cm)"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <!-- Trimmed Length Input -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:text="Trimmed\nLength:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/et_trimmed_length"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:background="@color/light_gray"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="cm"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Right Side - Anatomy Diagram -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/right_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp">
+
+                <ImageView
+                    android:id="@+id/iv_anatomy_diagram"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="ECG Electrode Placement Diagram"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ecg_anatomy"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Bottom Bar -->
+        <RelativeLayout
+            android:id="@+id/setup_bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_bar_height"
+            android:background="@color/av_darkest_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <!-- Left side buttons (Home, Volume, Brightness, Mute) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Home Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height">
+
+                        <ImageButton
+                            android:id="@+id/home_button"
+                            android:layout_width="@dimen/button_image_width"
+                            android:layout_height="@dimen/button_image_height"
+                            android:background="@drawable/av_btn"
+                            android:contentDescription="@string/cont_desc_return_to_patient_input"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/left_back" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/back"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Volume Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/volume_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn_alt"
+                        android:contentDescription="@string/cont_desc_volume"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_volume" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/change_volume_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Brightness Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/brightness_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn_alt"
+                        android:contentDescription="@string/cont_desc_brightness"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_brightness" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/change_brightness_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Mute Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/mute_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="@string/cont_desc_mute"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_mute" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/toggle_mute_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Right side - Next button -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <!-- Next Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height">
+
+                        <ImageButton
+                            android:id="@+id/next_button"
+                            android:layout_width="@dimen/button_image_width"
+                            android:layout_height="@dimen/button_image_height"
+                            android:background="@drawable/av_btn"
+                            android:contentDescription="Proceed to Patient Input"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/right_back" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Next"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!-- Screen Title in Top Bar -->
+        <LinearLayout
+            android:layout_width="@dimen/title_or_profile_widget_width"
+            android:layout_height="@dimen/top_bar_height"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/setup_screen_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="SETUP"
+                android:textAllCaps="true"
+                android:textColor="@color/av_light_blue"
+                android:textSize="@dimen/title_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

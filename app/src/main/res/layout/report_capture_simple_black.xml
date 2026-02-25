@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/pdf_capture_width"
+    android:layout_height="230pt"
+    android:background="@drawable/border_capture"
+    android:backgroundTint="@color/black"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/report_capture_icon"
+        android:layout_width="@dimen/pdf_capture_label_height"
+        android:layout_height="@dimen/pdf_capture_label_height"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="5dp"
+        android:contentDescription="@string/img_desc_facility_fav_icon"
+        android:padding="2pt"
+        android:src="@drawable/logo_capture_internal"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/report_capture_id"
+        android:layout_width="@dimen/pdf_capture_label_height"
+        android:layout_height="18pt"
+        android:gravity="center"
+        android:text="@string/intrav_capture_number"
+        android:textColor="@color/black"
+        android:textSize="@dimen/pdf_subtext_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/report_capture_header_label"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/pdf_capture_label_height"
+        android:layout_toEndOf="@id/report_capture_icon"
+        android:gravity="center_vertical"
+        android:text="@string/capture_header_label"
+        android:textColor="@color/white"
+        android:textSize="@dimen/pdf_text_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/report_capture_inserted_length"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/pdf_capture_label_height"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:gravity="center_vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="4pt"
+        android:text="@string/capture_header_length"
+        android:textColor="@color/white"
+        android:textSize="@dimen/pdf_text_size"
+        android:textStyle="bold" />
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/report_capture_graph"
+        style="@style/APDefacto.Light"
+        android:layout_width="match_parent"
+        android:layout_height="190pt"
+        android:layout_below="@id/report_capture_header_label"
+        android:background="@color/ap_transparent"
+        app:backgroundColor="@color/ap_transparent"
+        app:domainStep="0"
+        android:layout_marginTop="0dp"
+        app:domainStepMode="subdivide"
+        app:graphBackgroundColor="@color/ap_transparent"
+        app:graphHeight="1.0"
+        app:graphHeightMode="relative"
+        app:graphWidth="1.0"
+        app:graphWidthMode="relative"
+        app:gridBackgroundColor="@color/ap_transparent"
+        app:gridInsetBottom="0dp"
+        app:gridInsetLeft="0dp"
+        app:legendVisible="false"
+        app:lineLabels="none" />
+
+    <TextView
+        android:id="@+id/report_capture_footer_label"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/pdf_capture_label_height"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@id/report_capture_icon"
+        android:gravity="center_vertical"
+        android:text="@string/intrav_capture_footer_label"
+        android:textColor="@color/white"
+        android:textSize="@dimen/pdf_text_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/report_capture_exposed_length"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/pdf_capture_label_height"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:gravity="center_vertical"
+        android:paddingStart="0dp"
+        android:paddingEnd="4pt"
+        android:text="@string/intrav_capture_exposed_length"
+        android:textColor="@color/white"
+        android:textSize="@dimen/pdf_text_size"
+        android:textStyle="bold" />
+</RelativeLayout>

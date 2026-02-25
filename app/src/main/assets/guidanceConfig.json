@@ -1,0 +1,637 @@
+{
+  "x": 0,
+  "y": 0,
+  "w": 395,
+  "h": 295,
+  "textX": 65,
+  "textY": 5,
+  "textAnchorX": 0,
+  "textAnchorY": 0,
+  "textMaxLength": 550,
+  "fonts": [
+    {
+      "name": "Roboto-Medium.ttf",
+      "size": 40
+    },
+    {
+      "name": "SourceHanSerifTC-Medium.otf",
+      "size": 40
+    }
+  ],
+  "textColor": {
+    "r": 0.941,
+    "g": 0.918,
+    "b": 0,
+    "a": 1
+  },
+  "textBackground": {
+    "r": 0.004,
+    "g": 0.004,
+    "b": 0.004,
+    "a": 0.6
+  },
+  "textBackgroundPad": {
+    "left": 70,
+    "right": 5,
+    "top": 5,
+    "bottom": 5
+  },
+  "guidance_text": [
+    {
+      "locale": "da",
+      "phrases": [
+        "A4C",
+        "Vift langsomt op",
+        "Vift langsomt ned",
+        "Roter langsomt med uret",
+        "Roter langsomt mod uret ",
+        "Rok langsomt mod midten",
+        "Rok langsomt til siden",
+        "Stryg ét ribben ned",
+        "Glid langsomt til siden",
+        "Glid langsomt mod midten",
+        "Kør langsomt rundt",
+        "Prøv med mere pres",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "de",
+      "phrases": [
+        "A4C",
+        "Langsam nach oben fächern",
+        "Langsam nach unten fächern",
+        "Langsam im Uhrzeigersinn drehen",
+        "Langsam gegen den Uhrzeigersinn drehen ",
+        "Langsam mittig wippen",
+        "Langsam seitlich wippen",
+        "Um eine Rippe nach unten streichen",
+        "Langsam seitlich schieben",
+        "Langsam mittig schieben",
+        "Langsam umherbewegen",
+        "Mit mehr Druck versuchen",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "es",
+      "phrases": [
+        "A4C",
+        "Mover como abanico, lentamente, hacia arriba",
+        "Mover como abanico, lentamente, hacia abajo",
+        "Rotar lentamente en sentido horario",
+        "Rotar lentamente en sentido antihorario ",
+        "Mecer lentamente en la zona media",
+        "Mecer lentamente en la zona lateral",
+        "Realizar barrido descendente sobre una costilla",
+        "Deslizar lentamente en la zona lateral",
+        "Deslizar lentamente en la zona medial",
+        "Explorar lentamente",
+        "Probar una mayor presión",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "fr",
+      "phrases": [
+        "A4C",
+        "Manipuler lentement vers le haut",
+        "Manipuler lentement vers le bas",
+        "Faire lentement pivoter dans le sens horaire",
+        "Faire lentement pivoter dans le sens anti-horaire ",
+        "Basculer lentement médialement",
+        "Basculer lentement latéralement",
+        "Balayer d’une côte vers le bas",
+        "Glisser lentement latéralement",
+        "Glisser lentement médialement",
+        "Déplacer lentement",
+        "Essayer plus de pression",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "it",
+      "phrases": [
+        "A4C",
+        "Eseguire un movimento rotatorio lentamente verso l'alto",
+        "Eseguire un movimento rotatorio lentamente verso il basso",
+        "Ruotare lentamente in senso orario",
+        "Ruotare lentamente in senso antiorario ",
+        "Far oscillare lentamente in posizione mediale",
+        "Far oscillare lentamente in posizione laterale",
+        "Spostarsi rapidamente di una costola verso il basso",
+        "Far scorrere lentamente in posizione laterale",
+        "Far scorrere lentamente in posizione mediale",
+        "Spostarsi lentamente",
+        "Esercitare una pressione maggiore",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "nb",
+      "phrases": [
+        "A4C",
+        "Sakte viftebevegelse opp",
+        "Sakte viftebevegelse ned",
+        "Roter sakte med klokken",
+        "Roter sakte mot klokken ",
+        "Vugg sakte medialt",
+        "Vugg sakte lateralt",
+        "Sveip ned ett ribbein",
+        "Sakte glidebevegelse lateralt",
+        "Sakte glidebevegelse medialt",
+        "Beveg sakte rundt",
+        "Prøv mer trykk",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "nl",
+      "phrases": [
+        "A4C",
+        "Langzaam omhoog pannen",
+        "Langzaam omlaag pannen",
+        "Langzaam rechtsom draaien",
+        "Langzaam linksom draaien ",
+        "Langzaam mediaal schudden",
+        "Langzaam lateraal schudden",
+        "Een rib omlaag vegen",
+        "Langzaam lateraal schuiven",
+        "Langzaam mediaal schuiven",
+        "Langzaam rondbewegen",
+        "Probeer meer druk uit te oefenen",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "zh",
+      "phrases": [
+        "A4C",
+        "緩慢斜面向上",
+        "緩慢斜面向下",
+        "緩慢順時針旋轉",
+        "緩慢逆時針旋轉 ",
+        "緩慢向內側擺動",
+        "緩慢向外側擺動",
+        "向下約一根肋骨的距離",
+        "緩慢向外側滑動",
+        "緩慢向內側滑動",
+        "緩慢移動",
+        "增加施力",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "pt",
+      "phrases": [
+        "A4C",
+        "Aplique pressão com movimentos lentos para cima",
+        "Aplique pressão com movimentos lentos para baixo",
+        "Gire lentamente em sentido horário",
+        "Gire lentamente em sentido anti-horário",
+        "Balance lentamente para o meio",
+        "Balance lentamente para a lateral",
+        "Passe para a costela de baixo",
+        "Deslize lentamente para a lateral",
+        "Deslize lentamente para o meio",
+        "Faça movimentos lentos",
+        "pressione mais",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "sv",
+      "phrases": [
+        "A4C",
+        "Solfjäder långsamt upp",
+        "Solfjäder långsamt ned",
+        "Rotera långsamt medurs",
+        "Rotera långsamt moturs",
+        "Gunga långsamt på mitten",
+        "Gunga långsamt på sidan",
+        "Svep en ribba ned",
+        "Skjut långsamt på sidan",
+        "Skjut långsamt i mitten",
+        "Flytta omkring långsamt",
+        "Försök att trycka hårdare",
+        "A2C"
+      ]
+    },
+    {
+      "locale": "en",
+      "phrases": [
+        "A4C",
+        "Slowly Fan Up",
+        "Slowly Fan Down",
+        "Slowly Rotate Clockwise",
+        "Slowly Rotate Counter-clockwise",
+        "Slowly Rock Medial",
+        "Slowly Rock Lateral",
+        "Slowly Sweep One Rib Down",
+        "Slowly Slide Lateral",
+        "Slowly Slide Medial",
+        "Slowly Move Around",
+        "Try Pressing Harder",
+        "A2C"
+      ]
+    }
+  ],
+  "states": [
+    {
+      "id": "A4C_a4c",
+      "view": "A4C",
+      "subview_idx": 0,
+      "guidance": "A4C",
+      "guidance_index": 0,
+      "image_folder": "Guidance/A4C Hold",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_tdn",
+      "view": "A4C",
+      "subview_idx": 1,
+      "guidance": "Slowly Fan Up",
+      "guidance_index": 1,
+      "image_folder": "Guidance/02 Tilt Up",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_tup",
+      "view": "A4C",
+      "subview_idx": 2,
+      "guidance": "Slowly Fan Down",
+      "guidance_index": 2,
+      "image_folder": "Guidance/01 Tilt Down",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_ctr",
+      "view": "A4C",
+      "subview_idx": 3,
+      "guidance": "Slowly Rotate Clockwise",
+      "guidance_index": 3,
+      "image_folder": "Guidance/09 Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_clk",
+      "view": "A4C",
+      "subview_idx": 4,
+      "guidance": "Slowly Rotate Counter-clockwise",
+      "guidance_index": 4,
+      "image_folder": "Guidance/10 CNTR Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_lat",
+      "view": "A4C",
+      "subview_idx": 5,
+      "guidance": "Slowly Rock Medial",
+      "guidance_index": 5,
+      "image_folder": "Guidance/04 Angle Lateral",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_med",
+      "view": "A4C",
+      "subview_idx": 6,
+      "guidance": "Slowly Rock Lateral",
+      "guidance_index": 6,
+      "image_folder": "Guidance/03 Angle Medial",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_sup",
+      "view": "A4C",
+      "subview_idx": 7,
+      "guidance": "Slowly Sweep One Rib Down",
+      "guidance_index": 7,
+      "image_folder": "Guidance/05 Space Down",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_smed",
+      "view": "A4C",
+      "subview_idx": 8,
+      "guidance": "Slowly Slide Lateral",
+      "guidance_index": 8,
+      "image_folder": "Guidance/08 Slide Lateral",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_slat",
+      "view": "A4C",
+      "subview_idx": 9,
+      "guidance": "Slowly Slide Medial",
+      "guidance_index": 9,
+      "image_folder": "Guidance/07 Slide Medial",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_a2c",
+      "view": "A4C",
+      "subview_idx": 10,
+      "guidance": "Slowly Rotate Clockwise",
+      "guidance_index": 3,
+      "image_folder": "Guidance/09 Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_noise_main",
+      "view": "A4C",
+      "subview_idx": 11,
+      "guidance": "Slowly Move Around",
+      "guidance_index": 10,
+      "image_folder": "Guidance/Noise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_a3c",
+      "view": "A4C",
+      "subview_idx": 12,
+      "guidance": "Slowly Rotate Clockwise",
+      "guidance_index": 3,
+      "image_folder": "Guidance/09 Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_tdn_a2c",
+      "view": "A4C",
+      "subview_idx": 13,
+      "guidance": "Slowly Rotate Clockwise",
+      "guidance_index": 3,
+      "image_folder": "Guidance/09 Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_tup_a2c",
+      "view": "A4C",
+      "subview_idx": 14,
+      "guidance": "Slowly Rotate Clockwise",
+      "guidance_index": 3,
+      "image_folder": "Guidance/09 Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_med_a2c",
+      "view": "A4C",
+      "subview_idx": 15,
+      "guidance": "Slowly Rotate Clockwise",
+      "guidance_index": 3,
+      "image_folder": "Guidance/09 Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_sub_lat_a2c",
+      "view": "A4C",
+      "subview_idx": 16,
+      "guidance": "Slowly Rotate Clockwise",
+      "guidance_index": 3,
+      "image_folder": "Guidance/09 Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A4C_uncertain",
+      "view": "A4C",
+      "subview_idx": 17,
+      "guidance": "Try Pressing Harder",
+      "guidance_index": 11,
+      "image_folder": "Guidance/Noise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_a4c",
+      "view": "A2C",
+      "subview_idx": 0,
+      "guidance": "Slowly Rotate Counter-clockwise",
+      "guidance_index": 4,
+      "image_folder": "Guidance/10 CNTR Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_tdn",
+      "view": "A2C",
+      "subview_idx": 1,
+      "guidance": "Slowly Fan Up",
+      "guidance_index": 1,
+      "image_folder": "Guidance/02 Tilt Up",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_tup",
+      "view": "A2C",
+      "subview_idx": 2,
+      "guidance": "Slowly Fan Down",
+      "guidance_index": 2,
+      "image_folder": "Guidance/01 Tilt Down",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_ctr",
+      "view": "A2C",
+      "subview_idx": 3,
+      "guidance": "Slowly Rotate Counter-clockwise",
+      "guidance_index": 4,
+      "image_folder": "Guidance/10 CNTR Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_clk",
+      "view": "A2C",
+      "subview_idx": 4,
+      "guidance": "Slowly Rotate Counter-clockwise",
+      "guidance_index": 4,
+      "image_folder": "Guidance/10 CNTR Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_lat",
+      "view": "A2C",
+      "subview_idx": 5,
+      "guidance": "Slowly Rock Medial",
+      "guidance_index": 5,
+      "image_folder": "Guidance/04 Angle Lateral",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_med",
+      "view": "A2C",
+      "subview_idx": 6,
+      "guidance": "Slowly Rock Lateral",
+      "guidance_index": 6,
+      "image_folder": "Guidance/03 Angle Medial",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_sup",
+      "view": "A2C",
+      "subview_idx": 7,
+      "guidance": "Slowly Sweep One Rib Down",
+      "guidance_index": 7,
+      "image_folder": "Guidance/05 Space Down",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_smed",
+      "view": "A2C",
+      "subview_idx": 8,
+      "guidance": "Slowly Slide Lateral",
+      "guidance_index": 8,
+      "image_folder": "Guidance/08 Slide Lateral",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_slat",
+      "view": "A2C",
+      "subview_idx": 9,
+      "guidance": "Slowly Slide Medial",
+      "guidance_index": 9,
+      "image_folder": "Guidance/07 Slide Medial",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_a2c",
+      "view": "A2C",
+      "subview_idx": 10,
+      "guidance": "A2C",
+      "guidance_index": 12,
+      "image_folder": "Guidance/A2C Hold",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_noise_main",
+      "view": "A2C",
+      "subview_idx": 11,
+      "guidance": "Slowly Move Around",
+      "guidance_index": 10,
+      "image_folder": "Guidance/Noise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_a3c",
+      "view": "A2C",
+      "subview_idx": 12,
+      "guidance": "Slowly Rotate Clockwise",
+      "guidance_index": 3,
+      "image_folder": "Guidance/14 A2C Clockwise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_tdn_a2c",
+      "view": "A2C",
+      "subview_idx": 13,
+      "guidance": "Slowly Fan Up",
+      "guidance_index": 1,
+      "image_folder": "Guidance/16 A2C Lateral",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_tup_a2c",
+      "view": "A2C",
+      "subview_idx": 14,
+      "guidance": "Slowly Fan Down",
+      "guidance_index": 2,
+      "image_folder": "Guidance/15 A2C Medial",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_med_a2c",
+      "view": "A2C",
+      "subview_idx": 15,
+      "guidance": "Slowly Rock Lateral",
+      "guidance_index": 6,
+      "image_folder": "Guidance/12 A2C Angle to Floor",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_sub_lat_a2c",
+      "view": "A2C",
+      "subview_idx": 16,
+      "guidance": "Slowly Rock Medial",
+      "guidance_index": 7,
+      "image_folder": "Guidance/13 A2C Angle to Head",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    },
+    {
+      "id": "A2C_uncertain",
+      "view": "A2C",
+      "subview_idx": 17,
+      "guidance": "Try Pressing Harder",
+      "guidance_index": 11,
+      "image_folder": "Guidance/Noise",
+      "fps": 30.0,
+      "first_frame_extra_time_ms": 0.0,
+      "last_frame_extra_time_ms": 1000.0
+    }
+  ]
+}

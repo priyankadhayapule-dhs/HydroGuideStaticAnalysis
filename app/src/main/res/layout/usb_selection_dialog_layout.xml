@@ -1,0 +1,95 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="250dp"
+        android:background="@drawable/capture_dialog"
+        android:padding="15dp"
+        android:theme="@style/BottomDrawer"
+        tools:context=".ui.input.StorageSelectionDialogFragment">
+
+        <LinearLayout
+            android:id="@+id/confirmation_content"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/procedure_conclude_dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:autoSizeTextType="uniform"
+                android:text="More than one external storage"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/storage_select_dialog_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Which external drive would you like to save procedures to?" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/capture_dialog"
+                android:padding="4dp">
+
+                <Spinner
+                    android:id="@+id/ext_store_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:dropDownWidth="match_parent" />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:src="@drawable/drop"
+                    android:backgroundTint="@color/ap_transparent" />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/confirm_btn_storage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@id/confirmation_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/av_btn"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/button_report_checkmark" />
+
+        <ImageButton
+            android:id="@+id/cancel_button_select"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@id/confirmation_content"
+            android:background="@drawable/av_btn"
+            android:contentDescription="@string/cont_desc_return_to_patient_input"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/select_profile_arrow_left" />
+
+    </RelativeLayout>
+</layout>

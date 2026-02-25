@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="material_blue">#2196f3</color>
+    <color name="av_blue">#080A73</color>
+    <color name="av_darker_blue">#050952</color>
+    <color name="av_darkest_blue">#00033A</color>
+    <color name="av_light_blue">#A9D8FF</color>
+    <color name="av_alt_light_blue">#33419A</color>
+    <color name="av_gray">#CACFD8</color>
+    <color name="av_green">#0DFF56</color>
+    <color name="av_yellow">#FFE787</color>
+    <color name="av_tip_confirm_yellow">#FFF255</color>
+    <color name="av_pink">#FFA6E3</color>
+    <color name="av_nav_btn_blue">#2C479E</color>
+    <color name="battery_red">#FF2C19</color>
+    <color name="battery_yellow">#FFEC00</color>
+    <color name="battery_green">#0DFF56</color>
+    <color name="btn_focused_border">#19FFEE</color>
+    <color name="success_toaster">#4CAF50</color>
+    <color name="error_toaster">#FFB3B3</color>
+    <color name="warning_toaster">#FFC107</color>
+    <color name="btn_focused_border_alt">#FFB626</color>
+    <color name="deep_blue">#002B7F</color>
+    <color name="dark_blue">#001B4F</color>
+    <color name="light_gray">#CCCCCC</color>
+    <color name="capture_highlight">#FFEB3B</color> 
+    <color name="table_even_rows">#324099</color>
+    <color name="table_odd_rows">#1A2B93</color>
+    <color name="table_selected_rows">#A6ADD7</color>
+    <color name="colr_sys_update_tile">#2448A0</color>
+    <color name="colr_sys_update_no_updates">#A7D0FF</color>
+    <color name="color_progess_tint">#59FFB5</color>
+    <color name="colr_err_report">#D32F2F</color>
+    <color name="colr_err_report_msg">#757575</color>
+    <color name="colr_err_report_stack_trace_text">#616161</color>
+    <color name="colr_err_report_stack_trace_background">#FAFAFA</color>
+    <color name="colr_error_reporter_background">#F5F5F5</color>
+
+</resources>

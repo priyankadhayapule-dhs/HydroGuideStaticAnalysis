@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="showSyncIcon"
+            type="Boolean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/av_blue"
+        tools:context=".ui.RecordsFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+            <include
+                android:id="@+id/records_top_bar"
+                layout="@layout/generic_top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/top_bar_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Source selection tabs: Local (default) and Cloud -->
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/records_source_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/av_darkest_blue"
+                android:elevation="4dp"
+                app:tabIndicatorColor="@color/av_light_blue"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/av_light_blue"
+                app:tabTextAppearance="@style/RecordsTabTextAppearance" />
+
+            <TableLayout
+                android:id="@+id/records_table"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:foreground="@drawable/table_container"
+                android:theme="@style/TableTheme"
+                app:layout_constraintBottom_toTopOf="@id/records_bottom_bar"
+                app:layout_constraintTop_toBottomOf="@id/records_top_bar">
+
+                <TableRow
+                    android:id="@+id/local_header_row"
+                    android:background="@color/av_darkest_blue">
+
+                    <CheckBox
+                        android:id="@+id/local_select_all_checkbox"
+                        android:layout_width="@dimen/records_column_checkbox_width"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/simple_white_border" />
+
+                    <TextView
+                        android:id="@+id/tvPatientNameHeader"
+                        android:layout_width="@dimen/records_column_name_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/simple_white_border"
+                        android:gravity="start"
+                        android:padding="@dimen/records_table_cell_padding"
+                        android:text="@string/records_name_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPatientIdHeader"
+                        android:layout_width="@dimen/records_column_id_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/simple_white_border"
+                        android:gravity="start"
+                        android:padding="@dimen/records_table_cell_padding"
+                        android:text="@string/records_id_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPatientDobHeader"
+                        android:layout_width="@dimen/records_column_dob_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/simple_white_border"
+                        android:gravity="center"
+                        android:padding="@dimen/records_table_cell_padding"
+                        android:text="@string/records_dob_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvInsertionDateHeader"
+                        android:layout_width="@dimen/records_column_date_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/simple_white_border"
+                        android:gravity="center"
+                        android:padding="@dimen/records_table_cell_padding"
+                        android:text="@string/records_date_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvDoneByHeader"
+                        android:layout_width="@dimen/records_column_done_by_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/simple_white_border"
+                        android:gravity="start"
+                        android:padding="@dimen/records_table_cell_padding"
+                        android:text="@string/records_done_by_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvFacilityHeader"
+                        android:layout_width="@dimen/records_column_facility_width"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/simple_white_border"
+                        android:gravity="start"
+                        android:padding="@dimen/records_table_cell_padding"
+                        android:text="@string/records_facility_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="@dimen/records_column_sync_status_width"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/simple_white_border"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/records_table_cell_padding"
+                        android:text="@string/records_sync_status_label"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <!-- Cloud header row: built programmatically for dynamic columns -->
+                <TableRow
+                    android:id="@+id/cloud_header_row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/av_darkest_blue"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/records_empty_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="@string/records_empty_label"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+
+                <ProgressBar
+                    android:id="@+id/records_loading_indicator"
+                    style="@android:style/Widget.ProgressBar.Small"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/records_table_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:clipToPadding="false"
+                    android:fadeScrollbars="false"
+                    android:orientation="vertical"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"
+                    android:scrollbarSize="10dp"
+                    android:scrollbarStyle="outsideInset"
+                    android:scrollbarThumbVertical="@color/av_gray"
+                    android:scrollbarTrackVertical="@color/av_darkest_blue"
+                    android:scrollbars="vertical" />
+
+                <!-- Pagination Controls -->
+                <LinearLayout
+                    android:id="@+id/pagination_controls"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/av_darkest_blue"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:id="@+id/pagination_prev_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Previous"
+                        android:textColor="@color/white"
+                        android:background="@drawable/av_btn_alt" />
+
+                    <TextView
+                        android:id="@+id/pagination_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Page 1 of 1"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/pagination_next_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Next"
+                        android:textColor="@color/white"
+                        android:background="@drawable/av_btn_alt" />
+
+                    <!-- Page Size Selection -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_margin="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Records per page: "
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="5dp" />
+
+                        <Spinner
+                            android:id="@+id/pagination_limit_spinner"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/spinner_dropdown_bg"
+                            android:contentDescription="Page Size"
+                            android:padding="8dp"
+                            android:popupBackground="@color/av_darkest_blue"
+                            android:gravity="center" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TableRow
+                    android:background="@color/av_darkest_blue"
+                    android:minHeight="60dp"
+                    android:orientation="horizontal">
+
+                    <Space/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/sort_records_alpha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/sort_records_alpha_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_alphabetic_active" />
+
+                            <TextView
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/facility_descending_alphabetical"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/sort_records_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/sort_records_date_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_bydate_active" />
+
+                            <TextView
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="wrap_content"
+                                android:text="@string/facility_recent"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lnrShowFilters"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/imgFilters"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/icon_filter"
+                                android:clickable="false"
+                                android:focusable="false"/>
+
+                            <TextView
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="wrap_content"
+                                android:text="Filter"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lnrClearFilters"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/imgClearFilters"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/icon_clear_filter"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:padding="5dp"/>
+
+                            <TextView
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="wrap_content"
+                                android:text="Clear"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+
+            <RelativeLayout
+                android:id="@+id/records_bottom_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bottom_bar_height"
+                android:background="@color/av_darkest_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/home_button"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="@string/cont_desc_return_to_home"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_changescreens_home" />
+
+                    <TextView
+                        android:id="@+id/home_button_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/title_home"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"/>
+
+                    <LinearLayout
+                        android:id="@+id/volume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="40dp"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageButton
+                            android:id="@+id/volume_btn"
+                            android:layout_width="@dimen/button_image_width"
+                            android:layout_height="@dimen/button_image_height"
+                            android:background="@drawable/av_btn_alt"
+                            android:contentDescription="@string/cont_desc_volume"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/button_neutral_volume" />
+
+                        <TextView
+                            android:layout_width="91dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/change_volume_label"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/bottom_bar_button_label"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/brightness"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_toEndOf="@id/volume"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageButton
+                            android:id="@+id/brightness_btn"
+                            android:layout_width="@dimen/button_image_width"
+                            android:layout_height="@dimen/button_image_height"
+                            android:background="@drawable/av_btn_alt"
+                            android:contentDescription="@string/cont_desc_brightness"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/button_neutral_brightness" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/change_brightness_label"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/bottom_bar_button_label"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/selection_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/av_tip_confirm_yellow"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageButton
+                            android:id="@+id/delete_button"
+                            android:layout_width="@dimen/button_image_width"
+                            android:layout_height="@dimen/button_image_height"
+                            android:background="@drawable/av_btn"
+                            android:contentDescription="Delete Selected Records"
+                            android:scaleType="centerInside"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/button_neutral_delete" />
+
+                        <TextView
+                            android:id="@+id/delete_button_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Delete"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/bottom_bar_button_label"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <ImageButton
+                            android:id="@+id/export_button"
+                            android:layout_width="@dimen/button_image_width"
+                            android:layout_height="@dimen/button_image_height"
+                            android:background="@drawable/av_btn"
+                            android:contentDescription="@string/cont_desc_return_to_patient_input"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/button_bottom_export" />
+
+                        <TextView
+                            android:id="@+id/export_button_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/export_button_label"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/bottom_bar_button_label"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/title_or_profile_widget_width"
+            android:layout_height="@dimen/top_bar_height"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/records_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/title_records"
+                android:textAllCaps="true"
+                android:textColor="@color/av_light_blue"
+                android:textSize="@dimen/title_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

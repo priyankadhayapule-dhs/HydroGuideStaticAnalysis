@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    android:padding="@dimen/search_field_padding">
+    <solid android:color="@color/white" />
+    <corners
+        android:bottomRightRadius="@dimen/field_corners"
+        android:bottomLeftRadius="@dimen/field_corners"
+        android:topLeftRadius="@dimen/field_corners"
+        android:topRightRadius="@dimen/field_corners" />
+</shape>

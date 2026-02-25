@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="capture"
+            type="com.accessvascularinc.hydroguide.mma.model.Capture" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/latest_capture_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/capture_container_height"
+        android:background="@drawable/border_capture"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp">
+
+
+        <!-- Header: Overlay ID on Icon for alignment like All Captures Dialog -->
+        <FrameLayout
+            android:id="@+id/latest_capture_icon_id_container"
+            android:layout_width="@dimen/capture_header_footer_height"
+            android:layout_height="@dimen/capture_header_footer_height"
+            android:layout_alignParentStart="true">
+            <ImageView
+                android:id="@+id/latest_capture_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/img_desc_facility_fav_icon"
+                android:src="@{capture.isIntravascular ? @drawable/logo_capture_internal : @drawable/logo_external}" />
+            <TextView
+                android:id="@+id/latest_capture_id"
+                android:layout_width="32dp"
+                android:layout_height="26dp"
+                android:layout_gravity="top|start"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/capture_id_bg"
+                android:gravity="center"
+                android:visibility="@{capture.isIntravascular ? View.VISIBLE : View.INVISIBLE}"
+                android:text="@{capture.isIntravascular ? String.valueOf(capture.captureId) : ``}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/capture_id_text_size"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/latest_capture_header_label"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/capture_header_footer_height"
+            android:layout_toEndOf="@id/latest_capture_icon_id_container"
+            android:layout_alignTop="@id/latest_capture_icon_id_container"
+            android:layout_marginStart="8dp"
+            android:text="@string/capture_header_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/capture_text_size"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/latest_capture_inserted_length"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/capture_header_footer_height"
+            android:layout_alignParentEnd="true"
+            android:text='@{String.format("%.1f cm", capture.insertedLengthCm)}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/capture_text_size"
+            android:textStyle="bold"
+            android:visibility="@{View.VISIBLE}" />
+
+        <com.androidplot.xy.XYPlot
+            android:id="@+id/latest_capture_plot_graph"
+            style="@style/APDefacto.Dark"
+            android:layout_width="match_parent"
+            android:layout_height="216dp"
+            android:layout_below="@id/latest_capture_header_label"
+            android:background="@color/ap_transparent"
+            app:backgroundColor="@color/ap_transparent"
+            app:domainStep="0"
+            app:domainStepMode="subdivide"
+            app:graphBackgroundColor="@color/ap_transparent"
+            app:graphHeight="1.0"
+            app:graphHeightMode="relative"
+            app:graphWidth="1.0"
+            app:graphWidthMode="relative"
+            app:gridBackgroundColor="@color/ap_transparent"
+            app:gridInsetBottom="0dp"
+            app:gridInsetLeft="0dp"
+            app:legendVisible="false"
+            app:lineLabels="none" />
+
+        <TextView
+            android:id="@+id/latest_capture_footer_label"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/capture_header_footer_height"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@id/latest_capture_icon_id_container"
+            android:text="@string/intrav_capture_footer_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/capture_text_size"
+            android:textStyle="bold"
+            android:visibility="@{capture.isIntravascular ? View.VISIBLE : View.INVISIBLE}" />
+
+        <TextView
+            android:id="@+id/latest_capture_exposed_length"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/capture_header_footer_height"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text='@{capture.isIntravascular ? String.format("%.1f cm", capture.exposedLengthCm) : ``}'
+            android:textColor="@color/black"
+            android:textSize="@dimen/capture_text_size"
+            android:textStyle="bold"
+            android:visibility="@{capture.isIntravascular ? View.VISIBLE : View.INVISIBLE}" />
+
+    </RelativeLayout>
+</layout>

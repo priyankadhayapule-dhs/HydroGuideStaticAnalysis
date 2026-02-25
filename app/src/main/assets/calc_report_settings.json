@@ -1,0 +1,1013 @@
+{
+  "reportSettingsMeasurementTypeList": [
+    {
+      "measurementTypeName": "Distance",
+      "measurementTypeUnitList":[
+        {
+          "unitType": "mm",
+          "isUnitSelected": false
+        },{
+          "unitType": "cm",
+          "isUnitSelected": true}
+      ]
+    },
+    {
+      "measurementTypeName": "Velocity",
+      "measurementTypeUnitList":[
+        {
+          "unitType": "cm/s",
+          "isUnitSelected": true
+        },{
+          "unitType": "m/s",
+          "isUnitSelected": false}
+      ]
+    }
+  ],
+  "reportSettingsProtocolList": [
+    {
+      "displayName": "PLAX",
+      "measurementIdList": [0,1,2,3,4,5,6],
+      "calcType": 1
+    },
+    {
+      "displayName": "Right Heart",
+      "measurementIdList": [7, 8, 9, 33, 34, 39, 41, 40],
+      "calcType": 1
+    },
+    {
+      "displayName": "Mitral Valve",
+      "measurementIdList": [11, 12, 13, 14, 15, 16, 56, 18, 44, 46, 47, 57, 19, 20],
+      "calcType": 1
+    },
+    {
+      "displayName": "Aortic Valve",
+      "measurementIdList": [6, 22, 23, 24, 25, 37, 26, 27, 55, 58, 38],
+      "calcType": 1
+    },
+    {
+      "displayName": "Diastology",
+      "measurementIdList": [12, 13, 14, 15, 16, 56, 39, 46, 47, 57],
+      "calcType": 1
+    },
+    {
+      "displayName": "IVC",
+      "measurementIdList": [31, 32, 45],
+      "calcType": 1
+    },
+    {
+      "displayName": "M-Mode",
+      "measurementIdList": [21, 35, 36, 48, 49, 38, 45],
+      "calcType": 1
+    },
+    {
+      "displayName": "MM-PLAX",
+      "measurementIdList": [199,200,201,202,203,204,205],
+      "calcType": 1
+    },
+    {
+      "displayName": "OB",
+      "measurementIdList": [81, 82, 83, 84, 85, 86, 87, 88, 89, 195, 196, 212]
+    },
+    {
+      "displayName": "GYN",
+      "measurementIdList": [92, 93, 94, 95, 96]
+    },
+    {
+      "displayName": "Right Ovary",
+      "measurementIdList": [99,100,101,102,103]
+    },
+    {
+      "displayName": "Left Ovary",
+      "measurementIdList": [105,106,107,108,109]
+    },
+    {
+      "displayName": "Bladder",
+      "measurementIdList": [111,112]
+    },
+    {
+      "displayName": "R Ovarian Artery",
+      "measurementIdList": [173,174,175]
+    },
+    {
+      "displayName": "L Ovarian Artery",
+      "measurementIdList": [176,177,178]
+    },
+    {
+      "displayName": "Proximal Aorta",
+      "measurementIdList": [221, 222, 223, 224],
+      "calcType": 2
+    },
+    {
+      "displayName": "Mid Aorta",
+      "measurementIdList": [225, 226, 227, 228],
+      "calcType": 2
+    },
+    {
+      "displayName": "Distal Aorta",
+      "measurementIdList": [229, 230, 231, 232],
+      "calcType": 2
+    },
+    {
+      "displayName": "RT CIA",
+      "measurementIdList": [233, 234, 235, 236],
+      "calcType": 2
+    },
+    {
+      "displayName": "LT CIA",
+      "measurementIdList": [237, 238, 239, 240],
+      "calcType": 2
+    },
+    {
+      "displayName": "Aneurysm",
+      "measurementIdList": [241, 242, 243, 244],
+      "calcType": 2
+    }
+  ],
+
+  "reportSettingsMeasurementList": [{
+    "id": "0",
+    "displayName": "RVIDd",
+    "valueBy": "Last"
+  },
+    {
+      "id": "1",
+      "displayName": "IVSd",
+      "valueBy": "Last"
+    },
+    {
+      "id": "2",
+      "displayName": "LVIDd",
+      "valueBy": "Last"
+    },
+    {
+      "id": "3",
+      "displayName": "LVPWd",
+      "valueBy": "Last"
+    },
+    {
+      "id": "4",
+      "displayName": "LVIDs",
+      "valueBy": "Last"
+    },
+    {
+      "id": "5",
+      "displayName": "LA diam",
+      "valueBy": "Last"
+    },
+    {
+      "id": "6",
+      "displayName": "LVOTd",
+      "valueBy": "Last"
+    },
+    {
+      "id": "7",
+      "displayName": "RV basal",
+      "valueBy": "Last"
+    },
+    {
+      "id": "8",
+      "displayName": "RV mid",
+      "valueBy": "Last"
+    },
+    {
+      "id": "9",
+      "displayName": "RV length",
+      "valueBy": "Last"
+    },
+    {
+      "id": "10",
+      "displayName": "RA area",
+      "valueBy": "Last"
+    },
+    {
+      "id": "11",
+      "displayName": "MV VTI (PW)",
+      "valueBy": "Last"
+    },
+    {
+      "id": "12",
+      "displayName": "E vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "13",
+      "displayName": "Dec. T.",
+      "valueBy": "Last"
+    },
+    {
+      "id": "14",
+      "displayName": "A vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "15",
+      "displayName": "e’ Lateral",
+      "valueBy": "Last"
+    },
+    {
+      "id": "16",
+      "displayName": "a’ Lateral",
+      "valueBy": "Last"
+    },
+    {
+      "id": "17",
+      "displayName": "MR VTI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "18",
+      "displayName": "MV PHT",
+      "valueBy": "Last"
+    },
+    {
+      "id": "19",
+      "displayName": "MV Diam",
+      "valueBy": "Last"
+    },
+    {
+      "id": "20",
+      "displayName": "MV VC",
+      "valueBy": "Last"
+    },
+    {
+      "id": "21",
+      "displayName": "EPSS",
+      "valueBy": "Last"
+    },
+    {
+      "id": "22",
+      "displayName": "Annulus",
+      "valueBy": "Last"
+    },
+    {
+      "id": "23",
+      "displayName": "Sinus",
+      "valueBy": "Last"
+    },
+    {
+      "id": "24",
+      "displayName": "ST junction",
+      "valueBy": "Last"
+    },
+    {
+      "id": "25",
+      "displayName": "AscAo",
+      "valueBy": "Last"
+    },
+    {
+      "id": "26",
+      "displayName": "LVOT VTI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "27",
+      "displayName": "AV VTI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "28",
+      "displayName": "AV vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "29",
+      "displayName": "LA area",
+      "valueBy": "Last"
+    },
+    {
+      "id": "30",
+      "displayName": "LA length",
+      "valueBy": "Last"
+    },
+    {
+      "id": "31",
+      "displayName": "IVC min",
+      "valueBy": "Last"
+    },
+    {
+      "id": "32",
+      "displayName": "IVC max",
+      "valueBy": "Last"
+    },
+    {
+      "id": "33",
+      "displayName": "PV AcT",
+      "valueBy": "Last"
+    },
+    {
+      "id": "34",
+      "displayName": "TV s’",
+      "valueBy": "Last"
+    },
+    {
+      "id": "35",
+      "displayName": "TAPSE",
+      "valueBy": "Last"
+    },
+    {
+      "id": "36",
+      "displayName": "MAPSE",
+      "valueBy": "Last"
+    },
+    {
+      "id": "37",
+      "displayName": "AV VC",
+      "valueBy": "Last"
+    },
+    {
+      "id": "38",
+      "displayName": "HR",
+      "valueBy": "Last"
+    },
+    {
+      "id": "39",
+      "displayName": "TR VMax",
+      "valueBy": "Last"
+    },
+    {
+      "id": "40",
+      "displayName": "PREDV",
+      "valueBy": "Last"
+    },
+    {
+      "id": "41",
+      "displayName": "PR Vmax",
+      "valueBy": "Last"
+    },
+    {
+      "id": "42",
+      "displayName": "Dec. T.",
+      "valueBy": "Last"
+    },
+    {
+      "id": "43",
+      "displayName": "AR VTI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "44",
+      "displayName": "MV VTI (CW)",
+      "valueBy": "Last"
+    },
+    {
+      "id": "45",
+      "displayName": "RAP",
+      "valueBy": "Last"
+    },
+    {
+      "id": "46",
+      "displayName": "e’ Septal",
+      "valueBy": "Last"
+    },
+    {
+      "id": "47",
+      "displayName": "a’ Septal",
+      "valueBy": "Last"
+    },
+    {
+      "id": "48",
+      "displayName": "IVC min",
+      "valueBy": "Last"
+    },
+    {
+      "id": "49",
+      "displayName": "IVC max",
+      "valueBy": "Last"
+    },
+    {
+      "id": "51",
+      "displayName": "e’ Lateral",
+      "valueBy": "Last"
+    },
+    {
+      "id": "52",
+      "displayName": "a’ Lateral",
+      "valueBy": "Last"
+    },
+    {
+      "id": "53",
+      "displayName": "e’ Septal",
+      "valueBy": "Last"
+    },
+    {
+      "id": "54",
+      "displayName": "a’ Septal",
+      "valueBy": "Last"
+    },
+    {
+      "id": "55",
+      "displayName": "AR PHT",
+      "valueBy": "Last"
+    },
+    {
+      "id": "56",
+      "displayName": "s’ Lateral",
+      "valueBy": "Last"
+    },
+    {
+      "id": "57",
+      "displayName": "s’ Septal",
+      "valueBy": "Last"
+    },
+    {
+      "id": "58",
+      "displayName": "AV Pk Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "59",
+      "displayName": "Peak Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "60",
+      "displayName": "Mean Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "61",
+      "displayName": "Peak Gradient",
+      "valueBy": "Last"
+    },
+    {
+      "id": "62",
+      "displayName": "Mean Gradient",
+      "valueBy": "Last"
+    },
+    {
+      "id": "63",
+      "displayName": "Peak Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "64",
+      "displayName": "Mean Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "65",
+      "displayName": "Peak Gradient",
+      "valueBy": "Last"
+    },
+    {
+      "id": "66",
+      "displayName": "Mean Gradient",
+      "valueBy": "Last"
+    },
+    {
+      "id": "67",
+      "displayName": "Peak Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "68",
+      "displayName": "Mean Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "69",
+      "displayName": "Peak Gradient",
+      "valueBy": "Last"
+    },
+    {
+      "id": "70",
+      "displayName": "Mean Gradient",
+      "valueBy": "Last"
+    },
+    {
+      "id": "71",
+      "displayName": "Peak Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "72",
+      "displayName": "Mean Vel",
+      "valueBy": "Last"
+    },
+    {
+      "id": "73",
+      "displayName": "Peak Gradient",
+      "valueBy": "Last"
+    },
+    {
+      "id": "74",
+      "displayName": "Mean Gradient",
+      "valueBy": "Last"
+    },
+    {
+      "id": "81",
+      "displayName": "Cervical Length",
+      "valueBy": "Avg"
+    },
+    {
+      "id": "82",
+      "displayName": "Gestational Sac",
+      "valueBy": "Avg",
+      "authorByFetalAge": ["4"],
+      "authorByFetalGrowth": [],
+      "measurementDriven": true
+    },
+    {
+      "id": "83",
+      "displayName": "Yolk Sac",
+      "valueBy": "Avg"
+    },
+    {
+      "id": "84",
+      "displayName": "CRL",
+      "valueBy": "Avg",
+      "authorByFetalAge": ["0","4","11","12","9"],
+      "authorByFetalGrowth": ["0","4","11","12","6","9"],
+      "measurementDriven": true
+    },
+    {
+      "id": "85",
+      "displayName": "BPD",
+      "valueBy": "Avg",
+      "authorByFetalAge": ["10","0","4","2","3","11","12","1","6"],
+      "authorByFetalGrowth": ["10","0","15","2","3","13","11","12","1","14","16"],
+      "measurementDriven": true
+    },
+    {
+      "id": "86",
+      "displayName": "HC",
+      "valueBy": "Avg",
+      "authorByFetalAge": ["10","4","3","1"],
+      "authorByFetalGrowth": ["10","3","2","13","1","14","16"],
+      "measurementDriven": true
+    },
+    {
+      "id": "87",
+      "displayName": "OFD",
+      "valueBy": "Avg",
+      "authorByFetalAge": ["4"],
+      "authorByFetalGrowth": ["2","3","13","1"],
+      "measurementDriven": true
+    },
+    {
+      "id": "88",
+      "displayName": "AC",
+      "valueBy": "Avg",
+      "authorByFetalAge": ["10","4","11","1"],
+      "authorByFetalGrowth": ["10","11","1","15","2","13","14","16"],
+      "measurementDriven": true
+    },
+    {
+      "id": "89",
+      "displayName": "FL",
+      "valueBy": "Avg",
+      "authorByFetalAge": ["10","4","2","3","11","12","1"],
+      "authorByFetalGrowth": ["10","15","2","13","11","12","1","14","16"],
+      "measurementDriven": true
+    },
+    {
+      "id": "90",
+      "displayName": "AFI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "92",
+      "displayName": "Uterine Volume",
+      "valueBy": "Last"
+    },
+    {
+      "id": "93",
+      "displayName": "Endometrium",
+      "valueBy": "Last"
+    },
+    {
+      "id": "94",
+      "displayName": "Cervical Length",
+      "valueBy": "Last"
+    },
+    {
+      "id": "95",
+      "displayName": "Fibroma 1",
+      "valueBy": "Last"
+    },
+    {
+      "id": "96",
+      "displayName": "Fibroma 2",
+      "valueBy": "Last"
+    },
+    {
+      "id": "97",
+      "displayName": "R Uterine Artery",
+      "valueBy": "Last"
+    },
+    {
+      "id": "98",
+      "displayName": "L Uterine Artery",
+      "valueBy": "Last"
+    },
+    {
+      "id": "99",
+      "displayName": "RT Ovary Volume",
+      "valueBy": "Last"
+    },
+    {
+      "id": "100",
+      "displayName": "RT Mass 1",
+      "valueBy": "Last"
+    },
+    {
+      "id": "101",
+      "displayName": "RT Mass 2",
+      "valueBy": "Last"
+    },
+    {
+      "id": "102",
+      "displayName": "RT Ovarian Cyst 1",
+      "valueBy": "Last"
+    },{
+      "id": "103",
+      "displayName": "RT Ovarian Cyst 2",
+      "valueBy": "Last"
+    },
+    {
+      "id": "104",
+      "displayName": "R Ovarian Artery",
+      "valueBy": "Last"
+    },
+    {
+      "id": "105",
+      "displayName": "LT Ovary Volume",
+      "valueBy": "Last"
+    },{
+      "id": "106",
+      "displayName": "LT Mass 1",
+      "valueBy": "Last"
+    },
+    {
+      "id": "107",
+      "displayName": "LT Mass 2",
+      "valueBy": "Last"
+    },
+    {
+      "id": "108",
+      "displayName": "LT Ovarian Cyst 1",
+      "valueBy": "Last"
+    },
+    {
+      "id": "109",
+      "displayName": "LT Ovarian Cyst 2",
+      "valueBy": "Last"
+    },
+    {
+      "id": "110",
+      "displayName": "L Ovarian Artery",
+      "valueBy": "Last"
+    },
+    {
+      "id": "111",
+      "displayName": "Pre-Void Bladder Vol",
+      "valueBy": "Last"
+    },
+    {
+      "id": "112",
+      "displayName": "Post-Void Bladder Vol",
+      "valueBy": "Last"
+    },
+    {
+      "id": "119",
+      "displayName": "Transverse Thoracic Diameter",
+      "valueBy": "Avg"
+    },
+    {
+      "id": "120",
+      "displayName": "Trans Abdominal Diameter",
+      "valueBy": "Avg"
+    },
+    {
+      "id": "121",
+      "displayName": "Anterior Posterior Diameter",
+      "valueBy": "Avg"
+    },
+    {
+      "id": "167",
+      "displayName": "VTI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "168",
+      "displayName": "Peak Systolic",
+      "valueBy": "Last"
+    },
+    {
+      "id": "169",
+      "displayName": "End Diastolic",
+      "valueBy": "Last"
+    },
+    {
+      "id": "170",
+      "displayName": "VTI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "171",
+      "displayName": "Peak Systolic",
+      "valueBy": "Last"
+    },
+    {
+      "id": "172",
+      "displayName": "End Diastolic",
+      "valueBy": "Last"
+    },
+    {
+      "id": "173",
+      "displayName": "VTI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "174",
+      "displayName": "Peak Systolic",
+      "valueBy": "Last"
+    },
+    {
+      "id": "175",
+      "displayName": "End Diastolic",
+      "valueBy": "Last"
+    },
+    {
+      "id": "176",
+      "displayName": "VTI",
+      "valueBy": "Last"
+    },
+    {
+      "id": "177",
+      "displayName": "Peak Systolic",
+      "valueBy": "Last"
+    },
+    {
+      "id": "178",
+      "displayName": "End Diastolic",
+      "valueBy": "Last"
+    },
+    {
+      "id": "195",
+      "displayName": "Peak Systolic",
+      "valueBy": "Avg"
+    },
+    {
+      "id": "196",
+      "displayName": "End Diastolic",
+      "valueBy": "Avg"
+    },
+    {"id": "199",
+    "displayName": "RVIDd",
+    "valueBy": "Last"
+    },
+    {
+      "id": "200",
+      "displayName": "IVS",
+      "valueBy": "Last"
+    },
+    {
+      "id": "201",
+      "displayName": "LVIDd",
+      "valueBy": "Last"
+    },
+    {
+      "id": "202",
+      "displayName": "LVPW",
+      "valueBy": "Last"
+    },
+    {
+      "id": "203",
+      "displayName": "LVIDs",
+      "valueBy": "Last"
+    },
+    {
+      "id": "204",
+      "displayName": "Aorta dist",
+      "valueBy": "Last"
+    },
+    {
+      "id": "205",
+      "displayName": "LA dist",
+      "valueBy": "Last"
+    },
+    {
+      "id": "212",
+      "displayName": "HR",
+      "valueBy": "Last"
+    },
+    {
+      "id": "221",
+      "displayName": "Proximal Aorta TRANS DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "222",
+      "displayName": "Proximal Aorta AP DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "223",
+      "displayName": "Proximal Aorta Peak Systolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "224",
+      "displayName": "Proximal Aorta End Diastolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "225",
+      "displayName": "Mid Aorta TRANS DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "226",
+      "displayName": "Mid Aorta AP DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "227",
+      "displayName": "Mid Aorta Peak Systolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "228",
+      "displayName": "Mid Aorta End Diastolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "229",
+      "displayName": "Distal Aorta TRANS DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "230",
+      "displayName": "Distal Aorta AP DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "231",
+      "displayName": "Distal Aorta Peak Systolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "232",
+      "displayName": "Distal Aorta End Diastolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "233",
+      "displayName": "RT CIA TRANS DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "234",
+      "displayName": "RT CIA AP DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "235",
+      "displayName": "RT CIA Peak Systolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "236",
+      "displayName": "RT CIA End Diastolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "237",
+      "displayName": "LT CIA TRANS DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "238",
+      "displayName": "LT CIA AP DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "239",
+      "displayName": "LT CIA Peak Systolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "240",
+      "displayName": "LT CIA End Diastolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "241",
+      "displayName": "Aneurysm TRANS DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "242",
+      "displayName": "Aneurysm AP DIAM",
+      "valueBy": "Max"
+    },
+    {
+      "id": "243",
+      "displayName": "Aneurysm Peak Systolic",
+      "valueBy": "Max"
+    },
+    {
+      "id": "244",
+      "displayName": "Aneurysm End Diastolic",
+      "valueBy": "Max"
+    }
+  ],
+  "reportAuthorList": [
+    {
+      "id": "0",
+      "displayName": "Hadlock"
+    },
+    {
+      "id": "1",
+      "displayName": "Merz"
+    },
+    {
+      "id": "2",
+      "displayName": "Jeanty"
+    },
+    {
+      "id": "3",
+      "displayName": "Chitty"
+    },
+    {
+      "id": "4",
+      "displayName": "Hansmann"
+    },
+    {
+      "id": "5",
+      "displayName": "Osaka Uni."
+    },
+    {
+      "id": "6",
+      "displayName": "Rempen"
+    },
+    {
+      "id": "7",
+      "displayName": "JSUM 2001"
+    },
+    {
+      "id": "8",
+      "displayName": "Osaka"
+    },
+    {
+      "id": "9",
+      "displayName": "Robinson"
+    },
+    {
+      "id": "10",
+      "displayName": "Hadlock 84"
+    },
+    {
+      "id": "11",
+      "displayName": "JSUM"
+    },
+    {
+      "id": "12",
+      "displayName": "Osaka U"
+    },
+    {
+      "id": "13",
+      "displayName": "Nicolaides"
+    },
+    {
+      "id": "14",
+      "displayName": "Paladino"
+    },
+    {
+      "id": "15",
+      "displayName": "CFEF"
+    },
+    {
+      "id": "16",
+      "displayName": "CFEF-06"
+    }
+  ],
+  "estimatedFetalWeightList":[
+    {
+      "id": "78",
+      "calculationName": "Hadlock 1",
+      "isDefaultSelected": true
+    },
+    {
+      "id": "79",
+      "calculationName": "Hadlock 2",
+      "isDefaultSelected": false
+    },
+    {
+      "id": "80",
+      "calculationName": "Hadlock 3",
+      "isDefaultSelected": false
+    },
+    {
+      "id": "81",
+      "calculationName": "Hadlock 4",
+      "isDefaultSelected": false
+    },
+    {
+      "id": "96",
+      "calculationName": "JSUM",
+      "isDefaultSelected": false
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileState"
+            type="com.accessvascularinc.hydroguide.mma.model.ProfileState" />
+
+        <variable
+            name="screenTitle"
+            type="String" />
+
+        <variable
+            name="facilityState"
+            type="com.accessvascularinc.hydroguide.mma.db.entities.FacilityEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/av_blue"
+        tools:context=".ui.RecordsFragment">
+
+        <LinearLayout
+            android:id="@+id/lnrTopbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <include
+                android:id="@+id/includeTopbar"
+                layout="@layout/generic_top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/top_bar_height"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relFacilityInputs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:padding="@dimen/container_layouts_spacing"
+            app:layout_constraintTop_toBottomOf="@+id/lnrTopbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/inclBottomBar">
+
+            <LinearLayout
+                android:id="@+id/lnrFacilityContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lnrFacilityName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvFacilityName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".1"
+                        android:text="@string/pref_facility_name_title"
+                        android:textSize="@dimen/input_box_label_size" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".4"
+                        app:hintAnimationEnabled="false"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtFacilityName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:nextFocusDown="@id/edtFacilityName"
+                            android:paddingVertical="@dimen/input_box_vert_padding" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".2"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".18"
+                        android:text="@string/caption_patient_fields"
+                        android:textSize="@dimen/input_box_label_size" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/data_entry_settings"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/pref_outer_margin"
+                        android:layout_weight=".72"
+                        android:foreground="@drawable/table_container">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/horizontal_padding">
+
+                            <GridLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_margin="@dimen/pref_card_inner_margin"
+                                android:layout_weight="1"
+                                android:columnCount="2"
+                                android:rowCount="5">
+
+                                <CheckBox
+                                    android:id="@+id/chkPatientName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:enabled="false"
+                                    android:text="@string/patient_name_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkInsertionVien"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:text="@string/patient_insert_vein_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkPatientId"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:enabled="false"
+                                    android:text="@string/patient_id_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkPatientSide"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:text="@string/patient_insert_side_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkPatientDob"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:enabled="false"
+                                    android:text="@string/patient_dob_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkArmCircumference"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:text="@string/patient_arm_circum_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkVienSize"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:text="@string/patient_vein_size_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkReason"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:text="@string/patient_insert_reason_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkNoOfLumens"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:text="@string/patient_no_of_lumens_input_label" />
+
+                                <CheckBox
+                                    android:id="@+id/chkCatheterSize"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_rowWeight="1"
+                                    android:layout_columnWeight="1"
+                                    android:checked="true"
+                                    android:text="@string/patient_catheter_size_input_label" />
+
+                            </GridLayout>
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".35"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/inclBottomBar"
+            layout="@layout/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_bar_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

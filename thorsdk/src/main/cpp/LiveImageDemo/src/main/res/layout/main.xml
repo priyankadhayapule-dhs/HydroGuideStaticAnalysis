@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:keepScreenOn="true"
+    >
+
+    <LinearLayout
+        android:id="@+id/uictrl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.echonous.liveimagedemo.FreezeButton
+            android:id="@+id/freeze"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:textOff="unfreeze"
+            android:textOn="freeze"
+            android:layout_marginStart="43dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/image_id_label"
+            android:layout_marginStart="20dp" />
+
+        <EditText
+            android:id="@+id/editImageId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100dip"
+            android:numeric="integer"
+            android:inputType="number"
+            android:digits="1234567890"
+            android:imeOptions="actionDone"
+            android:selectAllOnFocus="true"
+            android:windowSoftInputMode="stateVisible" />
+
+    </LinearLayout>
+
+    <SurfaceView
+        android:id="@+id/surfaceview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/uictrl"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
+

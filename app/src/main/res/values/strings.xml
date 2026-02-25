@@ -1,0 +1,629 @@
+<resources>
+    <string name="app_name">HydroGUIDE</string>
+    <string name="title_home">Home</string>
+    <string name="title_procedure">Procedure</string>
+    <string name="title_patient_input">Patient Input</string>
+    <string name="title_report_summary">Report Summary</string>
+    <string name="title_records">Records</string>
+    <string name="title_preferences">Profile Settings</string>
+    <string name="title_system_update">System Update</string>
+    <string name="title_change_password">Change Password</string>
+    <string name="title_report_review">Report Review</string>
+    <string name="title_report_review_short">Report Rev.</string>
+    <string name="measurement_unit_cm">cm</string>
+    <string name="measurement_unit_mm">mm</string>
+
+    <!-- This is dynamically added by app/build.gradle.kts -->
+    <!-- string name="app_version">v1.0</string -->
+
+    <string name="close_keyboard_label">Close Keyboard</string>
+    <string name="dashboard_clinician_records">User Records</string>
+    <string name="dashboard_facility_records">Facility Records</string>
+    <string name="dashboard_system_update">System Update</string>
+    <string name="dashboard_settings">Settings</string>
+    <string name="dashboard_change_password">Change Password</string>
+    <string name="dashboard_title">Admin Dashboard</string>
+    <string name="dashboard_exit_message">Are you sure you want to exit?</string>
+    <string name="dashboard_action_argument_call_source">callSource</string>
+    <string name="close">Close</string>
+    <string name="button_generate">Generate</string>
+    <string name="password_copied">Password copied to clipboard</string>
+
+    <!-- Preferences Screen -->
+    <string name="pref_screen_title">User Preferences</string>
+    <string name="pref_audio_settings_title">Audio: </string>
+    <string name="pref_audio_settings_on">On</string>
+    <string name="pref_audio_settings_off">Off</string>
+    <string name="pref_inserter_name_title">Inserter: </string>
+    <string name="pref_facility_name_title">Facility Name</string>
+    <string name="pref_facility_once_manual_option">Always Use Same Facility</string>
+    <string name="pref_facility_dropdown_option">Use Dropdown List</string>
+    <string name="pref_facility_manual_each_option">Enter Manually for Each Procedure</string>
+    <string name="pref_facility_list_title">Facility: </string>
+    <string name="pref_data_entry_title">Data Entry Fields Displayed: </string>
+    <string name="pref_capture_title">Labeling for Waveform Captures</string>
+    <string name="pref_capture_label_exposed_option">Exposed Length</string>
+    <string name="pref_capture_label_inserted_option">Inserted Length</string>
+    <string name="pref_remove_profile_label">Remove Profile</string>
+    <string name="pref_save_profile_label">Save Profile</string>
+    <string name="pref_action_warning_text">Are you sure you want to proceed?</string>
+    <string name="pref_action_warning_yes">Yes</string>
+    <string name="pref_action_warning_no">No</string>
+    <string name="records_sync_status_label">Sync Status</string>
+
+    <string name="img_desc_preview_report">Preview report based on current settings.</string>
+    <string name="img_desc_facility_fav_icon">Icon representing favorite or default facility for input form.</string>
+    <string name="img_desc_profile_fav_icon">Icon representing favorite or default userProfile.</string>
+    <string name="img_desc_capture_select_icon">Represents the type of capture and its numeric identifier in the report.</string>
+
+    <string name="facility_select_all">Select All</string>
+    <string name="facility_add">Add</string>
+    <string name="facility_remove">Remove</string>
+    <string name="facility_edit">Edit</string>
+    <string name="facility_favorite">Favorite</string>
+    <string name="facility_descending_alphabetical">A to Z</string>
+    <string name="facility_ascending_alphabetical">Z to A </string>
+    <string name="facility_recent">Recent</string>
+    <string name="title_add_facility">Add Facility:</string>
+    <string name="title_edit_facility">Edit Facility:</string>
+
+    <string name="facility_dropdown_new_facility">Add New Facility</string>
+
+    <!-- Patient Input Form -->
+    <string name="patient_name_input_label">Patient Name:</string>
+    <string name="patient_name_input_value">John Dodge</string>
+    <string name="patient_id_input_label">Patient ID / MRN:</string>
+    <string name="patient_id_input_value">123456789</string>
+    <string name="patient_dob_input_label">Patient DOB:</string>
+    <string name="patient_dob_input_value">01/01/1960</string>
+    <string name="patient_gender_input_label">Gender:</string>
+    <string name="patient_insert_reason_input_label">Reason for Insertion:</string>
+    <string name="patient_insert_reason_input_value">Antibiotics</string>
+    <string name="patient_arm_circum_input_label">Arm Circumference:</string>
+    <string name="patient_arm_circum_input_label_nl">Arm \n Circumference:</string>
+    <string name="patient_arm_circum_input_value">-</string>
+    <string name="patient_facility_input_label">Facility:</string>
+    <string name="patient_insert_vein_input_label">Insertion Vein:</string>
+    <string name="patient_insert_vein_input_value">Left Basilic</string>
+    <string name="patient_cath_trim_length_input_label">Trimmed Length:</string>
+    <string name="patient_cath_trim_length_input_value">45</string>
+    <string name="patient_cath_ext_length_input_label">External Length:</string>
+    <string name="patient_cath_ext_length_input_value">-</string>
+    <string name="patient_inserter_input_label">Inserter:</string>
+    <string name="patient_inserter_input_value">Maya Yearns, RN</string>
+    <string name="patient_insert_side_input_label">Patient Side:</string>
+    <string name="patient_vein_size_input_label">Vein Size:</string>
+    <string name="patient_no_of_lumens_input_label">No. of Lumens:</string>
+    <string name="patient_catheter_size_input_label">Catheter Size:</string>
+    <string name="patient_notes_input_label">Notes:</string>
+    <string name="patient_input_advance_message">Advance to procedure screen before donning sterile gloves.</string>
+
+    <!-- Facility warning label -->
+    <string name="facility_warning_label">Facility must be selected before proceeding and cannot be changed for this procedure.</string>
+
+    <!-- Procedure Screen -->
+    <string name="patient_info_label">Patient / ID:</string>
+    <string name="patient_info_value">John Dodge 123456789</string>
+    <string name="heartbeat_value">63</string>
+    <string name="trim_length_label">Trim Length:</string>
+    <string name="interc_space_value">7.0cm</string>
+    <string name="controller_battery_label">Controller Battery:</string>
+    <string name="controller_battery_level">90%</string>
+    <string name="tablet_battery_label">Tablet Battery:</string>
+    <string name="external_value">0.80mV</string>
+    <string name="capture_instruction">Press Button To Capture</string>
+    <string name="last_capture_legend_label">Last Capture</string>
+    <string name="last_capture_legend_value">2.00mV</string>
+    <string name="current_label">Current</string>
+    <string name="current_value">1.75mV</string>
+    <string name="max_label">Maximum</string>
+    <string name="max_value">2.35mV</string>
+    <string name="p_wave_amp_label">P-Wave Change</string>
+    <string name="last_capture_label">Last Capture:</string>
+    <string name="last_capture_value">12:17:35</string>
+    <string name="external_label">External</string>
+    <string name="intravascular_label">Intravascular</string>
+    <string name="capture_header_label">Inserted Length:</string>
+    <string name="capture_header_length">00.0 cm</string>
+    <string name="intrav_capture_footer_label">Exposed Length</string>
+    <string name="intrav_capture_exposed_length">00.0 cm</string>
+    <string name="cont_desc_mute">TODO</string>
+    <string name="intrav_capture_number">##</string>
+    <string name="intrav_captures_instruction">Capture External Waveform for Baseline \nOR\n Change to Intravascular Waveform View</string>
+    <string name="intrav_captures_alt_instruction">Change to Intravascular Waveform View</string>
+    <string name="intrav_captures_instruction_intra">Capture Intravascular Waveform</string>
+    <string name="capture_dialog_inserted_length_title">Inserted Length</string>
+    <string name="capture_dialog_exposed_length_title">Exposed Length</string>
+    <string name="trim_length_selection_title">Select Catheter Trim Length</string>
+    <string name="prep_report_label">Prep. Report</string>
+
+    <!-- App/Graph Settings -->
+    <string name="change_volume_label">Volume</string>
+    <string name="change_brightness_label">Brightness</string>
+    <string name="toggle_mute_label">Mute</string>
+    <string name="toggle_waveform_label">Waveform View</string>
+    <string name="change_vertical_offset_label">Vertical Offset</string>
+    <string name="change_vertical_offset_label_short">Offset</string>
+    <string name="change_vertical_scale_label">Amplitude</string>
+    <string name="change_plot_speed_label">Speed</string>
+    <string name="cycle_mock_label">Cycle Mock</string>
+    <string name="capture_label">Capture</string>
+    <string name="volume_value">60</string>
+    <string name="time_scale_mode_manual_label">Manual</string>
+    <string name="time_scale_mode_auto_once_label">Auto Once</string>
+    <string name="time_scale_mode_auto_cont_label">Auto Continuous</string>
+    <string name="time_scale_value">5 sec</string>
+
+    <string name="cont_desc_horiz_scale">Adjust window of time being represented by waveform graphs and also change the live graph\’s swipe speed.</string>
+    <string name="cont_desc_vert_scale">Adjust vertical scale or range of waveform graphs.</string>
+    <string name="cont_desc_vert_offset">Adjust vertical offset of waveform graphs.</string>
+    <string name="cont_desc_brightness">Adjust brightness of the screen.</string>
+    <string name="cont_desc_help">Toggle helpful tooltips on the UI.</string>
+    <string name="cont_desc_volume">Adjust the device\’s audio volume.</string>
+    <string name="cont_desc_capture">Save a snippet of the live waveform graph for the procedure report.</string>
+    <string name="cont_desc_volume_change">Adjust the slider to desired audio volume.</string>
+    <string name="cont_desc_brightness_change">Adjust the slider to desired screen brightness.</string>
+    <string name="cont_desc_timescale_change">Adjust the slider to desired swipe speed of the live graph.</string>
+    <string name="cont_desc_start_procedure">Begin the procedure using this patient data.</string>
+    <string name="cont_desc_finish_report">End the procedure and save its report data.</string>
+    <string name="cont_desc_increase_value">Increase selected value.</string>
+    <string name="cont_desc_decrease_value">Decrease selected value.</string>
+    <string name="cont_desc_sync_status">Sync status indicator</string>
+    <!-- Prepare Report -->
+    <string name="tip_location_success_checkbox">Was tip location confirmed using HydroGUIDE?</string>
+    <string name="tip_location_confirm_yes">Yes</string>
+    <string name="tip_location_confirm_no">No</string>
+    <string name="patient_insert_side_left_btn">Left</string>
+    <string name="patient_insert_side_right_btn">Right</string>
+    <string name="conclusion_dialog_title">Conclude Procedure</string>
+    <string name="conclusion_dialog_error">Please select an option</string>
+    <string name="conclusion_dialog_option1">Completed Successfully</string>
+    <string name="conclusion_dialog_option2">Completed Unsuccessfully</string>
+    <string name="conclusion_dialog_option3">Abandoned</string>
+    <string name="conclusion_signal">Procedure Concluded</string>
+    <string name="submit_report">Submit</string>
+
+    <!-- Report View -->
+    <string name="report_date_label">Date:</string>
+    <string name="report_satisfaction_select_label">Are you satisfied with the appearance of the report?</string>
+    <string name="report_satisfaction_yes">Yes</string>
+    <string name="report_satisfaction_no">No</string>
+
+    <!-- Report PDF -->
+    <string name="report_software_version_label">SW: </string>
+    <string name="report_controller_firmware_version_label">FW: </string>
+    <string name="report_sample_version">v1.0</string>
+    <string name="report_insertion_date_label">Insertion Date:</string>
+    <string name="report_sample_insertion_date">06/06/2025</string>
+    <string name="report_sample_patient_name">Jane Doe II</string>
+    <string name="report_sample_patient_id">157896789065392</string>
+    <string name="report_sample_patient_dob">04/02/1986</string>
+    <string name="report_clinician_name_label">Clinician Name:</string>
+    <string name="report_sample_clinician_name">Audrey Simpson, RN</string>
+    <string name="report_sample_insertion_vein">Basilic</string>
+    <string name="report_sample_insertion_side">Right</string>
+    <string name="report_sample_trim_length">47 cm</string>
+    <string name="report_sample_external_length">1 cm</string>
+    <string name="report_sample_notes">Renal patient - nephrology consult prior to PICC placement</string>
+    <string name="report_external_ecg_title">External ECG</string>
+    <string name="report_top_intrav_ecg_title">Intravascular ECG</string>
+    <string name="report_additional_intrav_captures_title">Additional Intravascular ECG Captures</string>
+    <string name="report_isSubmitted">isSubmitted</string>
+
+    <!-- Top Bar -->
+    <string name="invalid_length">" ??? cm"</string>
+
+    <string name="cont_desc_battery_level_display">Visual display of battery level.</string>
+    <string name="cont_desc_usb_icon">Visual indicator of whether controller is connected or not.</string>
+    <string name="cont_desc_hydroguide_logo">HydroGuide logo.</string>
+    <string name="cont_desc_heart_icon">Heart icon.</string>
+
+    <!-- Bottom Bar -->
+    <string name="storage_remaining_label">"Storage Remaining:</string>
+
+    <string name="cont_desc_return_to_home">Return to the home screen.</string>
+    <string name="cont_desc_return_to_patient_input">Cancel procedure and return to the patient input screen.</string>
+    <string name="cont_desc_return_to_procedure">Return to the procedure screen.</string>
+
+    <!-- Home -->
+    <string name="profile_label">Current Profile:</string>
+    <string name="selected_profile_default">Select Profile</string>
+    <string name="create_new_profile_label">+ Create New Profile</string>
+    <string name="searchbar_hint">Profile Name</string>
+    <string name="exit_button_label">Exit</string>
+
+    <string name="cont_desc_navto_patient_input">Input patient information before starting a procedure.</string>
+    <string name="cont_desc_navto_procedure">Quick start a procedure using last procedure\’s patient information.</string>
+    <string name="cont_desc_navto_records">View list of previously done procedures.</string>
+    <string name="cont_desc_navto_preferences">View and edit selected userProfile\’s settings.</string>
+    <string name="cont_desc_navto_patient_summary">Go to procedure summary and report generation screen.</string>
+    <string name="cont_desc_navto_system_update">Open companion app to update the HydroGUIDE app.</string>
+    <string name="cont_desc_cancel">Cancel procedure and return to the previous screen.</string>
+    <!-- Records -->
+    <string name="records_name_label">Patient Name</string>
+    <string name="records_id_label">Patient ID#</string>
+    <string name="records_dob_label">D.O.B</string>
+    <string name="records_date_label">Date</string>
+    <string name="records_done_by_label">Procedure Done By</string>
+    <string name="records_facility_label">Facility</string>
+    <string name="records_empty_label">Device has no procedure data saved to storage.</string>
+    <string name="sort_alphabetically_asc_button_label">A to Z</string>
+    <string name="sort_alphabetically_des_button_label">Z to A</string>
+    <string name="sort_date_asc_button_label">Oldest</string>
+    <string name="sort_date_des_button_label">Recent</string>
+    <string name="export_button_label">Export</string>
+    <string name="invalid_profile_name_message">File not updated or created. Profile name is blank or made of invalid characters.</string>
+    <string name="N_A">N/A</string>
+    <string name="speed_auto_scale_invalid_bpm_message">Cannot auto scale for speed/time scale. Invalid BPM.</string>
+    <string name="no_pwave_found_label">No P-Wave Detected!</string>
+    <string name="export_success_mesg">Export Successful, kindly eject the storage media."</string>
+    <string name="export_transfer_interrupt_mesg">Storage device ejected while export was in progress,kindly retry again.."</string>
+
+    <!-- Alerts -->
+    <string name="alert_title_warning">Warning</string>
+    <string name="additional_alerts_label">Additional Alerts:</string>
+    <string name="alert_priority_label">Alert Priority:</string>
+    <string name="alert_composition_label">Composite Alerts:</string>
+    <string name="alert_id_label">ID:</string>
+    <string name="alert_suggestions_label">Suggested Actions:</string>
+    <string name="alert_title_prohibited">Action Prohibited</string>
+    <string name="alert_button_continue">Continue</string>
+    <string name="alert_button_return">Return</string>
+    <string name="alert_button_bypass">Bypass Alarm</string>
+    <string name="alert_content_procedue_cancel_warning">Are you sure you want to return to the home screen and cancel this procedure?</string>
+    <string name="alert_content_action_disabled_LP_alarm">Beginning a new procedure is disallowed until both the controller and tablet are charged above 10%. Please confirm both are charged and try again.</string>
+    <string name="alert_content_action_disabled_CST_alarm">Beginning a new procedure is disallowed until connection to the controller is restored. Please check the usb connection and try again.</string>
+    <!-- Storage/Sync Alerts -->
+    <string name="alert_storage_warning_online">Warning: You have %d un-uploaded procedure records. Please ensure internet connectivity to allow automatic synchronization before continuing.</string>
+    <string name="alert_storage_blocked_online">Beginning a new procedure is blocked. You have %d or more un-uploaded procedure records. Please ensure internet connectivity and wait for automatic synchronization to complete, or manually delete old records from the Records screen.</string>
+    <string name="alert_storage_warning_offline">Warning: Tablet storage is %d%% full. Please export and delete old procedure records to free up space.</string>
+    <string name="alert_storage_blocked_offline">Beginning a new procedure is blocked. Tablet storage is %d%% full. Please export and delete old procedure records to free up space before continuing.</string>
+    <string name="dismiss_button">Dismiss</string>
+    <string name="go_to_records_button">Go to Records</string>
+    <string name="alert_low_controller_battery_text">Low Controller Battery</string>
+    <string name="alert_symbol_ECG_missing_text">ECG Data Missing</string>
+    <string name="alert_symbol_controller_status_missing_text"> Controller Data Missing</string>
+    <string name="alert_charger_status_lvt">Low Voltage Timeout</string>
+    <string name="alert_charger_status_ocs">Overcurrent Shutdown</string>
+    <string name="alert_charger_status_iov">Input Overvoltage</string>
+    <string name="alert_charger_status_iuv">Input Undervoltage</string>
+    <string name="alert_charger_status_ivi">Input Voltage Invalid</string>
+    <string name="alert_charger_status_bvl">Battery Voltage Low</string>
+    <string name="alert_charger_status_btth">Battery Temperature Too High</string>
+    <string name="alert_charger_status_bttl">Battery Temperature Too Low</string>
+    <string name="alert_charger_status_bthw">Battery Temperature High Warning</string>
+    <string name="alert_charger_status_chf">Charger Hardware Fault</string>
+    <string name="alert_no_pwave_found">Alert: No PWave detected at this time</string>
+    <string name="alert_low_tablet_battery">Low Tablet Battery</string>
+    <string name="urgent_alert_title">Urgent Safety Alert</string>
+    <string name="cont_desc_alert_icon">An alert has been triggered</string>
+    <string name="charging_in_procedure_instructions">Immediately remove all ECG leads from
+    the patient and remove the clip to the intravascular lead at the entry point.\n\nThe
+        tablet is connected to a power source, creating hazards for the patient. Please
+        disconnect the tablet from any power source to continue the procedure.</string>
+
+    <string name="login_title">LOGIN</string>
+    <string name="email_address_label">Email Address:</string>
+    <string name="password_label">Password:</string>
+    <string name="img_desc_hydroguide_logo">HydroGuide Logo</string>
+    <string name="confirm_exit_message">Are you sure you want to exit?</string>
+    <string name="wifi_disabled_logout_message">WiFi is disabled, do you really want to logout?</string>
+    <string name="logout_anyway">Logout Anyway</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="okay">Okay</string>
+    <string name="cont_desc_navto_ultrasound">Ultrasound</string>
+    <string name="connect_ultrasound_message">Connect the Ultrasound Probe to the Tablet</string>
+    <string name="proceed_without_ultrasound">Or Proceed Without Using Ultrasound</string>
+    <string name="select_catheter_size">Select Catheter Size:</string>
+    <string name="french_5">5 French</string>
+    <string name="french_4">4 French</string>
+    <string name="bluetooth_pairing_label">Connect controller via bluetooth</string>
+    <string name="pairing_instructions">Press the arrows on controller in the following pattern to pair</string>
+    <string name="bluetooth_pairing_title">Bluetooth Pairing</string>
+    <string name="connect_controller_title">Connect Controller</string>
+    <string name="connect_ultrsound_probe_title">CONNECT TO ULTRASOUND PROBE</string>
+    <string name="empty_email_password">Email and Password cannot be empty</string>
+    <string name="scanning_ultrasound_title">SCANNING ULTRASOUND</string>
+    <string name="ultrasound_capture_title">ULTRASOUND CAPTURE</string>
+    <string name="ultrasound_title">Ultrasound</string>
+    <string name="ultrasound_capture_label">Ultrasound Capture</string>
+    <string name="calibration">Calibration</string>
+    <string name="mode_setup_offline_selected_message">Offline mode has been selected. Please restart the app for offline mode to be fully applied.</string>
+    <string name="offline_admin_setup_error_required">All fields are required.</string>
+    <string name="offline_admin_setup_error_email_invalid">Please enter a valid email address</string>
+    <string name="offline_admin_setup_error_password_mismatch">Passwords do not match.</string>
+    <string name="offline_admin_setup_success">Offline admin created successfully.</string>
+    <string name="offline_admin_setup_generic_error">Failed to create offline admin. Please try again.</string>
+
+    <!-- Offline Admin Setup -->
+    <string name="offline_admin_name_label">Admin Username:</string>
+    <string name="offline_admin_email_label">Admin Email:</string>
+    <string name="offline_admin_setup_create_button">CREATE OFFLINE ADMIN</string>
+    <string name="offline_admin_setup_generate_password_first">Please generate a password first.</string>
+    <string name="offline_admin_setup_title">OFFLINE ADMIN SETUP</string>
+
+    <!--        Admin  Strings   -->
+    <string name="caption_symbol_colon">:</string>
+    <string name="caption_clinician_screen">USER INPUT</string>
+    <string name="caption_facility_screen">FACILITY INPUT</string>
+    <string name="caption_back">Back</string>
+    <string name="caption_save_action">Save Record</string>
+    <string name="caption_reset_credentials_action">Reset Password</string>
+    <string name="caption_reset_pwd">Reset Password:</string>
+    <string name="caption_confirm_pwd">Confirm Password:</string>
+
+    <string name="caption_patient_fields">Patient Fields:</string>
+
+    <!--       Admin Clinician & Facility Table     -->
+    <string name="caption_clinician_records">USER RECORDS</string>
+    <string name="caption_facility_records">FACILITY RECORDS</string>
+    <string name="table_header_clinician_name">User Name</string>
+    <string name="table_header_clinician_email">Email Address</string>
+    <string name="table_header_user_type">User Type</string>
+    <string name="table_header_clinician_facility">Facility</string>
+    <string name="caption_add_clinician">Add Clinician</string>
+    <string name="caption_add_facility">Add Facility</string>
+    <string name="table_header_facility_name">Facility Name</string>
+
+    <!--       Admin Clinician & Facility Data & Navigation Flags   -->
+    <string name="caption_record_type_mode">RECORD_TYPE</string>
+    <string name="caption_selected_record_data">RECORD_DATA</string>
+    <string name="caption_record_type_mode_edit">EDIT</string>
+    <string name="stored_credentials">Stored Credentials</string>
+
+    <string name="internet_connection_available_to_sync">Internet connection is available. Would you like to sync?</string>
+    <string name="internet_connection_unavailable_to_sync">"Data cannot be synced as internet connectivity is unavailable."</string>
+    <string name="extract">Extract</string>
+    <string name="extracting_package">Extracting package…</string>
+    <string name="install">Install</string>
+    <string name="installing_app_updates">Installing App updates…</string>
+    <string name="latest_app_updates_installed_successfully">Latest app updates installed successfully</string>
+    <string name="back">Back</string>
+    <string name="retry">Retry</string>
+    <string name="no_latest_updates_found">No latest updates found</string>
+    <string name="searching_updates_online">Searching updates online…</string>
+    <string name="searching_updates_usb">Finding updates from connected usb device…</string>
+    <string name="search_online">SEARCH UPDATE ONLINE</string>
+    <string name="searching_usb">SEARCH UPDATES VIA USB</string>
+    <string name="install_online">INSTALL UPDATE VIA ONLINE</string>
+    <string name="install_usb">INSTALL UPDATE VIA USB</string>
+    <string name="progress_mesg_updates_from_local_storage">Finding updates from local storage…</string>
+    <string name="toolbar_title_install_local_storage">INSTALL UPDATE VIA LOCAL STORAGE</string>
+    <string name="system_update">System Update</string>
+    <string name="entity_clinician">clinicians</string>
+
+    <!-- Admin Confirmation Mesg -->
+    <string name="mesg_confirm_save_clinician">Are you sure you want to save clinician?</string>
+    <string name="mesg_confirm_remove_clinician">Are you sure you want to remove clinician?</string>
+    <string name="mesg_confirm_update_credentials">Are you sure you want to update credentials?</string>
+    <string name="mesg_screen_back">Are you sure you want to exit this screen?</string>
+    <string name="mesg_confirm_save_facility">Are you sure you want to save facility?</string>
+    <string name="mesg_confirm_remove_facility">Are you sure you want to remove facility?</string>
+
+
+    <!-- Validators Mesg -->
+    <string name="validate_mesg_add_clinician">Clinician Name &amp; Email is required.</string>
+    <string name="validate_mesg_credentials">Password &amp; Confirm Password is required.</string>
+    <string name="validate_mesg_facility">Facility name is required.</string>
+    <string name="validate_mesg_credentials_updated">Credentials updated successfully.</string>
+    <string name="validate_mesg_facility_updated">Facility details updated successfully.</string>
+    <string name="validate_mesg_clinician_updated">Clinicians details updated successfully.</string>
+    <string name="validate_mesg_clinician_deleted">Clinicians details deleted successfully.</string>
+    <string name="validate_mesg_facility_deleted">Facility details deleted successfully.</string>
+    <string name="validate_mesg_password_mismatch">Password &amp; Confirm Password must be same.</string>
+    <string name="validate_mesg_clinician_delete_failed">Clinician Delete Failed</string>
+    <string name="mesg_no_records">No Records Found</string>
+    <string name="maximum">Maximum</string>
+    <string name="last_capture">Last Capture</string>
+    <string name="internal">Internal</string>
+    <string name="external">External</string>
+    <string name="start_procedure">Start Procedure</string>
+    <string name="permission_rejects">It seems few permissions are denied, kindly allow them to proceed.</string>
+    <string name="build_install_duplicate">Seems updated build is same as current one,kindly perform updates with new one.</string>
+    <string name="build_transfer_load_failed">Failed to load build file.</string>
+    <string name="build_transfer_failed">Failed to transfer updated build file.</string>
+    <string name="build_file_missing">Build file not found for installation</string>
+    <string name="build_install_failed">Failed to perform installation</string>
+    <string name="grant_install_rights">Grant install permission and retry.</string>
+    <string name="missing_external_storage">cannot proceed with update as no external storage (USB/pen drive) detected.</string>
+    <string name="sys_update_backup_local">Backup Successful, kindly eject the storage media to connect the controller : "</string>
+    <string name="sys_backup_failed">Backup failed:.</string>
+    <string name="sys_backup_folder_write_err">Folder not writable. Pick another.</string>
+    <string name="sys_backup_cannot_create_folder">Cannot create backup folder.</string>
+    <string name="sys_update_tile_online_source">Search Updates Online</string>
+    <string name="sys_update_tile_online_source_desc">Search online for latest updates to install</string>
+    <string name="sys_update_tile_usb_source">Copy updates from USB</string>
+    <string name="sys_update_tile_usb_source_desc">Extract package from the connected USB device</string>
+    <string name="sys_update_tile_local_storage_source">Install Updates from memory</string>
+    <string name="sys_update_tile_local_storage_source_desc">Install package from device local storage</string>
+    <string name="sys_update_copying_files_progress">Copying build files.....</string>
+    <string name="sys_update_media_eject_pkg_transfer_failed">Storage device ejected while package transfer was in progress,kindly retry again.</string>
+    <string name="sys_update_media_eject_backup_failed">Storage device ejected while data backup was in progress,kindly retry again.</string>
+    <string name="sys_update_usb_deattached_while_read">USB detached during read.</string>
+    <string name="sys_update_usb_build_transfer_complete">Build transfer completed.</string>
+    <string name="sys_update_usb_build_start_data_export">Initiating data backup.</string>
+    <string name="sys_update_label_current_app_version">Current App Version.</string>
+    <string name="sys_update_label_current_controller_version">Current Controller Version.</string>
+    <string name="sys_update_label_current_os_version">Current OS Version.</string>
+
+    <string name="map_keys_update_src">updateSource</string>
+
+    <!-- Calibration Screen -->
+    <string name="calibration_title">Navigate Calibration</string>
+    <string name="calibration_step1_text">1. Insert catheter to 0 cm</string>
+    <string name="calibration_step2_text">2. Insert catheter to 5 cm</string>
+    <string name="calibration_step3_text">3. Insert catheter to 10 cm</string>
+    <string name="calibration_helper_text">Click \'Reset\' if you need to redo the calibration</string>
+    <string name="calibration_reset_confirm_title">Are you sure you want to reset calibration?</string>
+    <string name="button_ok_label">OK</string>
+    <string name="button_ok">OK</string>
+    <string name="button_reset">Reset</string>
+    <string name="button_back">Back</string>
+    <string name="button_proceed">Proceed</string>
+
+    <!-- Offline Storage Manager Error Messages -->
+    <string name="error_sync_not_available">Sync not available in offline mode</string>
+    <string name="error_repository_null">UsersRepository not available</string>
+    <string name="facility_repository_null">FacilityRepository not available</string>
+    <string name="error_invalid_request">Invalid request or UsersRepository not available</string>
+    <string name="error_clinician_removed">Clinician removed successfully</string>
+    <string name="error_invalid_id">Invalid clinician ID format</string>
+    <string name="error_not_found">Clinician not found</string>
+    <string name="error_reset_password">Offline reset password not implemented</string>
+    <string name="no_ultrasound_captures_saved">No Ultrasound Captures Saved</string>
+    <string name="you_haven_t_saved_any_ultrasound_captures">You haven\'t saved any ultrasound captures. Do you want to proceed without saving?</string>
+    <string name="user_name">User Name:</string>
+    <string name="key_bonded_device">bondedDevice</string>
+    <string name="key_arrowPattern">arrowPattern</string>
+
+    <!-- Exports & Transfer -->
+    <string name="zip_creation_failed">Failed to export, Kindly retry again</string>
+    <string name="zip_copy_failed">Failed to transfer exports on external attached storage.</string>
+    <string name="venous_access">VENOUS ACCESS</string>
+    <string name="scanning_ultrasound">Scanning Ultrasound</string>
+    <string name="proprietary_text">
+    This software is proprietary and confidential.\n\n
+    Unauthorized copying, distribution, or use of this software, via any medium, is strictly prohibited.\n\n
+    This software is provided as is without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose.
+    </string>
+    <string name="copyright_text">© 2024 Access Vascular Inc.
+    All rights reserved.
+    </string>
+    <string name="lincense_text">This software is proprietary and confidential
+            Unauthorized copying, distribution, or use of this software, via any medium, is strictly prohibited
+            This software is provided as is without warranty of any kind, either expressed or implied,
+            including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose.
+    </string>
+    <string name="set_numbers_of_lumens">Set Numbers of Lumens</string>
+    <string name="delete">Delete</string>
+    <string name="confirm">Confirm</string>
+    <string name="_1_9_french">1.9 French</string>
+    <string name="_2_6_french">2.6 French</string>
+    <string name="_3_french">3 French</string>
+    <string name="_4_french">4 French</string>
+    <string name="_5_french">5 French</string>
+    <string name="_6_french">6 French</string>
+
+    <!-- Firmware Update -->
+    <string name="toolbar_title_install_firmware">INSTALLING FIRMWARE</string>
+    <string name="fota_media_eject">Seems usb device is unavailable, kindly check device connection &amp; retry again!</string>
+    <string name="fota_battery_level_threshold">Looks battery is below the permissible limit required to perform firmware upgrade,kindly chargeup the device at-least 30%</string>
+    <string name="fota_firmware_not_attached">Looks like device for firmware is not attached or connected,  is below the permissible limit required to perform firmware upgrade,kindly chargeup the device at-least 30%</string>
+    <string name="fota_update_completed">Firmware Update Successful</string>
+    <string name="fota_client_not_instantiated">Unable to connect with firmware kindly navigate back again from dashboard</string>
+    <string name="firmware_version_duplicate">Seems updated firmware is same as current one,kindly perform update with new firmware version.</string>
+    <string name="missing_firmware_directory_for_fota">Cannot locate firmware.Retry.</string>
+    <string name="missing_firmware_file">Cannot locate firmware binaries.</string>
+    <string name="corrupt_firmware_file">Firmware files are corrupted, Retry with new version.</string>
+    <string name="firmware_metadata_load_failure">Failed to load metadata info.</string>
+    <string name="invalid_controller_attached">Seems controller attached is not valid, Kindly retry with appropriate controller.</string>
+    <string name="fota_phase_mesg_negotiate">Negotiating DFU session...</string>
+    <string name="fota_phase_mesg_prepare_device">Preparing device for firmware...</string>
+    <string name="fota_phase_mesg_device_prepared">Device prepared</string>
+    <string name="fota_phase_mesg_transfer_firmware">Transferring firmware...</string>
+    <string name="fota_phase_mesg_transfer_complete">Transfer complete</string>
+    <string name="fota_phase_mesg_verify_firmware">Verifying firmware...</string>
+    <string name="fota_phase_mesg_verify_success">Verification successful</string>
+    <string name="fota_phase_mesg_install_firmware">Installing firmware...</string>
+    <string name="fota_phase_mesg_installation_started">Installation started</string>
+    <string name="fota_phase_mesg_finalize_firmware">Finalizing Firmware session...</string>
+    <string name="fota_phase_mesg_firmware_state_complete_device_ack">Device acknowledged</string>
+    <string name="fota_phase_mesg_firmware_state_complete_pending_device_cnf">Complete (no device confirmation)</string>
+
+    <!-- Offline to Online Mode Switch Dialog -->
+    <string name="offline_to_online_dialog_title">Switch to Online Mode</string>
+    <string name="offline_to_online_switch_button">Switch</string>
+    <string name="offline_to_online_cancel_button">Cancel</string>
+    <string name="offline_to_online_network_connected">✓ Internet connection available</string>
+    <string name="offline_to_online_network_disconnected">✗ No internet connection. Switch requires internet access.</string>
+    <string name="offline_to_online_error_no_internet">Internet connection required for mode switch</string>
+    <string name="offline_to_online_error_terms_not_accepted">Please accept the terms and conditions to proceed</string>
+    <string name="offline_to_online_error_email_empty">Email cannot be empty</string>
+    <string name="offline_to_online_error_email_invalid">Please enter a valid email address</string>
+    <string name="offline_to_online_error_password_empty">Password cannot be empty</string>
+    <string name="offline_to_online_error_password_short">Password must be at least 6 characters</string>
+    <string name="offline_to_online_error_user_not_found">Current user not found. Please login again.</string>
+    <string name="offline_to_online_progress_initializing">Initializing sync...</string>
+    <string name="offline_to_online_success_prefix">✓ </string>
+    <string name="offline_to_online_error_prefix">✗ </string>
+    <string name="offline_to_online_error_user_fetch">User not found</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="create_a_4_6_digit_pin_for_quick_login">Create a 4-6 digit PIN for quick login</string>
+    <string name="show_hide_pin">Show/Hide PIN</string>
+    <string name="confirm_pin">Confirm PIN</string>
+    <string name="re_enter_pin">Re-enter PIN</string>
+    <string name="set_reset_pin_for_quick_login">Set/Reset PIN for quick login</string>
+    <string name="new_pin_4_6_digits">New PIN (4-6 digits)</string>
+    <string name="please_enter_a_pin">Please enter a PIN</string>
+    <string name="pin_must_be_4_6_digits">PIN must be 4-6 digits</string>
+    <string name="pins_do_not_match">PINs do not match</string>
+    <string name="failed_to_secure_pin">Failed to secure PIN</string>
+    <string name="pin">PIN</string>
+    <string name="username_email_cannot_be_empty">Username/Email cannot be empty</string>
+    <string name="pin_cannot_be_empty">PIN cannot be empty</string>
+    <string name="pin_not_configured_for_this_user">PIN not configured for this user</string>
+    <string name="logged_in_with_pin">Logged in with PIN</string>
+    <string name="error_loading_cached_data">Error loading cached data</string>
+    <string name="session_expired_please_login_with_password">Session expired. Please login with password.</string>
+    <string name="error_decrypting_tokens_please_login_with_password">Error decrypting tokens. Please login with password.</string>
+    <string name="no_stored_session_found_please_login_with_password_first">No stored session found. Please login with password first.</string>
+    <string name="incorrect_pin">Incorrect PIN</string>
+    <string name="password_cannot_be_empty">Password cannot be empty</string>
+    <string name="please_enter_new_password_or_enable_pin">Please enter new password or enable PIN to change</string>
+    <string name="new_password_cannot_be_empty">New password cannot be empty</string>
+    <string name="confirm_password_cannot_be_empty">Confirm password cannot be empty</string>
+    <string name="passwords_do_not_match">The new password and confirmation password do not match</string>
+    <string name="password_changed_successfully">Password changed successfully</string>
+    <string name="change_password_failed">Change password failed</string>
+    <string name="unable_to_identify_user">Unable to identify user</string>
+    <string name="pin_changed_successfully">PIN changed successfully</string>
+    <string name="failed_to_change_pin">Failed to change PIN</string>
+    <!-- Setup Screen Error Messages -->
+    <string name="setupscreen_distance_error_message">Distance between electrodes should be in the range of 10cm to 150cm</string>
+    <string name="setupscreen_trimlength_error_message">Trim length should be in the range of 0 to 200cm</string>
+    <string name="setupscreen_distance_required_error">At least one distance value is required</string>
+
+    <!-- Patient Input Screen Error Messages -->
+    <string name="patient_vein_size_error_min">Vein size cannot be less than 1mm (0.1cm)</string>
+    <string name="patient_vein_size_error_max">Vein size cannot exceed 15mm (1.5cm)</string>
+    <string name="patient_vein_size_error_invalid">Invalid vein size value</string>
+    <string name="patient_arm_circumference_error_min">Arm Circumference cannot be less than 10cm</string>
+    <string name="patient_arm_circumference_error_max">Arm Circumference cannot exceed 150cm</string>
+    <string name="patient_arm_circumference_error_invalid">Invalid Arm Circumference value</string>
+    <string name="patient_no_of_lumens_error_min">No. Of Lumens cannot be less than 1</string>
+    <string name="patient_no_of_lumens_error_max">No. Of Lumens cannot exceed 5</string>
+    <string name="patient_no_of_lumens_error_invalid">Invalid No. Of Lumens value</string>
+    <string name="patient_catheter_size_error_min">Catheter Size cannot be less than 1</string>
+    <string name="patient_catheter_size_error_max">Catheter Size cannot exceed 10</string>
+    <string name="patient_catheter_size_error_invalid">Invalid Catheter Size value</string>
+    <string name="patient_id_required_error">Please enter patient id before proceeding</string>
+    <string name="patient_facility_required_error">Facility must be selected</string>
+    <string name="patient_facility_required_toast">Please select a facility before proceeding.</string>
+    <string name="patient_facilities_loaded">Facilities Loaded</string>
+
+    <!-- Manage Clinicians Screen Messages -->
+    <string name="clinician_email_invalid_format">Invalid email format</string>
+    <string name="clinician_email_invalid">Please enter a valid email address</string>
+    <string name="clinician_password_required">Please fill Password</string>
+    <string name="clinician_created_success">User created successfully</string>
+    <string name="clinician_removed_success">User removed successfully</string>
+    <string name="clinician_password_reset_success">Password reset successfully</string>
+    <string name="clinician_error_generic">Error</string>
+    <string name="clinician_error_fetching">Error fetching clinician</string>
+    <string name="clinician_error_resetting_password">Error resetting password</string>
+    <string name="clinician_all_fields_required">Please fill all fields</string>
+    <string name="clinician_none_selected">No clinician selected</string>
+    <string name="clinician_password_reset_confirm">This Action will reset the Password for the User</string>
+    <string name="clinician_generate_password_first">Please generate a password first</string>
+
+    <!-- Error reporter -->
+    <string name="error_reporter_title">APP NOTICED AN UNUSUAL EVENT</string>
+    <string name="error_reporter_hint_msg">Application is about to close, please click Ok button to re-launch</string>
+    <string name="error_reporter_generic_msg">Something went wrong. Please try again later..</string>
+    <string name="error_reporter_screen_title">Error Reporter</string>
+
+
+    <string name="app_startup_mode_unknown">HydroGuide app initiated with unknown mode(Code : 9001 - MODE NOT CONFIGURED)</string>
+    <string name="validation_filter_on_selected_row">Filtering is restricted on selected records</string>
+</resources>

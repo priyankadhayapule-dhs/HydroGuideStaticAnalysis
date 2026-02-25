@@ -1,0 +1,68 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <variable
+            name="tabletState"
+            type="com.accessvascularinc.hydroguide.mma.model.TabletState" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:theme="@style/BottomDrawer"
+        tools:context=".ui.settings.VolumeChangeFragment">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:text="@string/change_volume_label"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/setting_change_label_size" />
+
+        <ImageView
+            android:id="@+id/volume_change_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="50dp"
+            android:contentDescription="@string/cont_desc_volume"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/button_selected_volume" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/volume_slider"
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/cont_desc_volume_change"
+            android:focusedByDefault="true"
+            android:stepSize="1"
+            android:value="@{tabletState.audioVolume}"
+            android:valueFrom="0"
+            android:valueTo="15"
+            app:labelBehavior="gone"
+            app:thumbColor="@color/white"
+            app:thumbHeight="53dp"
+            app:thumbStrokeColor="@color/av_darker_blue"
+            app:thumbStrokeWidth="5dp"
+            app:thumbWidth="24dp"
+            app:tickVisible="false"
+            app:trackColor="@color/av_light_blue"
+            app:trackHeight="24dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:text="@{Integer.toString(tabletState.audioVolume)}"
+            android:textAlignment="textStart"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>

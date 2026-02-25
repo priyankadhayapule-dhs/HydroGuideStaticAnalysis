@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/sys_updates_tile_width"
+    android:layout_height="@dimen/sys_updates_tile_height"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/card_background"
+    android:layout_margin="@dimen/dimen_32x"
+    android:padding="@dimen/dimen_16x"
+    android:id="@+id/lnrSysUpdateModeTile">
+
+    <ImageView
+        android:id="@+id/imgSysUpdateModeIcon"
+        android:layout_width="@dimen/sys_updates_package_icon_size"
+        android:layout_height="@dimen/sys_updates_package_icon_size"
+        android:src="@drawable/ic_search"
+        app:tint="@android:color/white" />
+
+    <TextView
+        android:id="@+id/tvSearchSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Updates Online"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_dimen_18x"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dimen_8x" />
+
+    <TextView
+        android:id="@+id/tvSourceDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search online for latest updates to install"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/sp_dimen_14x"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/dimen_4x" />
+
+</LinearLayout>

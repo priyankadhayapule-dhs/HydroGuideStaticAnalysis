@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="chartConfig"
+            type="com.accessvascularinc.hydroguide.mma.model.ChartConfig" />
+
+        <variable
+            name="encounterData"
+            type="com.accessvascularinc.hydroguide.mma.model.EncounterData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="580dp"
+        android:layout_height="355dp"
+        android:background="@drawable/capture_dialog"
+        android:padding="15dp"
+        android:theme="@style/BottomDrawer"
+        tools:context=".ui.captures.CaptureDialogFragment">
+
+        <!-- ===================== TAB BAR (Internal / External) ===================== -->
+        <LinearLayout
+            android:id="@+id/tab_container"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <!-- INTERNAL TAB -->
+            <TextView
+                android:id="@+id/tab_internal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/internal"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/tab_unselected_bg" />
+
+            <!-- EXTERNAL TAB -->
+            <TextView
+                android:id="@+id/tab_external"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/external"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/tab_selected_bg" />
+        </LinearLayout>
+
+        <!-- ======================================================================= -->
+        <!-- INTERNAL BLOCK (Initially hidden / fill later) -->
+        <!-- ======================================================================= -->
+
+        <RelativeLayout
+            android:id="@+id/internal_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tab_container"
+            android:paddingTop="10dp"
+            android:visibility="gone">
+
+            <!-- ================= GRAPH ================= -->
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/capture_graph_internal"
+                style="@style/APDefacto.Dark"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_toEndOf="@id/catheter_insertion_length_selection_internal"
+                android:background="@color/ap_transparent"
+                app:backgroundColor="@color/ap_transparent"
+                app:borderColor="@color/white"
+                app:borderThickness="2dp"
+                app:legendVisible="false"
+                app:graphWidthMode="relative"
+                app:graphWidth="1.0"
+                app:graphHeightMode="relative"
+                app:graphHeight="1.0"
+                app:gridBackgroundColor="@color/ap_transparent"
+                app:gridInsetBottom="0dp"
+                app:gridInsetLeft="0dp"
+                app:domainStep="0"
+                app:domainStepMode="subdivide"
+                app:lineLabels="none"
+                android:layout_marginEnd="20dp" />
+
+            <!-- ================= LENGTH SELECTION ================= -->
+            <LinearLayout
+                android:id="@+id/catheter_insertion_length_selection_internal"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/catheter_insertion_length_title_internal"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="@string/capture_dialog_inserted_length_title"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <com.accessvascularinc.hydroguide.mma.ui.input.NumberPickerArrowButton
+                    android:id="@+id/catheter_insertion_length_number_picker_up_internal"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@color/ap_transparent"
+                    android:contentDescription="@string/cont_desc_increase_value"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_capture_arrowup" />
+
+                <NumberPicker
+                    android:id="@+id/catheter_insertion_length_number_picker_internal"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_weight="1"
+                    android:focusedByDefault="true"
+                    android:theme="@style/ThemeOverlay.NumberPicker"
+                    android:contentDescription="@string/cont_desc_timescale_change" />
+
+                <com.accessvascularinc.hydroguide.mma.ui.input.NumberPickerArrowButton
+                    android:id="@+id/catheter_insertion_length_number_picker_down_internal"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@color/ap_transparent"
+                    android:contentDescription="@string/cont_desc_decrease_value"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_capture_arrowdown" />
+
+            </LinearLayout>
+
+            <!-- CONFIRM BUTTON -->
+
+            <!-- CANCEL DELETE BUTTON -->
+            <ImageButton
+                android:id="@+id/confirm_btn_internal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@id/cancel_button_internal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_return_to_patient_input"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_report_checkmark" />
+
+            <ImageButton
+                android:id="@+id/cancel_button_internal"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="55dp"
+                android:layout_alignBottom="@id/catheter_insertion_length_selection_internal"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_return_to_patient_input"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/camera_capture_button_delete" />
+
+        </RelativeLayout>
+
+        <!-- ======================================================================= -->
+        <!-- EXTERNAL BLOCK (Default visible - contains your existing UI) -->
+        <!-- ======================================================================= -->
+
+        <RelativeLayout
+            android:id="@+id/external_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tab_container"
+            android:paddingTop="10dp"
+            android:visibility="visible">
+
+            <!-- ================= GRAPH ================= -->
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/capture_graph"
+                style="@style/APDefacto.Dark"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                android:layout_toEndOf="@id/catheter_insertion_length_selection"
+                android:background="@color/ap_transparent"
+                app:backgroundColor="@color/ap_transparent"
+                app:borderColor="@color/white"
+                app:borderThickness="2dp"
+                app:legendVisible="false"
+                app:graphWidthMode="relative"
+                app:graphWidth="1.0"
+                app:graphHeightMode="relative"
+                app:graphHeight="1.0"
+                app:gridBackgroundColor="@color/ap_transparent"
+                app:gridInsetBottom="0dp"
+                app:gridInsetLeft="0dp"
+                app:domainStep="0"
+                app:domainStepMode="subdivide"
+                app:lineLabels="none"
+                android:layout_marginEnd="20dp" />
+
+            <!-- ================= LENGTH SELECTION ================= -->
+            <LinearLayout
+                android:id="@+id/catheter_insertion_length_selection"
+                android:layout_width="200dp"
+                android:layout_height="250dp"
+                android:layout_alignParentStart="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/catheter_insertion_length_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="@string/capture_dialog_inserted_length_title"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <com.accessvascularinc.hydroguide.mma.ui.input.NumberPickerArrowButton
+                    android:id="@+id/catheter_insertion_length_number_picker_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@color/ap_transparent"
+                    android:contentDescription="@string/cont_desc_increase_value"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_capture_arrowup" />
+
+                <NumberPicker
+                    android:id="@+id/catheter_insertion_length_number_picker"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_weight="1"
+                    android:focusedByDefault="true"
+                    android:theme="@style/ThemeOverlay.NumberPicker"
+                    android:contentDescription="@string/cont_desc_timescale_change" />
+
+                <com.accessvascularinc.hydroguide.mma.ui.input.NumberPickerArrowButton
+                    android:id="@+id/catheter_insertion_length_number_picker_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@color/ap_transparent"
+                    android:contentDescription="@string/cont_desc_decrease_value"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/icon_capture_arrowdown" />
+
+            </LinearLayout>
+
+            <!-- CONFIRM BUTTON -->
+
+            <!-- CANCEL DELETE BUTTON -->
+            <ImageButton
+                android:id="@+id/confirm_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_above="@id/cancel_button"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_return_to_patient_input"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/button_report_checkmark" />
+
+            <ImageButton
+                android:id="@+id/cancel_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="55dp"
+                android:layout_alignBottom="@id/catheter_insertion_length_selection"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/cont_desc_return_to_patient_input"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/camera_capture_button_delete" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

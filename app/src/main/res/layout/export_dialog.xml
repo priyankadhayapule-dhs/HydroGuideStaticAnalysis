@@ -1,0 +1,176 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/export_confirmation_content"
+        android:layout_width="@dimen/export_prompt_width"
+        android:layout_height="@dimen/export_prompt_height"
+        android:background="@drawable/capture_dialog"
+        android:padding="15dp"
+        android:theme="@style/BottomDrawer"
+        tools:context=".ui.input.ExportDialogFragment">
+
+        <RelativeLayout
+            android:id="@+id/export_selection_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/export_prompt_height">
+
+            <LinearLayout
+                android:id="@+id/export_content"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/export_button_width"
+                    android:autoSizeTextType="uniform"
+                    android:text="Export Confirmation"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/export_dialog_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Would you like to export XXX procedure reports to the external drive named XXX?"
+                    android:textSize="16sp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@color/av_darker_blue">
+
+                    <ImageButton
+                        android:id="@+id/export_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/export_button_width"
+                        android:background="@drawable/thin_white_border" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/ap_transparent">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_margin="4dp"
+                            android:background="@color/ap_transparent"
+                            android:src="@drawable/button_bottom_export" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/export_button_width"
+                            android:layout_marginStart="8dp"
+                            android:background="@color/ap_transparent"
+                            android:gravity="center"
+                            android:text="Export"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@color/av_darker_blue">
+
+                    <ImageButton
+                        android:id="@+id/button_delete_and_export"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/export_button_width"
+                        android:background="@drawable/thin_white_border" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/ap_transparent">
+
+                        <ImageView
+                            android:layout_width="@dimen/export_button_width"
+                            android:layout_height="@dimen/export_button_width"
+                            android:background="@color/ap_transparent"
+                            android:src="@drawable/button_remove_white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/export_button_width"
+                            android:layout_marginStart="8dp"
+                            android:background="@color/ap_transparent"
+                            android:gravity="center"
+                            android:text="Export and Delete"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/export_quit_button"
+                android:layout_width="@dimen/export_button_width"
+                android:layout_height="@dimen/export_button_width"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/ap_transparent"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/select_profile_arrow_left" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="@dimen/export_progress_width"
+            android:layout_height="@dimen/export_progress_height"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/in_progress_message"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:autoSizeTextType="uniform"
+                android:text="Export In Progress..."
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/export_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="15dp"
+                android:indeterminate="true"
+                android:max="100"
+                android:minWidth="256dp"
+                android:minHeight="50dp"
+                android:progressTint="@color/av_light_blue" />
+
+            <ImageButton
+                android:id="@+id/progress_quit_button"
+                android:layout_width="@dimen/export_button_width"
+                android:layout_height="@dimen/export_button_width"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/ap_transparent"
+                android:scaleType="centerInside"
+                android:visibility="gone"
+                app:srcCompat="@drawable/select_profile_arrow_left" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

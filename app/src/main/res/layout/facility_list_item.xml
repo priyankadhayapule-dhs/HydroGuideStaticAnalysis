@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:minHeight="?attr/minTouchTargetSize"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/facility_list_item_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:background="@color/av_blue"
+        android:gravity="center_vertical"
+        android:minWidth="40dp"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/facility_list_item_icon"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/img_desc_facility_fav_icon"
+        android:scaleType="fitCenter"
+        android:src="@drawable/button_favorite"
+        app:tint="@color/black" />
+
+    <TextView
+        android:id="@+id/facility_list_item_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginHorizontal="5dp"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceSubtitle1"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="@dimen/facility_select_text_size" />
+
+</LinearLayout>

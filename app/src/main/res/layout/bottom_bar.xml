@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <variable
+            name="chartConfig"
+            type="com.accessvascularinc.hydroguide.mma.model.ChartConfig" />
+
+        <variable
+            name="monitorData"
+            type="com.accessvascularinc.hydroguide.mma.model.MonitorData" />
+
+        <variable
+            name="tabletState"
+            type="com.accessvascularinc.hydroguide.mma.model.TabletState" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:background="@color/av_darkest_blue">
+
+        <LinearLayout
+            android:id="@+id/lnrBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageButton
+                android:id="@+id/imgBack"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/caption_back"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/left_back" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/caption_back"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrHome"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/lnrBack"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageButton
+                android:id="@+id/imgHome"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/title_home"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/white_home" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/title_home"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrVolume"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/lnrHome"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageButton
+                android:id="@+id/volume_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/cont_desc_volume"
+                android:nextFocusLeft="@id/nav_to_patient_summary"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/button_neutral_volume" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/change_volume_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrBrightness"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/lnrVolume"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageButton
+                android:id="@+id/brightness_btn"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/cont_desc_brightness"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/button_neutral_brightness" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/change_brightness_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrResetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toEndOf="@id/lnrBrightness"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageButton
+                android:id="@+id/imgResetPwd"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/caption_reset_credentials_action"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/icon_reset_pwd" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/caption_reset_credentials_action"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageButton
+                android:id="@+id/imgRemove"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn"
+                android:contentDescription="@string/facility_remove"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/button_remove" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/facility_remove"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrSave"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:layout_marginRight="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageButton
+                android:id="@+id/imgSave"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/caption_save_action"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/button_report_checkmark" />
+
+            <TextView
+                android:id="@+id/tvRecordsAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/caption_save_action"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrAddClinician"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/lnrExport"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/imgAddClinician"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/caption_add_clinician"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/icon_add_clinician" />
+
+            <TextView
+                android:id="@+id/tvAddClincian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/caption_add_clinician"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrAddFacility"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/lnrExport"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/imgAddFacility"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/caption_add_facility"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/icon_add_facility" />
+
+            <TextView
+                android:id="@+id/tvAddFacility"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/caption_add_facility"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrExport"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/imgExport"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/export_button_label"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/button_bottom_export" />
+
+            <TextView
+                android:id="@+id/tvExport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/export_button_label"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnrRetry"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:padding="@dimen/bottom_bar_padding"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/imgRetry"
+                android:layout_width="@dimen/button_image_width"
+                android:layout_height="@dimen/button_image_height"
+                android:background="@drawable/av_btn_alt"
+                android:contentDescription="@string/export_button_label"
+                android:scaleType="centerInside"
+                android:clickable="false"
+                app:srcCompat="@drawable/ic_retry" />
+
+            <TextView
+                android:id="@+id/tvRetry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/retry"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/bottom_bar_button_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

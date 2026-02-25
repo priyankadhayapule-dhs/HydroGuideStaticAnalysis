@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="tabletState"
+            type="com.accessvascularinc.hydroguide.mma.model.TabletState" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="173dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tablet_battery_label"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/tablet_battery_label"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/tablet_battery_level_indicator"
+            android:layout_width="53dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/tablet_battery_label"
+            android:contentDescription="@string/cont_desc_battery_level_display"
+            app:srcCompat="@drawable/indicator_battery_90" />
+
+        <TextView
+            android:id="@+id/tablet_battery_level_pct"
+            android:layout_width="106dp"
+            android:layout_height="37dp"
+            android:layout_below="@id/tablet_battery_label"
+            android:layout_alignParentEnd="true"
+            android:autoSizeTextType="uniform"
+            android:text="@{tabletState.tabletChargePct > -1 ? Integer.toString(tabletState.tabletChargePct) + '%': `??? `}"
+            android:textColor="@color/av_green" />
+
+    </RelativeLayout>
+</layout>

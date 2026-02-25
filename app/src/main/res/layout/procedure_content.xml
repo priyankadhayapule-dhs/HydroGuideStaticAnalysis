@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="chartConfig"
+            type="com.accessvascularinc.hydroguide.mma.model.ChartConfig" />
+
+        <variable
+            name="monitorData"
+            type="com.accessvascularinc.hydroguide.mma.model.MonitorData" />
+
+        <variable
+            name="encounterData"
+            type="com.accessvascularinc.hydroguide.mma.model.EncounterData" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="586dp"
+        android:background="@color/av_blue"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:id="@+id/procedure_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!-- Left 30%: Procedure image, intrav captures, external_capture -->
+            <LinearLayout
+                android:id="@+id/procedure_inner_content_container"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="3"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/procedure_internal_route_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="Internal Route"
+                    android:src="@drawable/procedure_internal_route" />
+
+                <TextView
+                    android:id="@+id/biozdata_average_debug"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:text="TextView" />
+
+                <include
+                    android:id="@+id/intrav_captures_container"
+                    layout="@layout/intrav_captures_list"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/capture_container_height"
+                    android:visibility="gone"/>
+
+                <Space
+                    android:id="@+id/vert_spacer"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <include
+                    android:id="@+id/external_capture"
+                    layout="@layout/capture_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/capture_container_height"
+                    android:visibility="gone"/>
+
+                <!-- latest_capture and no_capture_placeholder moved to parent RelativeLayout below -->
+            </LinearLayout>
+
+            <!-- Spacer between left and right -->
+            <Space
+                android:id="@+id/captures_spacer"
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <!-- Right 70%: Pwave graphs and alerts -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="7">
+
+                <include
+                    android:id="@+id/pwave_graphs"
+                    layout="@layout/live_graphs_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="35dp" />
+
+                <include
+                    android:id="@+id/alert_content"
+                    layout="@layout/alert_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="8dp"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/multi_alert_content"
+                    layout="@layout/multi_alert_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="8dp"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- latest_capture: direct child, bottom left, centered horizontally in left 30% -->
+        <include
+            android:id="@+id/latest_capture"
+            layout="@layout/capture_layout"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="false"
+            android:layout_gravity="center_horizontal" />
+
+        <include
+            android:id="@+id/no_capture_placeholder"
+            layout="@layout/no_capture_placeholder"
+            android:layout_width="400dp"
+            android:layout_height="350dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_centerHorizontal="false"
+            android:layout_gravity="center_horizontal"
+            android:visibility="@{encounterData.latestCapture == null ? View.VISIBLE : View.GONE}"/>
+    </RelativeLayout>
+</layout>

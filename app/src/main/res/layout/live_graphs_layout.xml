@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/live_waveform_container_width"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/testUsbText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="400dp"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/mockPhaseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <include
+        android:id="@+id/controller_battery_warning_icon"
+        layout="@layout/controller_battery_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/missing_cotroller_icon"
+        layout="@layout/missing_connection_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/missing_ecg"
+        layout="@layout/missing_ecg_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/battery_status_alert_layout"
+        layout="@layout/battery_status_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:visibility="gone" />
+
+    <!-- Waveform sections container to evenly divide space -->
+    <LinearLayout
+        android:id="@+id/wave_sections_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- External waveform section (top half) -->
+        <RelativeLayout
+            android:id="@+id/external_section"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/ekg_graph_border">
+            <!-- Header container for external waveform: separate ImageView for precise vertical alignment -->
+            <LinearLayout
+                android:id="@+id/external_header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:orientation="horizontal"
+                android:gravity="top|start">
+
+                <ImageView
+                    android:id="@+id/external_logo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/logo_external"
+                    android:contentDescription="@string/external_label" />
+
+                <TextView
+                    android:id="@+id/live_graph_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/external_label"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/live_graph"
+                style="@style/APDefacto.Dark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/external_header_container"
+                android:layout_marginTop="0dp"
+                android:background="@color/ap_transparent"
+                app:backgroundColor="@color/ap_transparent"
+                app:domainStep="0"
+                app:domainStepMode="subdivide"
+                app:graphBackgroundColor="@color/ap_transparent"
+                app:graphHeight="1.0"
+                app:graphHeightMode="relative"
+                app:graphWidth="1.0"
+                app:graphWidthMode="relative"
+                app:gridBackgroundColor="@color/ap_transparent"
+                app:gridInsetBottom="0dp"
+                app:gridInsetLeft="0dp"
+                app:legendVisible="false"
+                app:lineLabels="none"
+                app:renderMode="use_background_thread" />
+        </RelativeLayout>
+
+        <!-- Spacer between sections for visual padding -->
+        <View
+            android:id="@+id/section_spacer"
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <!-- Intravascular waveform section (bottom half) -->
+        <RelativeLayout
+            android:id="@+id/intravascular_section"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/ekg_graph_border">
+            <!-- Header container for intravascular waveform: separate ImageView for precise vertical alignment -->
+            <LinearLayout
+                android:id="@+id/intravascular_header_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:orientation="horizontal"
+                android:gravity="top|start">
+
+                <ImageView
+                    android:id="@+id/intravascular_logo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/logo_intravascular"
+                    android:contentDescription="@string/intravascular_label" />
+
+                <TextView
+                    android:id="@+id/intra_live_graph_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/intravascular_label"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <!-- Legend container for Last Capture and Maximum -->
+                <LinearLayout
+                    android:id="@+id/intra_legend_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="300dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Last Capture legend item -->
+                    <View
+                        android:id="@+id/legend_last_capture_square"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@color/av_pink" />
+
+                    <TextView
+                        android:id="@+id/legend_last_capture_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="@string/last_capture"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <!-- Maximum legend item -->
+                    <View
+                        android:id="@+id/legend_maximum_square"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@color/av_light_blue" />
+
+                    <TextView
+                        android:id="@+id/legend_maximum_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="@string/maximum"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/intra_live_graph"
+                style="@style/APDefacto.Dark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/intravascular_header_container"
+                android:layout_marginTop="0dp"
+                android:background="@color/ap_transparent"
+                app:backgroundColor="@color/ap_transparent"
+                app:domainStep="0"
+                app:domainStepMode="subdivide"
+                app:graphBackgroundColor="@color/ap_transparent"
+                app:graphHeight="1.0"
+                app:graphHeightMode="relative"
+                app:graphWidth="1.0"
+                app:graphWidthMode="relative"
+                app:gridBackgroundColor="@color/ap_transparent"
+                app:gridInsetBottom="0dp"
+                app:gridInsetLeft="0dp"
+                app:legendVisible="false"
+                app:lineLabels="none"
+                app:renderMode="use_background_thread" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

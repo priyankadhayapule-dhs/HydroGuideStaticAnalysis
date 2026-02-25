@@ -1,0 +1,205 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+
+    <!-- Common -->
+    <dimen name="top_bar_height">76dp</dimen>
+    <dimen name="bottom_bar_height">90dp</dimen>
+    <dimen name="bottom_bar_button_label">18sp</dimen>
+    <dimen name="title_label">36sp</dimen>
+    <dimen name="title_or_profile_widget_width">450dp</dimen>
+    <dimen name="report_view_quick_info_width">700dp</dimen>
+    <dimen name="profile_widget_height">500dp</dimen>
+    <dimen name="setting_change_label_size">20sp</dimen>
+
+    <!-- Buttons -->
+    <dimen name="button_image_width">93dp</dimen>
+    <dimen name="button_image_height">60dp</dimen>
+    <dimen name="button_image_sm_width">68dp</dimen>
+    <dimen name="button_image_sm_height">44dp</dimen>
+    <dimen name="button_image_lg_width">198dp</dimen>
+    <dimen name="button_image_lg_height">128dp</dimen>
+    <dimen name="button_close_keyboard">180dp</dimen>
+
+    <!-- Splash Screen -->
+    <dimen name="splash_logo_container_height">450dp</dimen>
+    <dimen name="splash_hydroguide_logo_width">788dp</dimen>
+    <dimen name="splash_hydroguide_logo_height">205dp</dimen>
+    <dimen name="splash_sub_logo_width">277dp</dimen>
+    <dimen name="splash_sub_logo_height">86dp</dimen>
+    <dimen name="splash_sub_logo_margin">20dp</dimen>
+    <dimen name="splash_text_size">33sp</dimen>
+    <dimen name="splash_text_vert_margin">20dp</dimen>
+
+    <!-- Home Screen -->
+    <dimen name="home_nav_margin">20dp</dimen>
+    <dimen name="home_nav_label_size">24sp</dimen>
+    <dimen name="home_missing_controller_margin">400dp</dimen>
+
+    <!-- Records Screen -->
+    <dimen name="records_table_header_label_size">20sp</dimen>
+    <dimen name="records_table_cell_text_size">16sp</dimen>
+    <dimen name="records_table_cell_padding">10dp</dimen>
+    <dimen name="records_column_checkbox_width">48dp</dimen>
+    <dimen name="records_column_name_width">200dp</dimen>
+    <dimen name="records_column_id_width">200dp</dimen>
+    <dimen name="records_column_dob_width">140dp</dimen>
+    <dimen name="records_column_date_width">160dp</dimen>
+    <dimen name="records_column_done_by_width">510dp</dimen>
+    <dimen name="records_column_facility_width">180dp</dimen>
+    <dimen name="records_column_sync_status_width">150dp</dimen>
+    <!-- Extra width applied only to Cloud table (to visually widen beyond Local) -->
+    <dimen name="records_cloud_extra_width">75dp</dimen>
+    <dimen name="records_cloud_extra_width1">130dp</dimen>
+    <dimen name="records_table_row_height">46dp</dimen>
+    <!-- Input Forms -->
+    <dimen name="input_box_label_size">24sp</dimen>
+    <dimen name="input_box_label_margin_end">10dp</dimen>
+    <dimen name="input_box_vert_padding">14dp</dimen>
+    <dimen name="input_box_margin_end">20dp</dimen>
+    <dimen name="input_box_margin_bottom">10dp</dimen>
+    <dimen name="input_box_small_width">200dp</dimen>
+    <dimen name="summary_input_box_label_size">16sp</dimen>
+    <dimen name="summary_input_box_vert_padding">7dp</dimen>
+    <dimen name="summary_input_box_margin_bottom">10dp</dimen>
+    <dimen name="summary_input_width_small">200dp</dimen>
+    <dimen name="summary_input_width_medium">350dp</dimen>
+    <dimen name="facility_select_text_size">20sp</dimen>
+
+    <!-- Procedure Screen -->
+    <dimen name="p_wave_change_legend_label">20sp</dimen>
+    <dimen name="live_waveform_container_width">940dp</dimen>
+    <dimen name="live_waveform_container_height">290dp</dimen>
+
+    <!-- Capture Views -->
+    <dimen name="capture_container_width">300dp</dimen>
+    <dimen name="capture_container_height">280dp</dimen>
+    <dimen name="capture_header_footer_height">32dp</dimen>
+    <dimen name="capture_text_size">20sp</dimen>
+    <dimen name="capture_id_text_size">14sp</dimen>
+
+    <!-- Preferences Screen -->
+    <dimen name="pref_outer_margin">16dp</dimen>
+    <dimen name="pref_card_inner_margin">5dp</dimen>
+    <dimen name="pref_card_inner_padding">5dp</dimen>
+    <dimen name="pref_card_text_input_padding">10dp</dimen>
+
+    <!-- Report View-->
+    <dimen name="report_view_top_bar_text_size">26sp</dimen>
+
+    <!-- Report -->
+    <!-- Dimension For US Letter Size Paper (1 inch = 72 points) -->
+    <dimen name="PDF_PAGE_WIDTH">612pt</dimen> <!-- 8.5 Inch -->
+    <dimen name="PDF_PAGE_HEIGHT">792pt</dimen> <!-- 11 Inch -->
+    <dimen name="PDF_PAGE_MARGIN">72pt</dimen> <!-- 1 Inch Margin -->
+    <dimen name="pdf_logo_width">297.9dp</dimen>
+    <dimen name="pdf_logo_height">77.56dp</dimen>
+    <dimen name="pdf_capture_width">200pt</dimen>
+    <dimen name="pdf_capture_height">230pt</dimen>
+    <dimen name="pdf_capture_label_height">22pt</dimen>
+
+    <dimen name="pdf_text_size">11pt</dimen>
+    <dimen name="pdf_subtext_size">8pt</dimen>
+    <dimen name="pdf_info_line_width">230pt</dimen>
+    <dimen name="pdf_info_label_width">94pt</dimen>
+    <dimen name="pdf_capture_label_width">194pt</dimen>
+    <dimen name="pdf_versions_text_end_margin">5dp</dimen>
+    <dimen name="pdf_text_vertical_margin">10dp</dimen>
+    <dimen name="pdf_text_info_vert_margin">20dp</dimen>
+    <dimen name="pdf_label_margin_end">10dp</dimen>
+    <dimen name="pdf_top_captures_horizontal_margin">30dp</dimen>
+    <dimen name="pdf_captures_row_vertical_margin">50dp</dimen>
+
+    <!-- Alert Dialog -->
+    <dimen name="alert_widget_padding">4dp</dimen>
+    <dimen name="alert_widget_spacing">10dp</dimen>
+    <dimen name="alert_widget_regular_text_size">22sp</dimen>
+    <dimen name="alert_widget_bulleted_text_size">20sp</dimen>
+    <dimen name="alert_widget_title_size">50dp</dimen>
+    <dimen name="alert_widget_dev_info_size">14sp</dimen>
+
+    <!-- Dialog Gain Responsive Dimensions (default/phone) -->
+    <dimen name="dialog_gain_title_text_size">28sp</dimen>
+    <dimen name="dialog_gain_title_margin_bottom">24dp</dimen>
+    <dimen name="dialog_gain_label_text_size">22sp</dimen>
+    <dimen name="dialog_gain_value_margin_start">8dp</dimen>
+    <dimen name="dialog_gain_min_width">910dp</dimen>
+    <dimen name="dialog_gain_min_height">546dp</dimen>
+    <dimen name="dialog_gain_padding">52dp</dimen>
+
+
+    <dimen name="ultrasound_controls_margin_start">24dp</dimen>
+    <dimen name="ultrasound_controls_margin_top">24dp</dimen>
+    <dimen name="ultrasound_controls_padding">16dp</dimen>
+    <dimen name="ultrasound_control_min_size">100dp</dimen>
+    <dimen name="ultrasound_control_margin_end">16dp</dimen>
+    <dimen name="ultrasound_control_padding_vertical">8dp</dimen>
+    <dimen name="ultrasound_image_min_width">200dp</dimen>
+    <dimen name="ultrasound_image_min_height">120dp</dimen>
+
+    <dimen name="dialog_gain_row_height">56dp</dimen>
+    <dimen name="dialog_gain_row_margin_bottom">24dp</dimen>
+    <dimen name="dialog_gain_last_row_margin_bottom">32dp</dimen>
+    <dimen name="dialog_gain_button_size">64dp</dimen>
+    <dimen name="dialog_gain_button_margin_end">24dp</dimen>
+
+    <dimen name="dialog_gain_seekbar_height">36dp</dimen>
+    <dimen name="dialog_gain_value_text_size">28sp</dimen>
+
+    <!-- Export Dialog -->
+    <dimen name="export_prompt_width">450dp</dimen>
+    <dimen name="export_prompt_height">300dp</dimen>
+    <dimen name="export_progress_width">400dp</dimen>
+    <dimen name="export_progress_height">150dp</dimen>
+    <dimen name="export_button_width">40dp</dimen>
+
+    <!-- Dashboard Grid Items -->
+    <dimen name="grids_vertical_spacing">40dp</dimen>
+    <dimen name="grids_horizontal_spacing">40dp</dimen>
+
+    <!-- Bottom Bar Margins -->
+    <dimen name="bottom_bar_margin_left">5dp</dimen>
+    <dimen name="bottom_bar_padding">5dp</dimen>
+
+    <dimen name="input_fields_top_margin">20dp</dimen>
+    <dimen name="container_layouts_spacing">20dp</dimen>
+
+    <!-- Search field -->
+    <dimen name="search_field_padding">10dp</dimen>
+    <dimen name="vertical_padding">3dp</dimen>
+    <dimen name="horizontal_padding">5dp</dimen>
+    <dimen name="prefix_drawable_padding">2dp</dimen>
+    <dimen name="field_corners">20dp</dimen>
+    <dimen name="search_field_height">40dp</dimen>
+
+    <dimen name="table_row_height">46dp</dimen>
+    <dimen name="table_taskbar_height">60dp</dimen>
+    <dimen name="table_taskbar_icons_padding">5dp</dimen>
+
+    <dimen name="table_text_no_records">12sp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!-- System updates package list icons -->
+    <dimen name="sys_updates_package_icon_size">48dp</dimen>
+    <dimen name="sys_updates_package_name_size">18sp</dimen>
+
+    <dimen name="sys_updates_tile_width">300dp</dimen>
+    <dimen name="sys_updates_tile_height">200dp</dimen>
+
+    <dimen name="dimen_4x">4dp</dimen>
+    <dimen name="dimen_8x">8dp</dimen>
+    <dimen name="dimen_10x">10dp</dimen>
+    <dimen name="dimen_16x">16dp</dimen>
+    <dimen name="dimen_32x">32dp</dimen>
+    <dimen name="dimen_42x">40dp</dimen>
+
+    <dimen name="sp_dimen_14x">14sp</dimen>
+    <dimen name="sp_dimen_18x">18sp</dimen>
+
+    <dimen name="dimen_80x">80dp</dimen>
+    <dimen name="dimen_12x">12dp</dimen>
+    <dimen name="dimen_25x">25dp</dimen>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/table_row_height"
+    android:orientation="vertical">
+
+    <TableRow
+        android:id="@+id/tblrRowClinician"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/TableRowTheme">
+
+        <CheckBox
+            android:id="@+id/chkRecord"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".04"
+            android:layout_margin="0dp"
+            android:background="@color/av_darkest_blue"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/thin_white_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/records_table_cell_padding"
+            android:text="@string/records_name_label"/>
+
+        <TextView
+            android:id="@+id/tvEmailAddress"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/thin_white_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/records_table_cell_padding"
+            android:text="@string/records_name_label"/>
+        <TextView
+            android:id="@+id/tvUserType"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:background="@drawable/thin_white_border"
+            android:gravity="center_vertical"
+            android:padding="@dimen/records_table_cell_padding"
+            android:text="UserType"/>
+
+    </TableRow>
+
+</LinearLayout>

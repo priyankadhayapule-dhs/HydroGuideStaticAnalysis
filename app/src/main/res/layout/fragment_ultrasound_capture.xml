@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_background"
+        tools:context=".ui.UltrasoundCaptureFragment">
+
+        <include
+            android:id="@+id/top_bar"
+            layout="@layout/generic_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            app:title="@{title}"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        
+        
+        <!-- FrameLayout wrapper for SurfaceView with border -->
+        <FrameLayout
+            android:id="@+id/ultrasound_image_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/top_bar"
+            app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Surface holder -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/surface_holder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Guideline to simulate negative bottom margin -->
+                <!-- 1.20 = 20% overlap beyond bottom -->
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bottom_overlap_guide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="1.4" />
+
+                <!-- Ultrasound container -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ultrasound_container"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/bottom_overlap_guide"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <SurfaceView
+                        android:id="@+id/ultrasound_surface_view"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <!-- Measurement Overlay - positioned exactly over SurfaceView -->
+                    <com.accessvascularinc.hydroguide.mma.ui.MeasurementOverlay
+                        android:id="@+id/measurement_overlay"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="@id/ultrasound_surface_view"
+                        app:layout_constraintBottom_toBottomOf="@id/ultrasound_surface_view"
+                        app:layout_constraintStart_toStartOf="@id/ultrasound_surface_view"
+                        app:layout_constraintEnd_toEndOf="@id/ultrasound_surface_view"
+                        android:visibility="visible" />
+
+                    <!-- Center Line Overlay - positioned exactly over SurfaceView -->
+                    <com.accessvascularinc.hydroguide.mma.ui.CenterLineOverlay
+                        android:id="@+id/center_line_overlay"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintTop_toTopOf="@id/ultrasound_surface_view"
+                        app:layout_constraintBottom_toBottomOf="@id/ultrasound_surface_view"
+                        app:layout_constraintStart_toStartOf="@id/ultrasound_surface_view"
+                        app:layout_constraintEnd_toEndOf="@id/ultrasound_surface_view"
+                        android:visibility="visible" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.accessvascularinc.hydroguide.mma.ui.MagnifierView
+                android:id="@+id/magnifier_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+
+        <!-- Selected Catheter Size Display -->
+        <LinearLayout
+            android:id="@+id/selected_catheter_size_container"
+            android:layout_width="wrap_content"
+            android:layout_height="170dp"
+            android:orientation="vertical"
+            android:background="@drawable/dialog_depth_bg"
+            android:padding="20dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toTopOf="@id/bottom_bar"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:id="@+id/selected_catheter_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selected Catheter Size"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="start">
+                <ImageView
+                    android:id="@+id/selected_catheter_check"
+                    android:layout_width="32dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/button_report_checkmark"
+                    android:contentDescription="Selected" />
+                <TextView
+                    android:id="@+id/selected_catheter_size_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4 French"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginStart="14dp" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/lumens_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of Lumnes"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp" />
+            <TextView
+                android:id="@+id/lumes_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="44"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bottom_bar_height"
+            android:background="@color/av_darkest_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <!-- Left side buttons (Back) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Back Button -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height">
+
+                        <ImageButton
+                            android:id="@+id/back_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/av_btn"
+                            android:contentDescription="@string/back"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/left_back" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Back"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Select Catheter Size Option -->
+                <LinearLayout
+                    android:id="@+id/catheter_size_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/catheter_size_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/select_catheter_size"
+                        android:contentDescription="Select Catheter Size"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Catheter Size"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <!-- Measurement Tool Option -->
+                <LinearLayout
+                    android:id="@+id/measurement_tool_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/measurement_tool_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@android:drawable/ic_menu_edit"
+                        android:contentDescription="Measurement Tool"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Measure"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <!-- Clear Measurements Option -->
+                <LinearLayout
+                    android:id="@+id/clear_measurements_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/clear_measurements_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@android:drawable/ic_menu_delete"
+                        android:contentDescription="Clear Measurements"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Clear"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <!-- Save Capture Option -->
+                <LinearLayout
+                    android:id="@+id/save_capture_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/save_capture_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@android:drawable/ic_menu_save"
+                        android:contentDescription="Save Capture"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/save_capture_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Save (0)"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <!-- Zoom Reset Option -->
+                <LinearLayout
+                    android:id="@+id/zoom_reset_option"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/zoom_reset_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@android:drawable/ic_menu_zoom"
+                        android:contentDescription="Reset Zoom"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reset Zoom"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Right side - Proceed button -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="@dimen/button_image_width"
+                    android:layout_height="@dimen/button_image_height">
+
+                    <ImageButton
+                        android:id="@+id/proceed_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="Proceed"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/right_back" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Proceed"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/bottom_bar_button_label"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

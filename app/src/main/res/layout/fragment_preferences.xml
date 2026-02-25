@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="profileState"
+            type="com.accessvascularinc.hydroguide.mma.model.ProfileState" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/av_blue"
+        tools:context=".ui.PreferencesFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/preferences_top_bar"
+                layout="@layout/generic_top_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/top_bar_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/pref_outer_margin"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toTopOf="@id/preferences_bottom_bar"
+                app:layout_constraintTop_toBottomOf="@id/preferences_top_bar">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/inserter_settings"
+                    android:layout_width="600dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.25">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/av_darkest_blue"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/pref_card_text_input_padding"
+                            android:text="@string/pref_inserter_name_title"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/patient_inserter_input_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:boxBackgroundColor="@color/white">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/patient_inserter_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none"
+                                android:maxLines="1"
+                                android:paddingVertical="@dimen/pref_card_text_input_padding"
+                                android:text="@={profileState.selectedProfile.profileName}"
+                                android:focusable="false"
+                                android:clickable="false"
+                                android:cursorVisible="false"
+                                android:longClickable="false"
+                                android:enabled="false" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/data_entry_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pref_outer_margin"
+                    app:layout_constraintEnd_toEndOf="@id/inserter_settings"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/inserter_settings"
+                    android:visibility="gone" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/av_darkest_blue"
+                            android:paddingVertical="@dimen/pref_card_inner_padding"
+                            android:text="@string/pref_data_entry_title"
+                            android:textAlignment="center"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_margin="@dimen/pref_card_inner_margin"
+                            android:layout_weight="1"
+                            android:columnCount="2"
+                            android:rowCount="5">
+
+                            <CheckBox
+                                android:id="@+id/show_inserter_name_cb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:checked="@={profileState.selectedProfile.userPreferences.displayedEntryFields.showName}"
+                                android:text="@string/patient_name_input_label" />
+
+                            <CheckBox
+                                android:id="@+id/show_insertion_vein_cb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:checked="@={profileState.selectedProfile.userPreferences.displayedEntryFields.showInsertionVein}"
+                                android:text="@string/patient_insert_vein_input_label" />
+
+                            <CheckBox
+                                android:id="@+id/show_id_cb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:checked="@={profileState.selectedProfile.userPreferences.displayedEntryFields.showId}"
+                                android:text="@string/patient_id_input_label" />
+
+                            <CheckBox
+                                android:id="@+id/show_patient_side_cb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:checked="@={profileState.selectedProfile.userPreferences.displayedEntryFields.showPatientSide}"
+                                android:text="@string/patient_insert_side_input_label" />
+
+                            <CheckBox
+                                android:id="@+id/show_dob_cb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:checked="@={profileState.selectedProfile.userPreferences.displayedEntryFields.showDob}"
+                                android:text="@string/patient_dob_input_label" />
+
+                            <CheckBox
+                                android:id="@+id/show_arm_circ_cb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:checked="@={profileState.selectedProfile.userPreferences.displayedEntryFields.showArmCircumference}"
+                                android:text="@string/patient_arm_circum_input_label" />
+
+                            <CheckBox
+                                android:id="@+id/show_vein_size_cb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:checked="@={profileState.selectedProfile.userPreferences.displayedEntryFields.showVeinSize}"
+                                android:text="@string/patient_vein_size_input_label" />
+
+                            <CheckBox
+                                android:id="@+id/show_insertion_reason_cb"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_rowWeight="1"
+                                android:layout_columnWeight="1"
+                                android:checked="@={profileState.selectedProfile.userPreferences.displayedEntryFields.showReasonForInsertion}"
+                                android:text="@string/patient_insert_reason_input_label" />
+
+                        </GridLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/capture_image_settings"
+                    android:layout_width="440dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/pref_outer_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/data_entry_settings">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/av_darker_blue"
+                            android:paddingVertical="@dimen/pref_card_inner_padding"
+                            android:text="@string/pref_capture_title"
+                            android:textAlignment="center"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <RadioGroup
+                            android:id="@+id/capture_labeling_radio_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/pref_card_inner_padding">
+
+                            <RadioButton
+                                android:id="@+id/radio_button_capture_labeling_exposed"
+                                style="@style/Widget.App.CheckBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/pref_capture_label_exposed_option"
+                                android:textColor="@color/white" />
+
+                            <RadioButton
+                                android:id="@+id/radio_button_capture_labeling_inserted"
+                                style="@style/Widget.App.CheckBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/pref_capture_label_inserted_option"
+                                android:textColor="@color/white" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/audio_settings"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/pref_outer_margin"
+                    android:layout_marginTop="@dimen/pref_outer_margin"
+                    app:cardElevation="0dp"
+                    app:layout_constraintStart_toEndOf="@id/capture_image_settings"
+                    app:layout_constraintTop_toBottomOf="@id/data_entry_settings">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/av_darker_blue"
+                            android:paddingVertical="@dimen/pref_card_inner_padding"
+                            android:text="@string/pref_audio_settings_title"
+                            android:textAlignment="center"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <RadioGroup
+                            android:id="@+id/enable_audio_radio_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/pref_card_inner_padding">
+
+                            <RadioButton
+                                android:id="@+id/enable_audio_on"
+                                style="@style/Widget.App.CheckBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/pref_audio_settings_on"
+                                android:textColor="@color/white" />
+
+                            <RadioButton
+                                android:id="@+id/enable_audio_off"
+                                style="@style/Widget.App.CheckBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/pref_audio_settings_off"
+                                android:textColor="@color/white" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/facility_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/pref_outer_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/inserter_settings"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/facility_mode_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/av_darkest_blue"
+                            android:padding="@dimen/pref_card_inner_padding"
+                            android:text="@string/pref_facility_name_title"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <RadioGroup
+                            android:id="@+id/facility_mode_radio_group"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/facility_mode_title"
+                            android:orientation="vertical"
+                            android:padding="@dimen/pref_card_inner_padding">
+
+                            <RadioButton
+                                android:id="@+id/radio_button_facility_mode_once_manual"
+                                style="@style/Widget.App.CheckBox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:textColor="@color/white" />
+
+                            <RadioButton
+                                android:id="@+id/radio_button_facility_mode_dropdown"
+                                style="@style/Widget.App.CheckBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/pref_facility_dropdown_option"
+                                android:textColor="@color/white" />
+
+                            <RadioButton
+                                android:id="@+id/radio_button_facility_mode_manual_each"
+                                style="@style/Widget.App.CheckBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/pref_facility_manual_each_option"
+                                android:textColor="@color/white" />
+                        </RadioGroup>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/facility_input_box"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/pref_card_inner_margin"
+                            android:layout_marginTop="50dp"
+                            android:paddingStart="40dp"
+                            android:paddingEnd="@dimen/pref_card_inner_padding"
+                            app:boxBackgroundColor="@color/white">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/facility_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPersonName"
+                                android:maxLines="1"
+                                android:paddingVertical="@dimen/pref_card_text_input_padding"
+                                android:text="@={profileState.selectedProfile.userPreferences.manualFacility.facilityName}" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/facility_list"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/pref_outer_margin"
+                    android:layout_marginTop="@dimen/pref_outer_margin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/data_entry_settings"
+                    app:layout_constraintTop_toBottomOf="@id/facility_settings"
+                    android:visibility="gone" >
+
+                    <RelativeLayout
+                        android:id="@+id/facilities_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:background="@color/av_darkest_blue"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/facilities_title"
+                            android:layout_width="84dp"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/pref_card_inner_padding"
+                            android:text="@string/pref_facility_list_title"
+                            android:textAlignment="center"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <LinearLayout
+                            android:id="@+id/select_all_facilities"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/facilities_title"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/select_all_facilities_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_selectall" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/facility_select_all"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/add_facility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/select_all_facilities"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/add_facility_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_add" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/facility_add"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/edit_facility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/add_facility"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/edit_facility_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_edit" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/facility_edit"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/remove_facilities"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/edit_facility"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/remove_facilities_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_remove" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/facility_remove"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/favorite_facilities"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/remove_facilities"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/favorite_facilities_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_favorite" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/facility_favorite"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/sort_facilities_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/favorite_facilities"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/sort_facilities_name_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_alphabetic_active" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/facility_descending_alphabetical"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/sort_facilities_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/sort_facilities_name"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <ImageButton
+                                android:id="@+id/sort_facilities_date_btn"
+                                android:layout_width="@dimen/button_image_sm_width"
+                                android:layout_height="@dimen/button_image_sm_height"
+                                android:background="@drawable/av_btn_alt"
+                                android:contentDescription="@string/cont_desc_vert_offset"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/button_bydate_active" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/facility_recent"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/bottom_bar_button_label"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/facility_list_items"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_below="@id/select_all_facilities"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/av_blue"
+                            android:clipToPadding="false"
+                            android:fadeScrollbars="true"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/pref_card_inner_padding"
+                            android:scrollbarSize="10dp"
+                            android:scrollbarThumbVertical="@color/av_yellow"
+                            android:scrollbars="vertical" />
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/preferences_bottom_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bottom_bar_height"
+                android:background="@color/av_darkest_blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/home_button"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="@string/cont_desc_return_to_patient_input"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_changescreens_home" />
+
+                    <TextView
+                        android:id="@+id/home_button_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/title_home"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/volume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="40dp"
+                    android:layout_toEndOf="@id/home"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/volume_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn_alt"
+                        android:contentDescription="@string/cont_desc_volume"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_volume" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/change_volume_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/brightness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/volume"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/brightness_btn"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn_alt"
+                        android:contentDescription="@string/cont_desc_brightness"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_neutral_brightness" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/change_brightness_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:visibility="gone" >
+
+                    <ImageButton
+                        android:id="@+id/remove_profile_button"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="@string/cont_desc_return_to_patient_input"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_remove" />
+
+                    <TextView
+                        android:id="@+id/remove_profile_button_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:singleLine="true"
+                        android:text="@string/pref_remove_profile_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="end"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <ImageButton
+                        android:id="@+id/save_profile_button"
+                        android:layout_width="@dimen/button_image_width"
+                        android:layout_height="@dimen/button_image_height"
+                        android:background="@drawable/av_btn"
+                        android:contentDescription="@string/cont_desc_return_to_patient_input"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/button_report_checkmark" />
+
+                    <TextView
+                        android:id="@+id/save_profile_button_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/pref_save_profile_label"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/bottom_bar_button_label"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/profile_top_bar"
+            android:layout_width="@dimen/title_or_profile_widget_width"
+            android:layout_height="@dimen/top_bar_height"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/user_label"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/profile_label"
+                android:textColor="@color/av_light_blue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/selected_profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:drawablePadding="10dp"
+                android:text="@{(profileState.selectedProfile.profileName.isEmpty()) ? `(New Profile)` : profileState.selectedProfile.profileName}"
+                android:textColor="@color/av_light_blue"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

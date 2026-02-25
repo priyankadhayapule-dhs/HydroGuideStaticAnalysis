@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+        <!--        <variable-->
+        <!--            name="controllerState"-->
+        <!--            type="com.example.hydroguide.model.ControllerState" />-->
+        <variable
+            name="encounterData"
+            type="com.accessvascularinc.hydroguide.mma.model.EncounterData" />
+
+        <variable
+            name="monitorData"
+            type="com.accessvascularinc.hydroguide.mma.model.MonitorData" />
+
+        <variable
+            name="controllerState"
+            type="com.accessvascularinc.hydroguide.mma.model.ControllerState" />
+
+        <variable
+            name="tabletState"
+            type="com.accessvascularinc.hydroguide.mma.model.TabletState" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/av_darkest_blue"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <LinearLayout
+            android:layout_width="306dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/patient_info_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:autoSizeTextType="uniform"
+                android:text="@string/patient_info_label"
+                android:textColor="@color/av_light_blue"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/patient_info_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autoSizeTextType="uniform"
+                android:text="@{encounterData.patient.patientName != null &amp;&amp; !encounterData.patient.patientName.isEmpty() ? encounterData.patient.patientName : encounterData.patient.patientId}"
+                android:textColor="@color/av_light_blue"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="850dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/heartbeat_icon"
+                android:layout_width="48dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/cont_desc_heart_icon"
+                app:srcCompat="@drawable/logo_bpm" />
+
+            <TextView
+                android:id="@+id/heartbeat_value"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="5dp"
+                android:autoSizeTextType="uniform"
+                android:text="@{monitorData.getDisplayHeartRate()}"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/trim_length_label"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/trim_length_label"
+                android:textAlignment="textEnd"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/trim_length_value"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:autoSizeTextType="uniform"
+                android:text="@{encounterData.trimLengthCm.isPresent() ? encounterData.trimLengthCm.getAsDouble() + `cm` : `??? `}"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="173dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/controller_battery_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="@string/controller_battery_label"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/remote_battery_level_indicator"
+                    android:layout_width="53dp"
+                    android:layout_height="37dp"
+                    android:layout_below="@id/controller_battery_label"
+                    android:contentDescription="@string/cont_desc_battery_level_display"
+                    app:srcCompat="@drawable/indicator_battery_90" />
+
+                <TextView
+                    android:id="@+id/controller_battery_level_pct"
+                    android:layout_width="106dp"
+                    android:layout_height="37dp"
+                    android:layout_below="@id/controller_battery_label"
+                    android:layout_alignParentEnd="true"
+                    android:autoSizeTextType="uniform"
+                    android:text="@{controllerState.batteryLevelPct > -1 ? Integer.toString(Math.round(controllerState.batteryLevelPct)) + '%': `??? `}"
+                    android:textColor="@color/av_green" />
+
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/tablet_battery_indicator"
+                layout="@layout/tablet_battery_indicator"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                app:tabletState="@{tabletState}" />
+
+            <ImageView
+                android:id="@+id/usb_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cont_desc_usb_icon"
+                app:srcCompat="@drawable/logo_usb_disconnected" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="193dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/cont_desc_hydroguide_logo"
+            app:srcCompat="@drawable/logo_hydroguide" />
+
+        <include
+            android:id="@+id/tablet_battery_warning_icon"
+            layout="@layout/tablet_battery_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

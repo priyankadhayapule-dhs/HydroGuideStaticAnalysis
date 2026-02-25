@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="320dp"
+    android:layout_height="290dp"
+    android:background="@color/av_darkest_blue"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/p_wave_gauges_label"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:text="@string/p_wave_amp_label"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/amp_legend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@id/p_wave_change_gauges"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/no_p_wave_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_pwave_found_label"
+            android:textAlignment="center"
+            android:textColor="@color/battery_red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:layout_marginBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/external_legend_marker"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:paddingEnd="4dp"
+                android:src="@drawable/legend_user_saved" />
+
+            <TextView
+                android:id="@+id/external_legend_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:drawablePadding="10dp"
+                android:text="@string/external_label"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/p_wave_change_legend_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/last_capture_legend_marker"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:paddingEnd="4dp"
+                android:src="@drawable/legend_external" />
+
+            <TextView
+                android:id="@+id/last_capture_legend_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:drawablePadding="10dp"
+                android:text="@string/last_capture_legend_label"
+                android:textAlignment="textStart"
+                android:textColor="@color/av_pink"
+                android:textSize="@dimen/p_wave_change_legend_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/current_legend_marker"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:paddingEnd="4dp"
+                android:src="@drawable/legend_current" />
+
+            <TextView
+                android:id="@+id/current_legend_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:drawablePadding="10dp"
+                android:text="@string/current_label"
+                android:textAlignment="textStart"
+                android:textColor="@color/av_yellow"
+                android:textSize="@dimen/p_wave_change_legend_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/max_legend_marker"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:paddingEnd="4dp"
+                android:src="@drawable/legend_maximum" />
+
+            <TextView
+                android:id="@+id/max_legend_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:drawablePadding="10dp"
+                android:text="@string/max_label"
+                android:textAlignment="textStart"
+                android:textColor="@color/av_light_blue"
+                android:textSize="@dimen/p_wave_change_legend_label"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/p_wave_change_gauges"
+        style="@style/APDefacto.Dark"
+        android:layout_width="140dp"
+        android:layout_height="250dp"
+        android:layout_below="@id/p_wave_gauges_label"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/ap_transparent"
+        app:backgroundColor="@color/ap_transparent"
+        app:borderColor="@color/white"
+        app:borderThickness="2dp"
+        app:domainStep="0"
+        app:domainStepMode="subdivide"
+        app:graphBackgroundColor="@color/ap_transparent"
+        app:graphHeight="1.0"
+        app:graphHeightMode="relative"
+        app:graphWidth="1.0"
+        app:graphWidthMode="relative"
+        app:gridBackgroundColor="@color/ap_transparent"
+        app:gridClippingEnabled="false"
+        app:gridInsetBottom="0dp"
+        app:gridInsetLeft="0dp"
+        app:legendVisible="false"
+        app:lineLabels="none"
+        app:renderMode="use_background_thread" />
+
+
+</RelativeLayout>

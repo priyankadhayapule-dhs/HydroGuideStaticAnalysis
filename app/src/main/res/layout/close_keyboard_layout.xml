@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/close_keyboard"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:background="@color/av_darkest_blue"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <ImageButton
+        android:id="@+id/close_keyboard_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/av_btn"
+        android:contentDescription="@string/cont_desc_start_procedure"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/keyboard_hide_24dp" />
+
+    <TextView
+        android:id="@+id/close_keyboard_button_label"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text="@string/close_keyboard_label"
+        android:textColor="@color/white"
+        android:textSize="@dimen/bottom_bar_button_label"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_frag">
+
+    <data>
+
+        <variable
+            name="profileState"
+            type="com.accessvascularinc.hydroguide.mma.model.ProfileState" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/av_darker_blue"
+        tools:context=".ui.HomeFragment">
+
+        <RelativeLayout
+            android:id="@+id/splash_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/splash_sub_logo_width"
+                android:layout_height="@dimen/splash_sub_logo_height"
+                android:layout_margin="@dimen/splash_sub_logo_margin"
+                android:src="@drawable/access_vascular_large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/splash_logo_container_height"
+                android:layout_centerInParent="true"
+                android:background="@drawable/colored_background"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/splash_hydroguide_logo_width"
+                    android:layout_height="@dimen/splash_hydroguide_logo_height"
+                    android:src="@drawable/logo_hydroguide" />
+
+                <LinearLayout
+                    android:layout_width="@dimen/splash_hydroguide_logo_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/splash_text_vert_margin"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="end"
+                        android:text="SW Version:"
+                        android:textColor="@color/av_light_blue"
+                        android:textSize="@dimen/splash_text_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/splash_sw_vers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="XXX"
+                        android:textColor="@color/av_light_blue"
+                        android:textSize="@dimen/splash_text_size"
+                        android:textStyle="bold" />
+
+                    <!--                    <TextView-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="50dp"-->
+                    <!--                        android:textSize="28dp"-->
+                    <!--                        android:text="FW Version: "-->
+                    <!--                        android:textColor="@color/av_light_blue"-->
+                    <!--                        android:textStyle="bold"-->
+                    <!--                        android:gravity="end"/>-->
+
+                    <!--                    <TextView-->
+                    <!--                        android:id="@+id/splash_fw_vers"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="50dp"-->
+                    <!--                        android:textSize="28dp"-->
+                    <!--                        android:text="XXX"-->
+                    <!--                        android:textColor="@color/av_light_blue"-->
+                    <!--                        android:textStyle="bold"-->
+                    <!--                        android:gravity="end"-->
+                    <!--                        android:layout_marginEnd="24dp"/>-->
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Thorsdk</string>
+    <string name="device_in_bootloader_mode" translatable="false">Device in bootloader mode</string>
+</resources>

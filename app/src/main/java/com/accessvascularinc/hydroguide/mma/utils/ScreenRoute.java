@@ -1,0 +1,15 @@
+package com.accessvascularinc.hydroguide.mma.utils;
+
+public enum ScreenRoute {
+  RECORDS,
+  PROFILE_SETTINGS,
+  SYSTEM_UPDATE,
+  PATIENT_INPUT,
+  PROCEDURE,
+  ULTRASOUND,
+  CLINICIAN_RECORDS,
+  FACILITY_RECORDS,
+  SETTINGS,
+  CHANGE_PASSWORD,
+  SWITCH_MODE
+}

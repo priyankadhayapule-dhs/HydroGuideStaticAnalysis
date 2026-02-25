@@ -1,0 +1,765 @@
+{
+    "ErrorSources": [
+        {
+            "name": "Miscellaneous",
+            "label": "TES_MISC",
+            "value": "0x1",
+            "description": "Contains all miscellaneous and generic errors",
+            "errors": [
+                {
+                    "name": "Operation Aborted",
+                    "label": "TER_MISC_ABORT",
+                    "value": "0x1",
+                    "description": "The operation was aborted"
+                },
+                {
+                    "name": "File Create Failed",
+                    "label": "TER_MISC_CREATE_FILE_FAILED",
+                    "value": "0x2",
+                    "description": "The file could not be created"
+                },
+                {
+                    "name": "File Open Failed",
+                    "label": "TER_MISC_OPEN_FILE_FAILED",
+                    "value": "0x3",
+                    "description": "The file could not be opened",
+                    "cause": "Varies.  PCIe link failure with probe could cause system files to be missing.  Could also be unable to open a video clip."
+                },
+                {
+                    "name": "Invalid File",
+                    "label": "TER_MISC_INVALID_FILE",
+                    "value": "0x4",
+                    "description": "The file has invalid format"
+                },
+                {
+                    "name": "File Not Open",
+                    "label": "TER_MISC_FILE_NOT_OPEN",
+                    "value": "0x5",
+                    "description": "The file is not open"
+                },
+                {
+                    "name": "Write Failed",
+                    "label": "TER_MISC_WRITE_FAILED",
+                    "value": "0x6",
+                    "description": "The write operation failed"
+                },
+                {
+                    "name": "Not Implemented",
+                    "label": "TER_MISC_NOT_IMPLEMENTED",
+                    "value": "0x7",
+                    "description": "The method is not implemented"
+                },
+                {
+                    "name": "Busy",
+                    "label": "TER_MISC_BUSY",
+                    "value": "0x8",
+                    "description": "Busy: The operation could not be performed"
+                },
+                {
+                    "name": "Invalid Parameter",
+                    "label": "TER_MISC_PARAM",
+                    "value": "0x9",
+                    "description": "One or more parameters are either null or out of range"
+                },
+                {
+                    "name": "Invalid Permission",
+                    "label": "TER_MISC_PERMISSION",
+                    "value": "0xA",
+                    "description": "Permission is not granted to perform the operation"
+                }
+            ]
+        },
+        {
+            "name": "Linux",
+            "label": "TES_LINUX",
+            "value": "0x2",
+            "description": "Standard Linux errors from errno"
+        },
+        {
+            "name": "Dau Hardware",
+            "label": "TES_DAU_HW",
+            "value": "0x3",
+            "description": "Errors generated from the Dau hardware",
+            "errors": [
+                {
+                    "name": "Power Error",
+                    "label": "TER_DAU_PWR",
+                    "value": "0x1",
+                    "description": "HV power supply monitor fault detected"
+                },
+                {
+                    "name": "MSI Error",
+                    "label": "TER_DAU_MSI",
+                    "value": "0x2",
+                    "description": "There was an MSI error in the Dau"
+                },
+                {
+                    "name": "Transmitter Fault",
+                    "label": "TER_DAU_TXC",
+                    "value": "0x3",
+                    "description": "There was a fault in the transmitter"
+                },
+                {
+                    "name": "PCIe Error",
+                    "label": "TER_DAU_PCIE",
+                    "value": "0x4",
+                    "description": "There was PCIe error detected from the Dau"
+                },
+                {
+                    "name": "Streaming Error",
+                    "label": "TER_DAU_STREAMING",
+                    "value": "0x5",
+                    "description": "An error occurred in the Dau while Streaming"
+                },
+                {
+                    "name": "Sequence Error",
+                    "label": "TER_DAU_SEQUENCE",
+                    "value": "0x6",
+                    "description": "An error occurred in the Dau while processing the Sequence"
+                },
+                {
+                    "name": "Motion Sensor Error",
+                    "label": "TER_DAU_MOTION_SENSOR",
+                    "value": "0x7",
+                    "description": "Invalid WHO_AM_I register reading"
+                },
+                {
+                    "name": "Memory Error",
+                    "label": "TER_DAU_MEM_ACCESS",
+                    "value": "0x8",
+                    "description": "Dau Register or memory access error"
+                },
+                {
+                    "name": "Unknown Error",
+                    "label": "TER_DAU_UNKNOWN",
+                    "value": "0x9",
+                    "description": "Unknown Dau error"
+                },
+                {
+                    "name": "ASIC Error",
+                    "label": "TER_DAU_ASIC_CHECK",
+                    "value": "0xA",
+                    "description": "ASIC integrity check fail after multiple power up retry cycles"
+                }
+            ]
+        },
+        {
+            "name": "Tablet Hardware",
+            "label": "TES_TABLET_HW",
+            "value": "0x4",
+            "description": "Errors unique to the Thor tablet hardware",
+            "errors": [
+                {
+                    "name": "Puck Open Failure",
+                    "label": "TER_TABLET_PUCK_OPEN",
+                    "value": "0x1",
+                    "description": "Failed to access the Puck"
+                },
+                {
+                    "name": "Puck Scan Failure",
+                    "label": "TER_TABLET_PUCK_SCAN",
+                    "value": "0x2",
+                    "description": "Failed to put the Puck in scanning mode"
+                },
+                {
+                    "name": "Puck Configuration Failure",
+                    "label": "TER_TABLET_PUCK_CONFIG",
+                    "value": "0x3",
+                    "description": "Failed to configure the Puck"
+                },
+                {
+                    "name": "Puck Firmware",
+                    "label": "TER_TABLET_PUCK_FIRMWARE",
+                    "value": "0x4",
+                    "description": "The Puck firmware needs to be updated"
+                },
+                {
+                    "name": "Puck Update Firmware",
+                    "label": "TER_TABLET_PUCK_UPDATE_FIRMWARE",
+                    "value": "0x5",
+                    "description": "The Puck firmware update failed"
+                },
+                {
+                    "name": "Puck Update Firmware Busy",
+                    "label": "TER_TABLET_PUCK_UPDATE_FIRMWARE_BUSY",
+                    "value": "0x6",
+                    "description": "The Puck firmware is already in progress"
+                },
+                {
+                    "__comment": "This entry is a success code for completion of a firmware udpate.  It is not an error code.",
+                    "name": "Puck Update Firmware Update Complete",
+                    "label": "TER_TABLET_PUCK_UPDATE_FIRMWARE_COMPLETE",
+                    "value": "0x7",
+                    "isError": false,
+                    "description": "The Puck firmware update completed"
+                }
+            ]
+        },
+        {
+            "name": "Thermal",
+            "label": "TES_THERMAL",
+            "value": "0x5",
+            "description": "Thermal warnings/errors from Thor tablet and Dau",
+            "errors": [
+                {
+                    "name": "Probe Thermal High",
+                    "label": "TER_THERMAL_PROBE",
+                    "value": "0x1",
+                    "description": "The probe is too hot"
+                },
+                {
+                    "name": "Tablet Thermal High",
+                    "label": "TER_THERMAL_TABLET",
+                    "value": "0x2",
+                    "description": "The tablet is too hot"
+                },
+                {
+                    "name": "Probe Thermal Fail",
+                    "label": "TER_THERMAL_PROBE_FAIL",
+                    "value": "0x3",
+                    "description": "The probe thermal sensor failed",
+                    "cause": "The thermal sensor may be faulty or the flex circuit may be loose or broken."
+                },
+                {
+                    "name": "Tablet Thermal Fail",
+                    "label": "TER_THERMAL_TABLET_FAIL",
+                    "value": "0x4",
+                    "description": "The tablet thermal sensor failed",
+                    "cause": "The thermal sensor may be faulty or the flex circuit may be loose or broken."
+                }
+            ]
+        },
+        {
+            "name": "Imaging Engine",
+            "label": "TES_IMAGE_ENG",
+            "value": "0x6",
+            "description": "Errors from the Ultrasound Imaging Engine",
+            "errors": [
+                {
+                    "name": "Underflow",
+                    "label": "TER_IE_UNDERFLOW",
+                    "value": "0x1",
+                    "description": "Data Underflow",
+                    "cause": "The probe stopped sending data"
+                },
+                {
+                    "name": "Overflow",
+                    "label": "TER_IE_OVERFLOW",
+                    "value": "0x2",
+                    "description": "Data Overflow",
+                    "cause": "The system could not keep up with the incoming data from the probe.  It is possible that the CPU was throttled due to low battery."
+                },
+                {
+                    "name": "Scan Converter Sources",
+                    "label": "TER_IE_SCAN_CONVERTER_SOURCES",
+                    "value": "0x3",
+                    "description": "Unable to load the Scan Converter Sources"
+                },
+                {
+                    "name": "UPS Extract",
+                    "label": "TER_IE_UPS_EXTRACT",
+                    "value": "0x4",
+                    "description": "Unable to extract the UPS"
+                },
+                {
+                    "name": "UPS Open",
+                    "label": "TER_IE_UPS_OPEN",
+                    "value": "0x5",
+                    "description": "Unable to open the UPS"
+                },
+                {
+                    "name": "UPS Access",
+                    "label": "TER_IE_UPS_ACCESS",
+                    "value": "0x6",
+                    "description": "Error accessing the UPS"
+                },
+                {
+                    "name": "DMA Open",
+                    "label": "TER_IE_DMA_OPEN",
+                    "value": "0x7",
+                    "description": "Unable to open the DMA buffer"
+                },
+                {
+                    "name": "DAU Power",
+                    "label": "TER_IE_DAU_POWER",
+                    "value": "0x8",
+                    "description": "Unable to power up the DAU"
+                },
+                {
+                    "name": "DAU Power",
+                    "label": "TER_IE_DAU_POWER_REBOOT",
+                    "value": "0x9",
+                    "description": "A reboot is needed to restore connection to Dau"
+                },
+                {
+                    "name": "DAU Memory",
+                    "label": "TER_IE_DAU_MEM",
+                    "value": "0xA",
+                    "description": "Unable to map DAU memory"
+                },
+                {
+                    "name": "Signal Handler Init",
+                    "label": "TER_IE_SIGHANDLE_INIT",
+                    "value": "0xB",
+                    "description": "Unable to initialize the Signal Handler"
+                },
+                {
+                    "name": "TBF Init",
+                    "label": "TER_IE_TBF_INIT",
+                    "value": "0xC",
+                    "description": "Unable to initialize the TBF"
+                },
+                {
+                    "name": "SSE Init",
+                    "label": "TER_IE_SSE_INIT",
+                    "value": "0xD",
+                    "description": "Unable to initialize the SSE"
+                },
+                {
+                    "name": "DAU Closed",
+                    "label": "TER_IE_DAU_CLOSED",
+                    "value": "0xE",
+                    "description": "The DAU is closed"
+                },
+                {
+                    "name": "Invalid Gain Value",
+                    "label": "TER_IE_GAIN",
+                    "value": "0xF",
+                    "description": "Gain value must be between 0 and 100"
+                },
+                {
+                    "name": "Invalid Image Parameters",
+                    "label": "TER_IE_IMAGE_PARAM",
+                    "value": "0x10",
+                    "description": "Cannot locate an Imaging Case from the supplied parameters"
+                },
+                {
+                    "name": "Invalid Operation - Running",
+                    "label": "TER_IE_OPERATION_RUNNING",
+                    "value": "0x11",
+                    "description": "The operation is invalid while running"
+                },
+                {
+                    "name": "Invalid Operation - Stopped",
+                    "label": "TER_IE_OPERATION_STOPPED",
+                    "value": "0x12",
+                    "description": "The operation is invalid while stopped"
+                },
+                {
+                    "name": "Image Processor - Init Failed",
+                    "label": "TER_IE_IMAGE_PROCESSOR_INIT",
+                    "value": "0x13",
+                    "description": "Failed to initialize Image Processor"
+                },
+                {
+                    "name": "Cine Buffer - Init Failed",
+                    "label": "TER_IE_CINE_BUFFER_INIT",
+                    "value": "0x14",
+                    "description": "Failed to initialize Cine Buffer"
+                },
+                {
+                    "name": "Cine Viewer - Init Failed",
+                    "label": "TER_IE_CINE_VIEWER_INIT",
+                    "value": "0x15",
+                    "description": "Failed to initialize Cine Viewer"
+                },
+                {
+                    "name": "Inference Engine - Init Failed",
+                    "label": "TER_IE_INFERENCE_ENGINE_INIT",
+                    "value": "0x16",
+                    "description": "Failed to initialize Inference Engine"
+                },
+                {
+                    "name": "Null FIFO",
+                    "label": "TER_IE_DMA_FIFO_NULL",
+                    "value": "0x17",
+                    "description": "The DMA FIFO is Null"
+                },
+                {
+                    "name": "Cine Viewer - Refresh Failed",
+                    "label": "TER_IE_CINE_VIEWER_REFRESH",
+                    "value": "0x18",
+                    "description": "Failed to refresh Cine Viewer"
+                },
+                {
+                    "name": "USB Init",
+                    "label": "TER_IE_USB_INIT",
+                    "value": "0xB0",
+                    "description": "Unable to initialize the USB Dau"
+                },
+                {
+                    "name": "USB Start",
+                    "label": "TER_IE_USB_START",
+                    "value": "0xB1",
+                    "description": "Unable to start imaging on USB Dau"
+                },
+                {
+                    "name": "USB Error",
+                    "label": "TER_IE_USB_ERROR",
+                    "value": "0xB2",
+                    "description": "There was a USB error communicating with the Dau"
+                },
+                {
+                    "name": "USB Timed Out",
+                    "label": "TER_IE_USB_TIMED_OUT",
+                    "value": "0xB3",
+                    "description": "USB transfer timed out"
+                },
+                {
+                    "name": "USB Stalled",
+                    "label": "TER_IE_USB_STALL",
+                    "value": "0xB4",
+                    "description": "USB transfer stalled"
+                },
+                {
+                    "name": "USB Overflow",
+                    "label": "TER_IE_USB_OVERFLOW",
+                    "value": "0xB5",
+                    "description": "USB data overflowed"
+                },
+                {
+                    "name": "Sequencer Stalled",
+                    "label": "TER_IE_SEQ_STALLED",
+                    "value": "0xB6",
+                    "description": "Sequencer did not stop in expected time frame"
+                },
+                {
+                    "name": "Sequence blob error",
+                    "label": "TER_IE_UPS_NULL_BLOB",
+                    "value": "0xB7",
+                    "description": "Failed to read sequence blob from UPS"
+                },
+                {
+                    "name": "Invalid sequence blob",
+                    "label": "TER_IE_UPS_INVALID_BLOB",
+                    "value": "0xB8",
+                    "description": "Size of sequence blob is invalid"
+                },
+                {
+                    "name": "LLE Sequence load error",
+                    "label": "TER_IE_SEQ_LLE_LOAD_FAILURE",
+                    "value":"0xB9",
+                    "description": "Failed to load sequence linked list"
+                },
+                {
+                    "name": "PLD Sequence load error",
+                    "label": "TER_IE_SEQ_PLD_LOAD_FAILURE",
+                    "value":"0xBA",
+                    "description": "Failed to load sequence payload"
+                },
+                {
+                    "name": "UPS read error",
+                    "label": "TER_IE_UPS_READ_FAILURE",
+                    "value":"0xBB",
+                    "description": "Error occurred retrieving a parameter from UPS"
+                },
+                {
+                    "name": "Invalid FOV",
+                    "label": "TER_IE_INVALID_FOV",
+                    "value":"0xBC",
+                    "description": "Error occurred retrieving FOV"
+                },
+                {
+                    "name": "No Active Stages",
+                    "label": "TER_IE_NO_ACTIVE_STAGES",
+                    "value":"0xBD",
+                    "description": "Image Processor is engaged with no active processing stage"
+                },
+                {
+                    "name": "Invalid Header",
+                    "label": "TER_IE_INVALID_HEADER",
+                    "value":"0xBE",
+                    "description": "Frame header count did not match the expected value"
+                },
+                {
+                    "name": "Unsupported Imaging Mode",
+                    "label": "TER_IE_IMAGING_MODE",
+                    "value":"0xC1",
+                    "description": "Unsupported imaging mode"
+                },
+                {
+                    "name": "UPS Integrity",
+                    "label": "TER_IE_UPS_INTEGRITY",
+                    "value": "0xC2",
+                    "description": "UPS integrity check failed"
+                },
+                {
+                    "name": "Font File Extract",
+                    "label": "TER_IE_FONT_EXTRACT",
+                    "value": "0xD0",
+                    "description": "Fail to extract the font file"
+                },
+                {
+                    "name": "Font File Open",
+                    "label": "TER_IE_FONT_OPEN",
+                    "value": "0xD1",
+                    "description": "Unable to open the font file"
+                },
+                {
+                    "name": "DA/ECG Frame Index Mismatch",
+                    "label": "TER_IE_DAECG_FRAME_INDEX",
+                    "value": "0xD2",
+                    "description": "DA/ECG frame index did not match image frame index"
+                },
+                {
+                    "name": "Invalid Colorflow parameter",
+                    "label": "TER_IE_COLORFLOW_PARAM",
+                    "value": "0xD3",
+                    "description": "Error in the computation of colorflow beam parameters"
+                },
+                {
+                    "name": "USB Cable Disconnected",
+                    "label": "TER_IE_USB_NO_DEVICE",
+                    "value": "0xD4",
+                    "description": "USB Device disconnected from Host"
+                },
+                {
+                    "name": "Invalid TLV Detected",
+                    "label": "TER_IE_USB_TLV_INVALID",
+                    "value": "0xD5",
+                    "description": "Error in TLV format"
+                },
+                {
+                    "name": "Invalid TLV Structure",
+                    "label": "TER_IE_USB_TLV_ERROR",
+                    "value": "0xD6",
+                    "description": "Error in TLV Parsing"
+                },
+                {
+                    "name": "Invalid TLV parameter",
+                    "label": "TER_IE_USB_TLV_BADPARAMETER",
+                    "value": "0xD7",
+                    "description": "Error in TLV Protocol Parameters"
+                },
+                {
+                    "name": "Unsupported Probe",
+                    "label": "TER_IE_UNSUPPORTED_PROBE",
+                    "value": "0xD8",
+                    "description": "Unsupported probe"
+                }
+            ]
+        },
+        {
+            "name": "Ultrasound Manager",
+            "label": "TES_ULTRASOUND_MGR",
+            "value": "0x7",
+            "description": "Errors from the Ultrasound Manager",
+            "errors": [
+                {
+                    "name": "Context Failure",
+                    "label": "TER_UMGR_CONTEXT",
+                    "value": "0x1",
+                    "description": "Unable to create or initialize the Context"
+                },
+                {
+                    "name": "Remote Exception",
+                    "label": "TER_UMGR_REMOTE",
+                    "value": "0x2",
+                    "description": "There was a RemoteException error.  Check the cause."
+                },
+                {
+                    "name": "Dau Closed",
+                    "label": "TER_UMGR_DAU_CLOSED",
+                    "value": "0x3",
+                    "description": "The Dau is closed.  A new instance must be created and opened."
+                },
+                {
+                    "name": "Invalid Parameter",
+                    "label": "TER_UMGR_INVALID_PARAM",
+                    "value": "0x4",
+                    "description": "One of the required parameters is null"
+                },
+                {
+                    "name": "Native Window",
+                    "label": "TER_UMGR_NATIVE_WINDOW",
+                    "value": "0x5",
+                    "description": "Unable to get native window from supplied surface"
+                },
+                {
+                    "name": "Asset Manager",
+                    "label": "TER_UMGR_ASSETMGR",
+                    "value": "0x6",
+                    "description": "Unable to get native Asset Manager from supplied parameter"
+                },
+                {
+                    "name": "Dau Exists",
+                    "label": "TER_UMGR_DAU_EXISTS",
+                    "value": "0x7",
+                    "description": "A Dau instance already exists"
+                },
+                {
+                    "name": "Service Access",
+                    "label": "TER_UMGR_SVC_ACCESS",
+                    "value": "0x8",
+                    "description": "Could not access the Ultrasound Service"
+                },
+                {
+                    "name": "Player Not Attached",
+                    "label": "TER_UMGR_PLAYER_NOT_ATTACHED",
+                    "value": "0x9",
+                    "description": "The Ultrasound Player is not attached to the Cine Buffer"
+                },
+                {
+                    "name": "Puck Exists",
+                    "label": "TER_UMGR_PUCK_EXISTS",
+                    "value": "0xA",
+                    "description": "A Puck instance already exists"
+                },
+                {
+                    "name": "Thor Only",
+                    "label": "TER_UMGR_THOR_ONLY",
+                    "value": "0xB",
+                    "description": "This operation is only available on the Thor Tablet"
+                },
+                {
+                    "name": "Puck Closed",
+                    "label": "TER_UMGR_PUCK_CLOSED",
+                    "value": "0xC",
+                    "description": "The Puck is closed.  A new instance must be created and opened."
+                },
+                {
+                    "name": "Dau Not Attached",
+                    "label": "TER_UMGR_DAU_ATTACHED",
+                    "value": "0xD",
+                    "description": "The Dau is not connected."
+                },
+                {
+                    "name": "USB Manager",
+                    "label": "TER_UMGR_USB_MANAGER",
+                    "value": "0xE",
+                    "description": "Could not access USB Manager."
+                },
+                {
+                    "name": "USB Device",
+                    "label": "TER_UMGR_USB_DEVICE",
+                    "value": "0xF",
+                    "description": "Could not open the USB device."
+                }
+            ]
+        },
+        {
+            "name": "AP_I Manager",
+            "label": "TES_API_MANAGER",
+            "value": "0x8",
+            "description": "Errors from the AP_I Manager",
+            "errors": [
+                {
+                    "name": "Too many UTPs",
+                    "label": "TER_APIMGR_NUM_UTPS",
+                    "value": "0x1",
+                    "description": "Number of UTPs exceeds limit"
+                },
+                {
+                    "name": "Invalid UTP string",
+                    "label": "TER_APIMGR_UTP_STRING",
+                    "value": "0x2",
+                    "description": "Parsing of UTP string obtained from API table failed"
+                },
+                {
+                    "name": "UTP ID not found",
+                    "label": "TER_APIMGR_UTPID",
+                    "value": "0x3",
+                    "description": "Failed to find a matching UTP ID in UPS"
+                },
+                {
+                    "name": "Input Vector Setup",
+                    "label": "TER_APIMGR_INPUT_VECTOR",
+                    "value": "0x4",
+                    "description": "Failed to setup input vector"
+                },
+                {
+                    "name": "AP&I Reference Data",
+                    "label": "TER_APIMGR_CORRUPTED_REF_DATA",
+                    "value": "0x5",
+                    "description": "AP&I reference data might be corrupted"
+                }
+            ]
+        },
+        {
+            "name": "AI System",
+            "label": "TES_AI_SYSTEM",
+            "value": "0x9",
+            "description": "Errors from the AI System",
+            "errors": [
+                {
+                    "name": "Model load error",
+                    "label": "TER_AI_MODEL_LOAD",
+                    "value": "0x1",
+                    "description": "An AI model failed to load"
+                },
+                {
+                    "name": "Model run error",
+                    "label": "TER_AI_MODEL_RUN",
+                    "value": "0x2",
+                    "description": "An AI model failed to run"
+                },
+                {
+                    "name": "Frame ID failure",
+                    "label": "TER_AI_FRAME_ID",
+                    "value": "0x3",
+                    "description": "Failed to identify either ED or ES frame (or both)"
+                },
+                {
+                    "name": "Frame ID warning",
+                    "label": "TER_AI_FRAME_ID_WARN",
+                    "value": "0x4",
+                    "description": "Detected ED or ES frame may be invalid. Recommend manual verification"
+                },
+                {
+                    "name": "Segmentation failure",
+                    "label": "TER_AI_SEGMENTATION",
+                    "value": "0x5",
+                    "description": "Failed to segment the requested item"
+                },
+                {
+                    "name": "Smart capture clip too short",
+                    "label": "TER_AI_SC_NOFRAMES",
+                    "value": "0x6",
+                    "description": "Current clip is too short for smart capture"
+                },
+                {
+                    "name": "Smart capture no range found",
+                    "label": "TER_AI_SC_NO_VALID_RANGE",
+                    "value": "0x7",
+                    "description": "No clip range met smart capture requirements"
+                },
+                {
+                    "name": "LV not found",
+                    "label": "TER_AI_LV_NOT_FOUND",
+                    "value": "0x8",
+                    "description": "No LV region found by AI"
+                },
+                {
+                    "name": "Multiple LV",
+                    "label": "TER_AI_MULTIPLE_LV",
+                    "value": "0x9",
+                    "description": "Multiple possible LV regions found by AI"
+                },
+                {
+                    "name": "LV too small",
+                    "label": "TER_AI_LV_TOO_SMALL",
+                    "value": "0xA",
+                    "description": "LV region is too small"
+                },
+                {
+                    "name": "LV uncertainty error",
+                    "label": "TER_AI_LV_UNCERTAINTY_ERROR",
+                    "value": "0xB",
+                    "description": "Uncertainty in LV segmentation above threshold"
+                },
+                {
+                    "name": "A4C foreshortened",
+                    "label": "TER_AI_A4C_FORESHORTENED",
+                    "value": "0xC",
+                    "description": "A4C major axis is significantly shorter than A2C major axis"
+                },
+                {
+                    "name": "A2C foreshortened",
+                    "label": "TER_AI_A2C_FORESHORTENED",
+                    "value": "0xD",
+                    "description": "A2C major axis is significantly shorter than A4C major axis"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="controllerState"
+            type="com.accessvascularinc.hydroguide.mma.model.ControllerState" />
+        <variable
+            name="tabletState"
+            type="com.accessvascularinc.hydroguide.mma.model.TabletState" />
+        <variable
+            name="title"
+            type="String" />
+        <variable
+            name="showSyncIcon"
+            type="Boolean" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="@color/av_darkest_blue"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:id="@+id/top_bar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:gravity="center_vertical"
+            android:text="@{title}"
+            android:textAllCaps="true"
+            android:textColor="@color/av_light_blue"
+            android:textSize="@dimen/title_label"
+            android:textStyle="bold"
+            android:paddingEnd="32dp"
+            android:visibility="@{title != null &amp;&amp; !title.isEmpty() ? View.VISIBLE : View.GONE}" />
+
+        <LinearLayout
+            android:layout_width="700dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/includeSearch"
+                layout="@layout/component_search_field"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+            <include
+                android:id="@+id/tablet_battery_indicator"
+                layout="@layout/tablet_battery_indicator"
+                android:layout_width="200dp"
+                android:visibility="visible"
+                android:layout_height="match_parent"
+                app:tabletState="@{tabletState}" />
+
+            <RelativeLayout
+                android:layout_width="173dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/controller_battery_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="@string/controller_battery_label"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/remote_battery_level_indicator"
+                    android:layout_width="53dp"
+                    android:layout_height="37dp"
+                    android:layout_below="@id/controller_battery_label"
+                    android:contentDescription="@string/cont_desc_battery_level_display"
+                    app:srcCompat="@drawable/indicator_battery_90" />
+
+                <TextView
+                    android:id="@+id/controller_battery_level_pct"
+                    android:layout_width="106dp"
+                    android:layout_height="37dp"
+                    android:layout_below="@id/controller_battery_label"
+                    android:layout_alignParentEnd="true"
+                    android:autoSizeTextType="uniform"
+                    android:text="@{controllerState.batteryLevelPct > -1 ? Integer.toString(Math.round(controllerState.batteryLevelPct)) + '%': `??? `}"
+                    android:textColor="@color/av_green" />
+
+            </RelativeLayout>
+
+
+
+            <ImageView
+                android:id="@+id/usb_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cont_desc_usb_icon"
+                app:srcCompat="@drawable/logo_usb_disconnected" />
+
+            <ImageView
+                android:id="@+id/sync_status_icon"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:contentDescription="@string/cont_desc_sync_status"
+                android:visibility="@{showSyncIcon ? View.VISIBLE : View.GONE}"
+                app:srcCompat="@drawable/sync_unavailable" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="193dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/cont_desc_hydroguide_logo"
+            app:srcCompat="@drawable/logo_hydroguide" />
+
+        <include
+            android:id="@+id/tablet_battery_warning_icon"
+            layout="@layout/tablet_battery_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+</layout>

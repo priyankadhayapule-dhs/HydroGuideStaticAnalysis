@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TableRow
+        android:id="@+id/tblHeaderClinician"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/av_darkest_blue">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".04"/>
+
+        <TextView
+            android:id="@+id/tvHeaderClinicianName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="@drawable/simple_white_border"
+            android:gravity="start"
+            android:padding="@dimen/records_table_cell_padding"
+            android:text="@string/table_header_clinician_name"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHeaderEmailAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="@drawable/simple_white_border"
+            android:gravity="start"
+            android:padding="@dimen/records_table_cell_padding"
+            android:text="@string/table_header_clinician_email"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHeaderUserType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="@drawable/simple_white_border"
+            android:gravity="start"
+            android:padding="@dimen/records_table_cell_padding"
+            android:text="@string/table_header_user_type"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tblHeaderFacility"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/av_darkest_blue">
+
+        <Space
+            android:layout_width="@dimen/records_column_checkbox_width"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tvHeaderFacilityName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/simple_white_border"
+            android:gravity="start"
+            android:padding="@dimen/records_table_cell_padding"
+            android:text="@string/table_header_facility_name"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+</LinearLayout>
