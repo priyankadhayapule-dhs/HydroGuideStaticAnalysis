@@ -31,10 +31,8 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
       - name: Make gradlew executable
-        working-directory: HydroGuideApp
         run: chmod +x gradlew
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        working-directory: HydroGuideApp
         run: ./gradlew build sonar --info
