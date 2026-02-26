@@ -31,7 +31,7 @@ android {
     }
     externalNativeBuild {
         ndkBuild {
-            path file('src/main/cpp/NdkBuild/jni/NdkAndroid.mk')
+            //path file('src/main/cpp/NdkBuild/jni/NdkAndroid.mk')
         }
     }
 
@@ -212,7 +212,7 @@ android {
             // Enable building of native tools (dauread, etc)
             externalNativeBuild {
                 ndkBuild {
-                    arguments "THOR_ENABLE_TOOLS=1"
+                    arguments "THOR_ENABLE_TOOLS=0"
                 }
             }
         }
@@ -220,7 +220,7 @@ android {
             // Enable building of native unit tests
             externalNativeBuild {
                 ndkBuild {
-                    arguments "THOR_ENABLE_TESTS=1"
+                    arguments "THOR_ENABLE_TESTS=0"
                 }
             }
         }

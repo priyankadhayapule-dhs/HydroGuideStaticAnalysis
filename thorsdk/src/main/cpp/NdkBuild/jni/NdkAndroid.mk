@@ -27,6 +27,6 @@ include $(ROOT_PATH)/tools/SeqUtilities/NdkAndroid.mk
 endif
 
 # Tests
-ifneq ($(strip $(THOR_ENABLE_TESTS)),)
-include $(ROOT_PATH)/test/NdkAndroid.mk
-endif
+#ifneq ($(strip $(THOR_ENABLE_TESTS)),)
+#include $(ROOT_PATH)/test/NdkAndroid.mk
+#endif

@@ -41,5 +41,8 @@ sonarqube {
     properties {
         property("sonar.projectKey", "priyankadhayapule-dhs_tablet-app-source-code")
         property("sonar.organization", "priyankadhayapule-dhs")
+        property("sonar.projectKey", "priyankadhayapule-dhs_HydroGuideApp")
+        property("sonar.organization", "priyankadhayapule-dhs")
+        property("sonar.host.url", "https://sonarcloud.io")
     }
 }
