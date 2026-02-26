@@ -44,13 +44,15 @@ sonarqube {
         property("sonar.token", System.getenv("SONAR_TOKEN"))
 
         // Sources and tests
-        //property("sonar.sources", "app/src/main/java,app/src/main/kotlin")
+        //property("sonar.sources", "app/src/main,base/src/main,thorsdk/src/main")
         //property("sonar.tests", "app/src/test/java,app/src/androidTest/java")
 
         // Android Lint
         property("sonar.androidLint.reportPaths", "app/build/reports/lint-results-debug.xml")
 
         // Binary classes for Java/Kotlin
-        //property("sonar.java.binaries", "app/build/intermediates/javac/debug/classes")
+        property("sonar.java.binaries", "app/build,base/build,thorsdk/build")
+
+        property("sonar.exclusions", "**/.github/**")
     }
 }
