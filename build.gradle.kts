@@ -44,5 +44,7 @@ sonarqube {
         property("sonar.projectKey", "priyankadhayapule-dhs_HydroGuideApp")
         property("sonar.organization", "priyankadhayapule-dhs")
         property("sonar.host.url", "https://sonarcloud.io")
+        // Android Lint report path(s)
+        property("sonar.androidLint.reportPaths", "thorsdk/build/reports/lint-results-basicDebug.xml, app/build/reports/lint-results-debug.xml")
     }
 }
