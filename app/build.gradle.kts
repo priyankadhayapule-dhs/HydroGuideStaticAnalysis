@@ -72,6 +72,10 @@ android {
     lint {
         absolutePaths = false
         abortOnError = false
+        checkReleaseBuilds = false
+        xmlReport = true
+        htmlReport = true
+        lintConfig = file("lint.xml")
     }
 
     project.tasks.preBuild.dependsOn("cyclonedxBom")

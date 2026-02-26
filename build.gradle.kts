@@ -36,15 +36,21 @@ ext {
     set("lintIgnoreWarnings", !(extra["enableLint"] as Boolean))
 }
 
-
 sonarqube {
     properties {
-        property("sonar.projectKey", "priyankadhayapule-dhs_tablet-app-source-code")
-        property("sonar.organization", "priyankadhayapule-dhs")
         property("sonar.projectKey", "priyankadhayapule-dhs_HydroGuideApp")
         property("sonar.organization", "priyankadhayapule-dhs")
         property("sonar.host.url", "https://sonarcloud.io")
-        // Android Lint report path(s)
-        property("sonar.androidLint.reportPaths", "thorsdk/build/reports/lint-results-basicDebug.xml, app/build/reports/lint-results-debug.xml")
+        property("sonar.token", System.getenv("SONAR_TOKEN"))
+
+        // Sources and tests
+        //property("sonar.sources", "app/src/main/java,app/src/main/kotlin")
+        //property("sonar.tests", "app/src/test/java,app/src/androidTest/java")
+
+        // Android Lint
+        property("sonar.androidLint.reportPaths", "app/build/reports/lint-results-debug.xml")
+
+        // Binary classes for Java/Kotlin
+        //property("sonar.java.binaries", "app/build/intermediates/javac/debug/classes")
     }
 }
