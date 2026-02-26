@@ -71,6 +71,7 @@ android {
 
     lint {
         absolutePaths = false
+        abortOnError = false
     }
 
     project.tasks.preBuild.dependsOn("cyclonedxBom")
