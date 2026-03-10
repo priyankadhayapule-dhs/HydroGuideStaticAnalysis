@@ -66,7 +66,7 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
-        buildConfig = true
+        //buildConfig = true
     }
 
     lint {
@@ -130,6 +130,19 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    // Mockito
+    testImplementation("org.mockito:mockito-core:5.7.0")
+    testImplementation("org.mockito:mockito-inline:5.2.0")
+
+    // Robolectric (IMPORTANT)
+    testImplementation("org.robolectric:robolectric:4.11.1")
+    // Android testing helpers
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    // Fragment testing
+    debugImplementation ("androidx.fragment:fragment-testing:1.6.2")
+
+    testImplementation ("com.google.dagger:hilt-android-testing:2.48")
+    kaptTest ("com.google.dagger:hilt-android-compiler:2.48")
 
 }
 

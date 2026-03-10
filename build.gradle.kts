@@ -43,10 +43,6 @@ sonarqube {
         property("sonar.host.url", "https://sonarcloud.io")
         property("sonar.token", System.getenv("SONAR_TOKEN"))
 
-        // Sources and tests
-        //property("sonar.sources", "app/src/main,base/src/main,thorsdk/src/main")
-        //property("sonar.tests", "app/src/test/java,app/src/androidTest/java")
-
         // Android Lint
         property("sonar.androidLint.reportPaths", "app/build/reports/lint-results-debug.xml")
 
